@@ -4,18 +4,18 @@
 
 <mapper namespace="Question_TbVO">
         <select id="list" resultType="Question_TbVO">
-                SELECT * FROM BOARD
-                ORDER BY seq
+                SELECT * FROM QUESTION_TB
+                ORDER BY que_no
         </select>
         
         <select id="select" parameterType="int" resultType="Question_TbVO">
                 SELECT * FROM
-                BOARD WHERE seq = #{seq}
+                QUESTION_TB WHERE que_no = #{que_no}
         </select>
         
         <insert id="insert" parameterType="Question_TbVO">
-                INSERT INTO BOARD 
-                (seq, title, content, writer, password, regDate, cnt)
+                INSERT INTO QUESTION_TB 
+                (QUESTION_TB, QUE_TITLE, QUE_TEXT, QUE_USER, QUE_CATEGORY, QUE_REG_DT, QUE_READ_CNT)
                 VALUES
                 (BOARD_SEQ.nextval, 
 			#{title}, #{content}, #{writer}, #{password}, SYSDATE, 0)
