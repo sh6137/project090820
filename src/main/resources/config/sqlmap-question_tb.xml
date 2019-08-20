@@ -2,18 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="boardDAO">
-        <select id="list" resultType="boardVO">
+<mapper namespace="Question_TbVO">
+        <select id="list" resultType="Question_TbVO">
                 SELECT * FROM BOARD
                 ORDER BY seq
         </select>
         
-        <select id="select" parameterType="int" resultType="boardVO">
+        <select id="select" parameterType="int" resultType="Question_TbVO">
                 SELECT * FROM
                 BOARD WHERE seq = #{seq}
         </select>
         
-        <insert id="insert" parameterType="boardVO">
+        <insert id="insert" parameterType="Question_TbVO">
                 INSERT INTO BOARD 
                 (seq, title, content, writer, password, regDate, cnt)
                 VALUES
@@ -24,7 +24,7 @@
                 </selectKey>
         </insert>
         
-        <update id="update" parameterType="boardVO">
+        <update id="update" parameterType="Question_TbVO">
                 UPDATE BOARD SET title = #{title},
                 content = #{content},
                 writer = #{writer}
@@ -35,7 +35,7 @@
                 UPDATE BOARD SET cnt = cnt + 1 WHERE seq = #{seq}
         </update>
         
-        <delete id="delete" parameterType="boardVO">
+        <delete id="delete" parameterType="Question_TbVO">
                 DELETE FROM BOARD WHERE seq = #{seq}
                 AND password = #{password}
         </delete>
