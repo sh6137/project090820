@@ -21,7 +21,7 @@ public class ProductVO {
 	
 	public int getProNo() {
 		return proNo;
-	}	//d
+	}
 	public void setProNo(int proNo) {
 		this.proNo = proNo;
 	}
