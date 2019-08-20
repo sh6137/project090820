@@ -1,0 +1,19 @@
+CREATE TABLE BOARD(
+    seq INT PRIMARY KEY,
+    title VARCHAR(255) not null,
+    content VARCHAR(1000) not null,
+    writer VARCHAR(10) not null,
+    password INT not null,
+    regDate TIMESTAMP not null,
+    cnt INT not null
+    
+)
+
+CREATE SEQUENCE BOARD_SEQ
+START WITH 1
+INCREMENT BY 1
+MINVALUE 1
+MAXVALUE 99999;
+
+INSERT INTO BOARD (seq, title, content, writer, password, regDate, cnt)
+values(BOARD_SEQ.nextval,'t1','c1','w1',1234,'2015-10-10 14:21:12',1);
