@@ -41,12 +41,12 @@
 		<constructor-arg ref="sqlSessionFactory" />
 	</bean>
 	
-	<bean id="boardDao" class="board.dao.BoardDaoMybatis">
+	<bean id="productDao" class="product.dao.ProductDao">
 	<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
 	</bean>
 	
-	<bean id="boardService" class="board.service.BoardServiceImpl">
-		<property name="boardDao" ref="boardDao"/>
-	</bean>
+<!-- 	<bean id="boardService" class="board.service.BoardServiceImpl">
+		<property name="productDao" ref="productDao"/>
+	</bean> -->
 	
 </beans>
