@@ -49,4 +49,8 @@
 		<property name="boardDao" ref="boardDao"/>
 	</bean>
 	
+	<bean id="boardServiceImpl" class="board.service.BoardServiceImpl">
+		<property name = "boardDao" ref="boardDao"/>
+	</bean>
+	
 </beans>

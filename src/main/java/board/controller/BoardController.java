@@ -29,18 +29,18 @@ public class BoardController {
 	}
 	
 	//모델 추가 전
-/*	@RequestMapping(value="/board/list")
+	@RequestMapping(value="/board/list")
 	@ResponseBody
 	public String list(){
 		return boardService.list().toString();
-	}*/
-	
-	//모델 추가 후
-	@RequestMapping(value="/board/list")
-	public String list(Model model){
-		model.addAttribute("boardList", boardService.list());
-		return "/board/list";
 	}
+
+//	//모델 추가 후
+//	@RequestMapping(value="/board/list")
+//	public String list(Model model){
+//		model.addAttribute("boardList", boardService.list());
+//		return "/board/list";
+//	}
 	
 	//읽기 기능
 	@RequestMapping(value="/board/read/{seq}")

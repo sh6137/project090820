@@ -10,7 +10,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class BoardVO {
         private int seq;
         
-        @Length(min=2, max=5, message="제목은 2자 이상, 5자 미만 입력해야 합니다.")
+        @Length(min=2, max=10, message="제목은 2자 이상, 10자 미만 입력해야 합니다.")
         private String title;
         
         @NotEmpty(message="내용을 입력하세요.")
