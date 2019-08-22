@@ -40,4 +40,10 @@ public class BoardDaoMybatis implements BoardDao {
 			return sqlSessionTemplate.selectList("list");
 		}
 		
+		@Override
+		public List<ProductVO> list2() {
+			// TODO Auto-generated method stub
+			return sqlSessionTemplate.selectList("list2");
+		}
+		
 }

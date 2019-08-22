@@ -36,5 +36,10 @@ public class BoardServiceImpl implements BoardService {
 		// TODO Auto-generated method stub
 		return boardDao.list();
 	}
-
+	
+	@Override
+	public List<ProductVO> list2() {
+		// TODO Auto-generated method stub
+		return boardDao.list2();
+	}
 }

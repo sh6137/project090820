@@ -108,13 +108,13 @@
 	</c:forEach>
 	</tr>
 	<tr align="center">
-	 <c:forEach var="board" items="${boardList}" varStatus="loop">
-		<td width="900" height="200">${board.proThumbnail}</td>
+	 <c:forEach var="board2" items="${boardList2}" varStatus="loop">
+		<td width="900" height="200">${board2.proThumbnail}</td>
 	</c:forEach> 
 	</tr>
 	<tr align="center">
-	<c:forEach var="board" items="${boardList}" varStatus="loop">
-		<td width="900" height="50">${board.proName}</td>
+	<c:forEach var="board2" items="${boardList2}" varStatus="loop">
+		<td width="900" height="50">${board2.proName}</td>
 	</c:forEach>
 	</tr>
 </table>

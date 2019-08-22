@@ -31,6 +31,7 @@ public class BoardController {
 	@RequestMapping(value="/board/main")
 	public String read(Model model) {
 		model.addAttribute("boardList", boardService.list());
+		model.addAttribute("boardList2", boardService.list2());
 		return "/board/main";
 	}
 }

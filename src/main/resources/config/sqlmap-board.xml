@@ -7,4 +7,9 @@
                 SELECT * FROM 
         	(SELECT * FROM PRODUCT_TB ORDER BY PRO_LIKE_CNT DESC)<![CDATA[ WHERE ROWNUM <=3]]>   
         </select>
+        
+        <select id="list2" resultType="ProductVO">
+                SELECT * FROM 
+        	(SELECT * FROM PRODUCT_TB ORDER BY PRO_READ_CNT DESC)<![CDATA[ WHERE ROWNUM <=3]]>   
+        </select>
 </mapper>
