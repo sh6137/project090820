@@ -19,6 +19,14 @@ public class ProductVO {
 	private String proFileName;
 	private String proFileSysName;
 	
+	public ProductVO() {}
+	
+	public ProductVO(String proName, String proThumbnail) {
+		super();
+		this.proName = proName;
+		this.proThumbnail = proThumbnail;
+	}
+	
 	public int getProNo() {
 		return proNo;
 	}

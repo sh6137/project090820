@@ -19,10 +19,25 @@ public class BoardDaoMybatis implements BoardDao {
         public void setSqlMapClient(SqlSessionTemplate sqlSessionTemplate) {
                 this.sqlSessionTemplate = sqlSessionTemplate;
         }
-        
+
 		@Override
-		public Object call(ProductVO productVO) {
-			return sqlSessionTemplate.call("call", productVO);
-			
+		public ProductVO selectName(String proName) {
+			// TODO Auto-generated method stub
+			ProductVO vo = (ProductVO)sqlSessionTemplate.selectOne("upName", proName);
+			return vo;
 		}
+
+		@Override
+		public ProductVO selectThumbnail(String proThumbnail) {
+			// TODO Auto-generated method stub
+			ProductVO vo = (ProductVO)sqlSessionTemplate.selectOne("selectThumbnail", proThumbnail);
+			return vo;
+		}
+
+		@Override
+		public List<ProductVO> list() {
+			// TODO Auto-generated method stub
+			return sqlSessionTemplate.selectList("list");
+		}
+		
 }

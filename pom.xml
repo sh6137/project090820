@@ -5,7 +5,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>sp4</groupId>
-	<artifactId>project090820</artifactId>
+	<artifactId>10_board_mybatis</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
@@ -46,8 +46,6 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/oracle/ojdbc6 -->
-		<!-- ?�운???�되�??�동?�로 로컬 리파지?�리??추�? -->
 		<dependency>
 			<groupId>oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
