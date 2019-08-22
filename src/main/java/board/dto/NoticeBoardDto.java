@@ -9,6 +9,7 @@ public class NoticeBoardDto {
 	private String notice_user;
 	private Date notice_reg_dt;
 	private int notice_read_cnt;
+	
 	public int getNotice_no() {
 		return notice_no;
 	}
