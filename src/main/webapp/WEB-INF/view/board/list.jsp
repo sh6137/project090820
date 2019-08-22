@@ -6,8 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+$(function(){
+	$("#btnWrite").click(function(){
+		location.href="${path}/board/write.do";
+	});
+	</script>
 </head>
 <body>
+<h2>게시판</h2>
+<button type="button" id="btnWrite">글쓰기</button>
 	<table border="1" width="600px">
 	<tr>
 		<th>번호</th>
@@ -21,8 +29,8 @@
 		<td>${row.notice_no}</td>
 		<td>${row.notice_title}</td>
 		<td>${row.notice_user}</td>
-		<td>${row.notice_read_cnt}</td>
 		<td>${row.notice_reg_date}</td>
+		<td>${row.notice_read_cnt}</td>
 	</tr>
 	</c:forEach>
 </table>

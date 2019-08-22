@@ -19,6 +19,11 @@ public class BoardController {
 	@Autowired
 	NoticeBoardService noticeboardService;
 	
+	@RequestMapping("write.do")
+	public String write() {
+		return "board/write";
+	}
+	
 	@RequestMapping("list.do") // 세부적인 mapping
 	public ModelAndView list() throws Exception{
 		List<NoticeBoardDto> list=noticeboardService.listAll(0, 0, "",""); //목록
