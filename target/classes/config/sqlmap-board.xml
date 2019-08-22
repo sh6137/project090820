@@ -14,13 +14,13 @@
         </select>
         
         <insert id="insert" parameterType="boardVO">
-                INSERT INTO BOARD 
-                (seq, title, content, writer, password, regDate, cnt)
+                INSERT INTO MEMBER_TB 
+                (member_no, member_id, member_pass, member_nick, member_email, member_gender, member_birth, member_reg_dt, member_admin, member_like)
                 VALUES
-                (BOARD_SEQ.nextval, 
-			#{title}, #{content}, #{writer}, #{password}, SYSDATE, 0)
+                (MEMBER_TB_SEQ.nextval, 
+			#{member_id}, #{member_pass}, #{member_nick}, #{member_email}, #{member_gender}, #{member_birth}, SYSDATE, #{member_admin}, #{member_like})
                 <selectKey keyProperty="seq" resultType="Integer">
-                        SELECT NVL(MAX(seq), 0) FROM BOARD
+                        SELECT NVL(MAX(member_no), 0) FROM MEMBER_TB
                 </selectKey>
         </insert>
         
@@ -31,16 +31,10 @@
                 WHERE seq = #{seq} AND password = #{password}
         </update>
         
-        <update id="updateCount" parameterType="int">
-                UPDATE BOARD SET cnt = cnt + 1 WHERE seq = #{seq}
-        </update>
-        
         <delete id="delete" parameterType="boardVO">
-                DELETE FROM BOARD WHERE seq = #{seq}
-                AND password = #{password}
+        	DELETE from MEMBER_TB where member_id = #{member_id}
+                <!-- AND member_password = #{password} -->
         </delete>
         
-        <delete id="deleteAll">
-                DELETE FROM BOARD
-        </delete>
+        
 </mapper>

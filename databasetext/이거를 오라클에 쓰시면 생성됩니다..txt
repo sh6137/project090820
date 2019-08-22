@@ -17,3 +17,4 @@ MAXVALUE 99999;
 
 INSERT INTO BOARD (seq, title, content, writer, password, regDate, cnt)
 values(BOARD_SEQ.nextval,'t1','c1','w1',1234,'2015-10-10 14:21:12',1);
+
