@@ -1,7 +1,5 @@
 package board.service;
 
-import java.util.List;
-
 import board.domain.BoardVO;
 
 public interface BoardService {

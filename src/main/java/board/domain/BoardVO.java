@@ -3,8 +3,9 @@ package board.domain;
 import java.sql.Timestamp;
 
 import org.apache.ibatis.type.Alias;
-//import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.Length;
 //import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Alias("BoardVO")
 public class BoardVO {
@@ -21,11 +22,21 @@ public class BoardVO {
 	 */
 	
 	private int member_no; 			 //1.회원번호
+	
+	@NotEmpty(message="아이디를 입력하세요.")
 	private String member_id;		 //2.아이디
+	
+	@NotEmpty(message="패스워드를 입력하세요.")
 	private String member_pass;		 //3.비밀번호
+	
+	@NotEmpty(message="닉네임을 입력하세요.")
 	private String member_nick;		 //4.닉네임
+	@NotEmpty(message="이메일을 입력하세요.")
 	private String member_email;	 //5.이메일
+	@NotEmpty(message="성별을 클릭하세요.")
 	private String member_gender;	 //6.성별
+	
+	@Length(min=8, max=8, message="8자리 연속 입력." )
 	private int member_birth;		 //7.생년월일
 	private Timestamp member_reg_dt; //8.가입일
 	private int member_admin;		 //9.운영자여부(기본 0)
@@ -113,18 +124,18 @@ public class BoardVO {
 
         public BoardVO(){}
         
-        public BoardVO(String member_id, String member_pass, String member_nick, 
-        		String member_email, String member_gender, int member_birth, 
-        		int member_admin){
-                super();
-                this.member_id = member_id;
-                this.member_pass = member_pass;
-                this.member_nick = member_nick;
-                this.member_email = member_email;
-                this.member_gender = member_gender;
-                this.member_birth = member_birth;
-                this.member_admin = member_admin;
-        }
+//        public BoardVO(String member_id, String member_pass, String member_nick, 
+//        		String member_email, String member_gender, int member_birth, 
+//        		int member_admin){
+//                super();
+//                this.member_id = member_id;
+//                this.member_pass = member_pass;
+//                this.member_nick = member_nick;
+//                this.member_email = member_email;
+//                this.member_gender = member_gender;
+//                this.member_birth = member_birth;
+//                this.member_admin = member_admin;
+//        }
 
         
         

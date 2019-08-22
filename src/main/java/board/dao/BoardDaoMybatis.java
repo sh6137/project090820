@@ -1,7 +1,5 @@
 package board.dao;
 
-import java.util.List;
-
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
