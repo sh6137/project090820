@@ -1,11 +1,11 @@
-package board.dao;
+package board.service;
 
 import java.util.List;
 
 import board.dto.NoticeBoardDto;
 
-public interface NoticeBoardDao {
-	public void insert (NoticeBoardDto dto)throws Exception; //글쓰기
+public interface NoticeBoardService {
+public void insert (NoticeBoardDto dto)throws Exception; //글쓰기
 	
 	public NoticeBoardDto read(int notice_no) throws Exception;	//글읽기
 	
