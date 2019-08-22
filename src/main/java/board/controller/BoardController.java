@@ -2,6 +2,7 @@ package board.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -27,16 +28,12 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/product/write", method = RequestMethod.GET)
-	public String proWriteForm(Model model) {
-		ProductVO vo = new ProductVO();
-		model.addAttribute("productVO", vo);
+	public String proWriteForm(@ModelAttribute("productVO")ProductVO data) {
 		return "product/write";
 	}
 	
 	@RequestMapping(value = "/product/write", method = RequestMethod.POST)
-	public String proWriteProc(Model model) {
-		ProductVO vo = new ProductVO();
-		model.addAttribute("productVO", vo);
+	public String proWriteProc(ProductVO productVO) {
 		return "product/write";
 	}
 

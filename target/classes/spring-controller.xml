@@ -16,7 +16,9 @@
 		<mvc:jsp prefix="/WEB-INF/view/"/>
 	</mvc:view-resolvers>
 
-	<bean id="boardController" class="board.controller.BoardController">
-		<!-- <property name="boardService" ref="boardService" /> -->
-	</bean>
+<!-- 	<bean id="boardController" class="board.controller.BoardController">
+		<property name="boardService" ref="boardService" />
+	</bean> -->
+	
+
 </beans>

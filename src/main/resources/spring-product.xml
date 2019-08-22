@@ -21,12 +21,18 @@
 
 		<!-- defaultEncoding -->
 		<property name="defaultEncoding" value="utf-8" />
-
 	</bean>
 
-	<bean id="sqlSessionFactory"
+	<bean id="productVO" class="board.domain.ProductVO" />
+
+	<bean id="boardController"
+		class="board.controller.BoardController">
+		<property name="productVO" ref="productVO"></property>
+	</bean>
+
+<!-- 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" />
-	</bean>
+	</bean> -->
 
 </beans>

@@ -16,6 +16,7 @@
 				classpath:spring-board.xml
 				classpath:spring-controller.xml
 				classpath:spring-mvc.xml
+				classpath:spring-product.xml
 			</param-value>
 		</init-param>
 		<!-- 서버 실행 시 로드하도록 -->
