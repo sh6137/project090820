@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
     
-   <!-- <link rel="stylesheet" type="text/css" href="/WEB-INF/view/css/main.css" > -->
+   <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
     <title>Hello, Main!</title>
   </head>
 <body>
@@ -18,7 +18,7 @@
 <div class="top">
 <div class="top-left">다나옴</div>
 <div class="top-center">
-<div class="top-center-south"><table><tr align="center"><td align="center"><img src="#" width="900" height="120"></td></tr></table></div>
+<div class="top-center-south"><table><tr align="center"><td align="center"><img src="<c:url value="/resources/css/dada.png" />" width="900" height="120"></td></tr></table></div>
 <div class="top-center-north" align="center">
 	<input type="text" placeholder="검색어 입력"/>
 	<button type="submit">검색</button></div>
@@ -97,18 +97,26 @@
 </div>
 <div class="center">
 <table border="1">
-
-	<tr>
+	<tr align="center">
 	 <c:forEach var="board" items="${boardList}" varStatus="loop">
-		<td>${board.proThumbnail}</td>
+		<td width="900" height="200">${board.proThumbnail}</td>
 	</c:forEach> 
 	</tr>
-	<tr>
+	<tr align="center">
 	<c:forEach var="board" items="${boardList}" varStatus="loop">
-		<td>${board.proName}</td>
+		<td width="900" height="50">${board.proName}</td>
 	</c:forEach>
 	</tr>
-
+	<tr align="center">
+	 <c:forEach var="board" items="${boardList}" varStatus="loop">
+		<td width="900" height="200">${board.proThumbnail}</td>
+	</c:forEach> 
+	</tr>
+	<tr align="center">
+	<c:forEach var="board" items="${boardList}" varStatus="loop">
+		<td width="900" height="50">${board.proName}</td>
+	</c:forEach>
+	</tr>
 </table>
 </div>
 <div class="right">

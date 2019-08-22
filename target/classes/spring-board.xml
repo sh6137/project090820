@@ -54,4 +54,6 @@
 		<property name="boardDao" ref="boardDao"/>
 	</bean>
 	
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
 </beans>
