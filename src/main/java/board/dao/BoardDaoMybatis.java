@@ -21,20 +21,6 @@ public class BoardDaoMybatis implements BoardDao {
         }
 
 		@Override
-		public ProductVO selectName(String proName) {
-			// TODO Auto-generated method stub
-			ProductVO vo = (ProductVO)sqlSessionTemplate.selectOne("upName", proName);
-			return vo;
-		}
-
-		@Override
-		public ProductVO selectThumbnail(String proThumbnail) {
-			// TODO Auto-generated method stub
-			ProductVO vo = (ProductVO)sqlSessionTemplate.selectOne("selectThumbnail", proThumbnail);
-			return vo;
-		}
-
-		@Override
 		public List<ProductVO> list() {
 			// TODO Auto-generated method stub
 			return sqlSessionTemplate.selectList("list");

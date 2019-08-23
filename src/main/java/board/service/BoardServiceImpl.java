@@ -20,18 +20,6 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public ProductVO readName(String proName) {
-		// TODO Auto-generated method stub
-		return boardDao.selectName(proName);
-	}
-
-	@Override
-	public ProductVO readThumbnail(String proThumbnail) {
-		// TODO Auto-generated method stub
-		return boardDao.selectThumbnail(proThumbnail);
-	}
-
-	@Override
 	public List<ProductVO> list() {
 		// TODO Auto-generated method stub
 		return boardDao.list();

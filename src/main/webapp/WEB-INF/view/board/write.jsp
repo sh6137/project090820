@@ -97,26 +97,12 @@
 </div>
 <div class="center">
 <table border="1">
-	<tr align="center">
-	 <c:forEach var="board" items="${boardList}" varStatus="loop">
-		<td width="900" height="200">${board.proThumbnail}</td>
-	</c:forEach> 
-	</tr>
-	<tr align="center">
-	<c:forEach var="board" items="${boardList}" varStatus="loop">
-		<td width="900" height="50">${board.proName}</td>
-	</c:forEach>
-	</tr>
-	<tr align="center">
-	 <c:forEach var="board2" items="${boardList2}" varStatus="loop">
-		<td width="900" height="200">${board2.proThumbnail}</td>
-	</c:forEach> 
-	</tr>
-	<tr align="center">
-	<c:forEach var="board2" items="${boardList2}" varStatus="loop">
-		<td width="900" height="50">${board2.proName}</td>
-	</c:forEach>
-	</tr>
+	<form action="<c:url value="/board/write" />" method="POST">
+	<tr><td>제품이름<input type="text" name="name"></td></tr>
+	<tr><td>내용<input type="textarea" name="text"></td></tr>
+	<tr><td>파일<input type="text" name="file"></td></tr>
+	<tr><td><input type="submit" value="등록">
+	</form>
 </table>
 </div>
 <div class="right">
