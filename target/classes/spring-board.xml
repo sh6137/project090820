@@ -26,6 +26,9 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	
+	<!-- 위는 DB연결 설정, ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 아래는 마이바티스 연동 빈 -->
+	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:config/mybatis-config.xml" />
@@ -41,6 +44,8 @@
 		<constructor-arg ref="sqlSessionFactory" />
 	</bean>
 	
+	<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+	
 	<bean id="boardDao" class="board.dao.BoardDaoMybatis">
 	<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
 	</bean>
@@ -48,6 +53,7 @@
 	<bean id="boardService" class="board.service.BoardServiceImpl">
 		<property name="boardDao" ref="boardDao"/>
 	</bean>
-
-	<mvc:resources mapping="/resources/*" location="/resources/"/>
+	
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
 </beans>

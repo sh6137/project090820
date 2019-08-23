@@ -3,22 +3,13 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="boardDAO">
+        <select id="list" resultType="ProductVO">
+                SELECT * FROM 
+        	(SELECT * FROM PRODUCT_TB ORDER BY PRO_LIKE_CNT DESC)<![CDATA[ WHERE ROWNUM <=3]]>   
+        </select>
         
-        <insert id="insert" parameterType="boardVO">
-                INSERT INTO MEMBER_TB 
-                (member_no, member_id, member_pass, member_nick, member_email, member_gender, member_birth, member_reg_dt, member_admin, member_like)
-                VALUES
-                (MEMBER_TB_SEQ.nextval, #{member_id}, #{member_pass}, #{member_nick}, #{member_email}, #{member_gender}, #{member_birth}, SYSDATE, #{member_admin}, #{member_like})
-                <selectKey keyProperty="seq" resultType="Integer">
-                        SELECT NVL(MAX(member_no), 0) FROM MEMBER_TB
-                </selectKey>
-        </insert>
-        
-        
-        <delete id="delete" parameterType="boardVO">
-        	DELETE from MEMBER_TB where member_id = #{member_id}
-                <!-- AND member_password = #{password} -->
-        </delete>
-        
-        
+        <select id="list2" resultType="ProductVO">
+                SELECT * FROM 
+        	(SELECT * FROM PRODUCT_TB ORDER BY PRO_READ_CNT DESC)<![CDATA[ WHERE ROWNUM <=3]]>   
+        </select>
 </mapper>

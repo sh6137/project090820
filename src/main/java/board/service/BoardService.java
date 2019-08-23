@@ -1,12 +1,13 @@
+    
 package board.service;
 
-import board.domain.BoardVO;
+import java.util.List;
+
+import board.domain.ProductVO;
 
 public interface BoardService {
-
-	public abstract int delete(BoardVO boardVO);
-
-	public abstract void insert(BoardVO boardVO);
-
 	
+	public abstract List<ProductVO> list();
+	
+	public abstract List<ProductVO> list2();
 }
