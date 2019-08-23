@@ -15,6 +15,12 @@
 	<mvc:view-resolvers>
 		<mvc:jsp prefix="/WEB-INF/view/"/>
 	</mvc:view-resolvers>
+	
+	<!-- 뷰 컨트롤러! 프로젝트 경로 설정  JSP파일 설정!--> 
+	<mvc:view-controller path="/main" view-name="/board/main"/>
+	<mvc:view-controller path="/login" view-name="/board/login"/>
+	<mvc:view-controller path="/reg" view-name="/board/reg"/>
+	
 
 	<bean id="boardController" class="board.controller.BoardController">
 		<property name="boardService" ref="boardService" />

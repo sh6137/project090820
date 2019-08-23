@@ -3,12 +3,12 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="boardDAO">
-        <select id="list" resultType="ProductVO">
+        <select id="list" resultType="BoardVO">
                 SELECT * FROM 
         	(SELECT * FROM PRODUCT_TB ORDER BY PRO_LIKE_CNT DESC)<![CDATA[ WHERE ROWNUM <=3]]>   
         </select>
         
-        <select id="list2" resultType="ProductVO">
+        <select id="list2" resultType="BoardVO">
                 SELECT * FROM 
         	(SELECT * FROM PRODUCT_TB ORDER BY PRO_READ_CNT DESC)<![CDATA[ WHERE ROWNUM <=3]]>   
         </select>

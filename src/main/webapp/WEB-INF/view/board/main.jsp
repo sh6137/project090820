@@ -19,7 +19,7 @@
 <div class="top">
 <div class="top-left">다나옴</div>
 <div class="top-center">
-<div class="top-center-south"><table><tr align="center"><td align="center"><img src="/resource/1.png" width="900" height="120"></td></tr></table></div>
+<div class="top-center-south"><table><tr align="center"><td align="center"><img src="/resources/1.png" width="900" height="120"></td></tr></table></div>
 <div class="top-center-north" align="center">
 	<input type="text" placeholder="검색어 입력"/>
 	<button type="submit">검색</button></div>
@@ -29,7 +29,7 @@
 <tr align="center">
 <td width="120" height="100"><a class="btn btn-iight" href="#" role="button"><span style="font-size:13pt">최근 본 상품</span></a></td>
 <td width="120" height="100"><a class="btn btn-iight" href="#" role="button"><span style="font-size:13pt">관심<br>상품 </span></a></td>
-<td width="120" height="100"><a class="btn btn-iight" href="login/login.jsp" role="button"><span style="font-size:13pt">로 그 인</span></a></td>
+<td width="120" height="100"><a class="btn btn-iight" href="<c:url value='/login' />" role="button"><span style="font-size:13pt">로 그 인</span></a></td>
 </tr> 
 
 </table></div>
