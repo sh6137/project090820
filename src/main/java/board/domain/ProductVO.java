@@ -13,7 +13,7 @@ public class ProductVO {
 	private String proText;
 	private int proReadCnt;
 	private int proLikeCnt;
-	private Date proRegDate;
+//	private Date proRegDate;
 	private String proThumbnail;
 	private String proSysThumbnail;
 	private String proFileName;
@@ -63,12 +63,12 @@ public class ProductVO {
 	public void setProLikeCnt(int proLikeCnt) {
 		this.proLikeCnt = proLikeCnt;
 	}
-	public Date getProRegDate() {
-		return proRegDate;
-	}
-	public void setProRegDate(Date proRegDate) {
-		this.proRegDate = proRegDate;
-	}
+//	public Date getProRegDate() {
+//		return proRegDate;
+//	}
+//	public void setProRegDate(Date proRegDate) {
+//		this.proRegDate = proRegDate;
+//	}
 	public String getProThumbnail() {
 		return proThumbnail;
 	}

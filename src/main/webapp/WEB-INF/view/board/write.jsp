@@ -96,25 +96,23 @@
       </div>
 </div>
 <div class="center">
+<form action="<c:url value="/board/write"/>" method="POST">
 <table border="1">
-	<form action="<c:url value="/board/write"/>" method="POST">
-	
 	<tr><td>게시물번호<input type="text" name="proNo" ></td></tr>
-	<tr><td>제품이름<input type="text" name="proName" value="${productVO.proName}"></td></tr>
-	<tr><td>카테고리<input type="text" name="${productVO.proCate}"></td></tr>
-	<tr><td>제품하위카테고리<input type="text" name="${productVO.proSubCat}"></td></tr>
-	<tr><td>내용<input type="text" name="${productVO.proText}"></td></tr>
-	<tr><td>조회수<input type="text" name="${productVO.proReadCnt}"></td></tr>
-	<tr><td>좋아요수<input type="text" name="${productVO.proLikeCnt}"></td></tr>
-	<tr><td>게시일<input type="text" name="${productVO.proRegDate}"></td></tr>
-	<tr><td>썸네일이름<input type="text" name="${productVO.proThumbnail}"></td></tr>
-	<tr><td>썸네일시스템이름<input type="text" name="${productVO.proSysThumbnail}"></td></tr>
-	<tr><td>파일이름<input type="text" name="${productVO.proFileName}"></td></tr>
-	<tr><td>파일시스템이름<input type="text" name="${productVO.proFileSysName}"></td></tr>
-	
+	<tr><td>제품이름<input type="text" name="proName"></td></tr>
+	<tr><td>카테고리<input type="text" name="proCate"></td></tr>
+	<tr><td>제품하위카테고리<input type="text" name="proSubCat"></td></tr>
+	<tr><td>내용<input type="text" name="proText"></td></tr>
+	<tr><td>조회수<input type="text" name="proReadCnt"></td></tr>
+	<tr><td>좋아요수<input type="text" name="proLikeCnt"></td></tr>
+	<!-- <tr><td>게시일<input type="text" name="proRegDate"></td></tr> -->
+	<tr><td>썸네일이름<input type="text" name="proThumbnail"></td></tr>
+	<tr><td>썸네일시스템이름<input type="text" name="proSysThumbnail"></td></tr>
+	<tr><td>파일이름<input type="text" name="proFileName"></td></tr>
+	<tr><td>파일시스템이름<input type="text" name="proFileSysName"></td></tr>
 	<tr><td><input type="submit" value="등록">	
-	</form>
 </table>
+</form>
 </div>
 <div class="right">
 </div>
