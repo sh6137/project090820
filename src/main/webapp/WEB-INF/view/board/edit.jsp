@@ -42,8 +42,8 @@
 			</tr>
 		</table>
 		<div>
-			<input type="submit" value="등록"> <a
-				href="<c:url value="/board/list" />">목록</a>
+			<input type="submit" value="등록"> 
+			<a href="<c:url value="/board/list" />">목록</a>
 		</div>
 	</form:form>
 </body>

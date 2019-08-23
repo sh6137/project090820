@@ -69,13 +69,26 @@ public class BoardController {
 		return "redirect:/board/list";
 	}*/
 	
+	
+	
+	
 	//예외 처리 추가
-	//새 글 작성을 위한 요청을 처리
-	@RequestMapping(value="/board/write", method=RequestMethod.GET)
-	public String write(Model model){
-		model.addAttribute("boardVO", new BoardVO());
-		return "/board/write";
+	//회원가입을 위한 요청을 처리
+	@RequestMapping(value="/board/reg", method=RequestMethod.GET)
+	public String insert(Model model){
+		model.addAttribute("insert", new BoardVO());
+		return "/board/reg";
 	}
+	
+	@RequestMapping(value="/board/reg", method=RequestMethod.POST)
+	public String insert(BoardVO BoardVO){
+		boardService.insert1 (BoardVO);
+		return "redirect:/board/reg";
+	}
+	
+	
+	
+	
 	//새 글 등록을 위한 요청을 처리 
 //	@RequestMapping(value="/board/write", method=RequestMethod.POST)
 //	public String write(@Valid BoardVO boardVO, BindingResult bindingResult){

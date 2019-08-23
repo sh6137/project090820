@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/index.css">
-	<link href="<c:url value="/resources/css/Main.css"/>" rel="stylesheet">
+	<link href="<c:url value="/resources/css/Main.css"/>">
 <title>치면 다 나온다!다나옴 로그인</title>
     
  
@@ -32,8 +33,8 @@
               <button type="submit"> 로그인 </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
               
               <a href="IdFind.jsp">| 아이디</a> 혹은 <a href="PasswordFind.jsp">비밀번호</a>를 잊어버리셨습니까? &nbsp;  |  
-              <a href="reg.jsp"> 회원 가입 하러 가기    &nbsp; | </a>
-              <a href="/bootstrap/Main.jsp"> 메인으로    </a>
+              <a href="<c:url value="/reg" />"> 회원 가입 하러 가기 &nbsp; | </a>
+              <a href="<c:url value="/main" />">메인으로</a>
             </fieldset>
           </form>
         </div>

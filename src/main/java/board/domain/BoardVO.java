@@ -120,23 +120,6 @@ public class BoardVO {
 
 	public void setMember_like(String member_like) {
 		this.member_like = member_like;
-	}
-
-        public BoardVO(){}
-        
-//        public BoardVO(String member_id, String member_pass, String member_nick, 
-//        		String member_email, String member_gender, int member_birth, 
-//        		int member_admin){
-//                super();
-//                this.member_id = member_id;
-//                this.member_pass = member_pass;
-//                this.member_nick = member_nick;
-//                this.member_email = member_email;
-//                this.member_gender = member_gender;
-//                this.member_birth = member_birth;
-//                this.member_admin = member_admin;
-//        }
-
-        
+	}        
         
 }

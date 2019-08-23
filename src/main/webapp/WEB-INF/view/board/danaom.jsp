@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <!-- c태그로 href시키려면  c라이브러리 파일이 있어야 함 여기다가 선언해줘야! -->
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+    
+<% String member_id =(String)session.getAttribute("member_id"); %>    
     
 <html lang="UTF-8">
   <head>
@@ -12,7 +13,7 @@
     <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
     
-  <link href="<c:url value="/resources/css/Main.css"/>" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="CSS/Main.css">
     <title>Hello, Main!</title>
   </head>
 <body>
@@ -20,8 +21,7 @@
 <div class="top">
 <div class="top-left">다나옴</div>
 <div class="top-center">
-<div class="top-center-south"><table><tr align="center"><td align="center"><img src="<c:url value="/resources/1.png"/>" width="900" height="120">
-</td></tr></table></div>
+<div class="top-center-south"><table><tr align="center"><td align="center"><img src="logo/1.png" width="900" height="120"></td></tr></table></div>
 <div class="top-center-north" align="center">
 	<input type="text" placeholder="검색어 입력"/>
 	<button type="submit">검색</button></div>
@@ -31,7 +31,7 @@
 <tr align="center">
 <td width="120" height="100"><a class="btn btn-iight" href="#" role="button"><span style="font-size:13pt">최근 본 상품</span></a></td>
 <td width="120" height="100"><a class="btn btn-iight" href="#" role="button"><span style="font-size:13pt">관심<br>상품 </span></a></td>
-<td width="120" height="100"><a class="btn btn-iight" href="<c:url value='/login' />" role="button"><span style="font-size:13pt">로 그 인</span></a></td>
+<td width="120" height="100"><a class="btn btn-iight" href="login/logout.jsp" role="button"><span style="font-size:13pt">로 그 아 웃</span></a></td>
 </tr> 
 
 </table></div>
@@ -42,14 +42,14 @@
 <tr>
 	<td>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="<c:url value='/main' />">다나옴</a>
+  <a class="navbar-brand" href="Danaom.jsp">다나옴</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="<c:url value='/main' />">Main</a>
+        <a class="nav-link" href="Danaom.jsp">Main</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">제품 목록 게시판</a>
@@ -68,9 +68,9 @@
           Dropdown link
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="<c:url value='/login' />">로그인</a>
+          <a class="dropdown-item" href="login/logout.jsp">로그아웃</a>
           <a class="dropdown-item" href="login/IdPassword.jsp">아이디/패스워드 찾기</a>
-          <a class="dropdown-item" href="<c:url value='/reg' />">회원가입</a>
+          <a class="dropdown-item" href="login/delete.jsp">회원탈퇴</a>
         </div>
       </li>
     </ul>
@@ -79,6 +79,13 @@
 </td>
 </tr>
 </table>
+<% if(member_id !=null) { %>
+<% }else{ %>
+<script>
+alert("정상적인 접근이 아닙니다. 로그인 해주세요!");
+location.href="";
+</script>
+<% } %>
 </div>
 
 <div class="middle">
@@ -103,52 +110,50 @@
 
 <section class="main_partner_v2" id="main_brandAd" data-log-actionid-area="main_partner" data-log-actionid-label="btn" data-is-ab-send="5">
 	<table>
-	<ul id="main_ul_main_brandAd_0"> 
-	<h4>쇼핑하러 바로가기</h4>
+	<ul id="main_ul_main_brandAd_0"> <h4>쇼핑하러 바로가기</h4>
 	<tr><td>
-	
-	<a href="<c:url value='https://www.shinsegae.com' />" data-log-index="1">
-	<img src="resources/1.jpg" alt="신세계백화점" width="270" height="50"></a>
+	<a href="https://www.shinsegae.com" data-log-index="1">
+	<img src="logo/1.jpg" alt="신세계백화점" width="270" height="50"></a>
 	</td></tr>
 	
 	<tr><td>
-	<a href="<c:url value='https://www.lotteshopping.com' />" onclick="doCommonStat('MAINMB130101');"  data-log-index="2">	
-	<img src="resources/2.jpg" alt="롯데백화점" width="270" height="50"></a>
+	<a href="https://www.lotteshopping.com" onclick="doCommonStat('MAINMB130101');"  data-log-index="2">	
+	<img src="logo/2.jpg" alt="롯데백화점" width="270" height="50"></a>
 	</td></tr>
 	
 	<tr><td>
-	<a href="<c:url value='https://www.thehyundai.com' />" onclick="doCommonStat('MAINMB130101');"  data-log-index="3">	
-	<img src="resources/3.jpg" alt="현대백화점" width="270" height="50"></a>
+	<a href="https://www.thehyundai.com" onclick="doCommonStat('MAINMB130101');"  data-log-index="3">	
+	<img src="logo/3.jpg" alt="현대백화점" width="270" height="50"></a>
 	</td></tr>
 	
 	<tr><td>
-	<a href="<c:url value='http://www.galleria.co.kr' />" onclick="doCommonStat('MAINMB130101');" data-log-index="4">	
-	<img src="resources/5.jpg" alt="갤러리아" width="270" height="50"></a>
+	<a href="http://www.galleria.co.kr" onclick="doCommonStat('MAINMB130101');" data-log-index="4">	
+	<img src="logo/5.jpg" alt="갤러리아" width="270" height="50"></a>
 	</td></tr>
 	
 	<tr><td>
-	<a href="<c:url value='http://www.debec.co.kr' />" onclick="doCommonStat('MAINMB130101');" data-log-index="5">	
-	<img src="resources/6.jpg" alt="대구백화점" width="270" height="50"></a>
+	<a href="http://www.debec.co.kr" onclick="doCommonStat('MAINMB130101');" data-log-index="5">	
+	<img src="logo/6.jpg" alt="대구백화점" width="270" height="50"></a>
 	</td></tr>
 	
 	<tr><td>
-	<a href="<c:url value='https://with.gsshop.com' />" onclick="doCommonStat('MAINMB130101');" data-log-index="6">	
-	<img src="resources/8.jpg" alt="GS홈쇼핑" width="270" height="50"></a>
+	<a href="https://with.gsshop.com" onclick="doCommonStat('MAINMB130101');" data-log-index="6">	
+	<img src="logo/8.jpg" alt="GS홈쇼핑" width="270" height="50"></a>
 	</td></tr>
 	
 	<tr><td>
-	<a href="<c:url value='http://display.cjmall.com' />" onclick="doCommonStat('MAINMB130101');" data-log-index="7">	
-	<img src="resources/10.jpg" alt="CJ몰" width="270" height="50"></a>
+	<a href="http://display.cjmall.com" onclick="doCommonStat('MAINMB130101');" data-log-index="7">	
+	<img src="logo/10.jpg" alt="CJ몰" width="270" height="50"></a>
 	</td></tr>
 	
 	<tr><td>
-	<a href="<c:url value='http://www.lotteimall.com' />" onclick="doCommonStat('MAINMB130101');" data-log-index="8">	
-	<img src="resources/12.jpg" alt="롯데홈쇼핑" width="270" height="50"></a>
+	<a href="http://www.lotteimall.com" onclick="doCommonStat('MAINMB130101');" data-log-index="8">	
+	<img src="logo/12.jpg" alt="롯데홈쇼핑" width="270" height="50"></a>
 	</td></tr>
 	
 	<tr><td>
-	<a href="<c:url value='http://www.nike.com' />" onclick="doCommonStat('MAINMB130101');" data-log-index="9">	
-	<img src="resources/14.jpg" alt="나이키" width="270" height="50"></a>
+	<a href="http://www.nike.com" onclick="doCommonStat('MAINMB130101');" data-log-index="9">	
+	<img src="logo/14.jpg" alt="나이키" width="270" height="50"></a>
 	</td></tr>
 	</table>
 	</ul>

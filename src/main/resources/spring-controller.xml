@@ -20,6 +20,9 @@
 	<mvc:view-controller path="/main" view-name="/board/main"/>
 	<mvc:view-controller path="/login" view-name="/board/login"/>
 	<mvc:view-controller path="/reg" view-name="/board/reg"/>
+	<mvc:view-controller path="/danaom" view-name="/board/danaom"/>
+	<mvc:view-controller path="/delete" view-name="/board/delete"/>
+	
 	
 
 	<bean id="boardController" class="board.controller.BoardController">

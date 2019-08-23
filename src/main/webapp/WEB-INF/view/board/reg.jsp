@@ -21,7 +21,7 @@
       <!-- 로그인 폼 CSS -->
       <div id="loginer" align="center">
         <div id="form">
-          <form action="regok.jsp" method="post" >
+          <form action="<c:url value='/main' />" method="post" >
             <fieldset>
               <legend>회원 가입</legend> <!-- 이름 , id, password, password1, email, address,   -->
               <table>
@@ -55,7 +55,7 @@
               <tr><td>
               <button type="submit">회원 가입</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <button type="reset">다시 입력</button>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button type="button" onClick="/bootstrap/Main.jsp">메인으로</button>
+              <button type="button" onClick="<c:url value='/main' />"> 메인으로</button>
               </td></tr>
               
               </table>

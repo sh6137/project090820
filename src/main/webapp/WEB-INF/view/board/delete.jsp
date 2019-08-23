@@ -1,18 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html><head><title>삭제</title></head>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원탈퇴</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/login.css">
+ 
+<!-- 링크 색상 없애기 -->
+    <style type="text/css">
+     a:link { color: black; text-decoration: none;}
+     a:visited { color: black; text-decoration: none;}
+     a:hover { color: black; text-decoration: underline;}
+    </style>
+  </head>
 <body>
-        <form name="deleteForm" 
-        action="<c:url value="/board/delete" />" method="POST">
-                <input size="1" name="seq" value="${seq}"/>
-                번글을 삭제하시겠습니까?<br>
-                비밀번호<input type="password" name="pwd" />
-                <input type="submit" value="삭제">
-                <a href="<c:url value="/board/read/${seq}" />">취소</a>
-        </form>
-        <div>${msg}</div>
-</body>
+ 
+      <div id="loginer" align="center">
+        <div id="form">
+          <form action="deleteProc.jsp" method="post">
+            <fieldset>
+              <legend>회원 탈퇴</legend> 
+             
+              	패스워드 : <input type="password" name="member_pass" placeholder="Enter Your Password" required/>
+             &nbsp;&nbsp; 
+      		<button type="submit"> 회원탈퇴 </button> 
+            </fieldset>
+          </form>
+        </div>
+      </div>
+ 
+      <!-- 하단 -->
+      <div id="footer">
+        <p align="center">&copy; Copyright 2019 By son DANAOM</p>
+      </div>
+      
+      
+  </body>
 </html>
