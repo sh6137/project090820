@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>${boardVO.title}&nbsp내용</title>
+<title>${boardVO.title}&nbsp;내용</title>
 </head>
 <body>
         <table border="1">

@@ -1,0 +1,105 @@
+.top{
+	width: 1530px;
+	height: 150px;
+	float: left;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.top-left{
+	width:270px;
+	height:150px;
+	float:left;
+	margin-left:10px;
+	margin-right:10px;
+	font-family:'휴먼둥근헤드라인';	
+	font-size : 60px;
+	position: center;
+	text-align: center;
+	margin-top:20px;
+}
+
+.top-center{
+	width:900px;
+	float:left;
+	margin-left:10px;
+	margin-right:10px;	
+}
+
+.top-center-north{
+	width:900px;
+	height:85px;
+	float:left;
+}
+
+.top-center-south{
+	width:900px;
+	height:130px;
+	float:left;
+}
+
+.top-right{
+	width:270px;
+	height:150px;
+	float:left;
+	font-family:'휴먼둥근헤드라인';	
+}
+
+.top-middle{
+	width: 1500px;
+	height: 50px;
+	color:green;
+	clear:both;
+	margin-left:10px;
+	margin-right:10px;
+	margin-left:10px;
+	margin-right:10px;
+}
+
+.middle{
+	width:1500px;
+	height:auto;
+}
+
+.left{
+	width:270px;
+	height:500px;
+	float:left;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:5px;
+	margin-right:5px;
+}
+
+.center{
+	width:900px;
+	height:500px;
+	float:left;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:5px;
+	margin-right:5px;
+}
+
+.footer
+{
+   width:1500px;
+   height:50px;
+   margin-left:10px;
+   margin-right:10px;
+   margin-bottom:10px;
+   margin-top:10px;
+	
+}
+
+
+.right{
+	width:270px;
+	height:500px;
+	float:left;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.section{
+	font-family:'휴먼둥근헤드라인';
+}
