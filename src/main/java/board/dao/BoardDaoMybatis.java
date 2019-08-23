@@ -31,5 +31,10 @@ public class BoardDaoMybatis implements BoardDao {
 			// TODO Auto-generated method stub
 			return sqlSessionTemplate.selectList("list2");
 		}
+
+		@Override
+		public void insert(ProductVO productVO) {
+			sqlSessionTemplate.insert("insert", productVO);
+		}
 		
 }

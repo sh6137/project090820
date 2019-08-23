@@ -12,4 +12,15 @@
                 SELECT * FROM 
         	(SELECT * FROM PRODUCT_TB ORDER BY PRO_READ_CNT DESC)<![CDATA[ WHERE ROWNUM <=3]]>   
         </select>
+        
+        <insert id="insert" parameterType="productVO">
+        	INSERT INTO PRODUCT_TB 
+        	(PRO_NO, PRO_NAME, PRO_CATE, PRO_SUBCAT, PRO_TEXT, PRO_READ_CNT, 
+        	PRO_LIKE_CNT, PRO_REGDATE, PRO_THUMBNAIL, PRO_SYSTEM_THUMBNAIL, 
+        	PRO_FILENAME, PRO_FILESYSTEMNAME) 
+        	VALUES 
+        	(#{proNo}, #{proName}, #{proCate}, #{proSubCat}, #{proText}, #{proReadCnt}, 
+        	#{proLikeCnt}, #{proRegDate}, #{proThumbnail}, #{proSysThumbnail}, 
+        	#{proFileName}, #{proFileSysName})
+        </insert>
 </mapper>

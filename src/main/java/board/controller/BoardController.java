@@ -28,6 +28,7 @@ public class BoardController {
 		this.boardService = boardService;
 	}
 	
+	//불러오기
 	@RequestMapping(value="/board/main")
 	public String read(Model model) {
 		model.addAttribute("boardList", boardService.list());
@@ -35,8 +36,17 @@ public class BoardController {
 		return "/board/main";
 	}
 	
-	@RequestMapping(value="/board/write")
+	//새글 작성
+	@RequestMapping(value="/board/write", method=RequestMethod.GET)
 	public String write(Model model) {
+		model.addAttribute("ProductVO", new ProductVO());
 		return "/board/write";
+	}
+	//새글 등록
+	@RequestMapping(value="/board/write", method=RequestMethod.POST)
+	public String write(ProductVO productVO) {
+		System.out.println(productVO.getProName());
+		boardService.write(productVO);
+		return "redirect:/board/write";
 	}
 }

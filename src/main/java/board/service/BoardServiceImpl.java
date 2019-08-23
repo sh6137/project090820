@@ -30,4 +30,9 @@ public class BoardServiceImpl implements BoardService {
 		// TODO Auto-generated method stub
 		return boardDao.list2();
 	}
+
+	@Override
+	public void write(ProductVO productVO) {
+		boardDao.insert(productVO);
+	}
 }
