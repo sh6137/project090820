@@ -6,9 +6,9 @@
         <insert id="insert" parameterType="BoardVO">
                 INSERT INTO MEMBERTB 
                 (MEMBERNO, MEMBERID, MEMBERPASS, MEMBERNICK, MEMBEREMAIL, MEMBERGENDER, MEMBERBIRTH, MEMBERREGDT, MEMBERADMIN) 
-                VALUES (MEMBERTB_SEQ.nextval, #{MEMBERID}, #{MEMBERPASS}, #{MEMBERNICK}, #{MEMBEREMAIL}, #{MEMBERGENDER}, #{MEMBERBIRTH}, SYSDATE, #{MEMBERADMIN})
+                VALUES (MEMBERTB_SEQ.nextval, #{memberid}, #{memberpass}, #{membernick}, #{memberemail}, #{membergender}, #{memberbirth}, SYSDATE, #{memberadmin})
                <selectKey keyProperty="memberno" resultType="Integer">
-                        SELECT NVL(MAX(MEMBERNO), 0) FROM MEMBERTB
+                        SELECT NVL(MAX(memberno), 0) FROM MEMBERTB
                 </selectKey>
         </insert>
         

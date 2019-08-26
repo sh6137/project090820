@@ -77,7 +77,7 @@ public class BoardController {
 	@RequestMapping(value="/board/reg", method=RequestMethod.GET)
 	public String insert(Model model){
 		model.addAttribute("insert", new BoardVO());
-		return "/board/reg";
+		return "board/reg";
 	}
 	
 	@RequestMapping(value="/board/reg", method=RequestMethod.POST)
@@ -93,7 +93,7 @@ public class BoardController {
 		System.out.println(BoardVO.getMemberadmin());
 		System.out.println(BoardVO.getMemberlike());
 		boardService.insert(BoardVO);
-		return "redirect:/project090820/login";
+		return "redirect:/login";
 	}
 	
 	

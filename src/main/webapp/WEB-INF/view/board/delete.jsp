@@ -24,7 +24,7 @@
             <fieldset>
               <legend>회원 탈퇴</legend> 
              
-              	패스워드 : <input type="password" name="member_pass" placeholder="Enter Your Password" required/>
+              	패스워드 : <input type="password" name="memberpass" placeholder="Enter Your Password" required/>
              &nbsp;&nbsp; 
       		<button type="submit"> 회원탈퇴 </button> 
             </fieldset>

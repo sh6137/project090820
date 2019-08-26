@@ -23,7 +23,7 @@
       <div id="loginer" align="center">
         <div id="form">
         	<!-- 요청주소 -->
-          <form action="/board/login" method="post" >
+          <form action="/project090820/board/reg" method="post" >
             <fieldset>
               <legend>회원 가입</legend> <!-- 이름 , id, password, password1, email, address,   -->
               <table>

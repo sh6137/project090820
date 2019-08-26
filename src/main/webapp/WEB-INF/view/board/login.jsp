@@ -26,9 +26,9 @@
             <fieldset>
               <legend>로그인!</legend>
               <table><tr><td>
-              	아이디 : </td><td><input type="text" name="member_id" placeholder="Enter Your Id"> </td></tr>
+              	아이디 : </td><td><input type="text" name="memberid" placeholder="Enter Your Id"> </td></tr>
               <tr><td>
-              	비밀번호 : </td><td><input type="password" name="member_pass" placeholder="Enter Your Password"></td></tr>
+              	비밀번호 : </td><td><input type="password" name="memberpass" placeholder="Enter Your Password"></td></tr>
               </table>
               <button type="submit"> 로그인 </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
               

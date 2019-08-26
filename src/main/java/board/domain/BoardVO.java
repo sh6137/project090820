@@ -22,20 +22,11 @@ public class BoardVO {
 	 */
 	
 	private int memberno; 			 //1.회원번호
-	@NotEmpty(message="아이디를 입력하세요.")
 	private String memberid;		 //2.아이디
-	
-	@NotEmpty(message="패스워드를 입력하세요.")
 	private String memberpass;		 //3.비밀번호
-	
-	@NotEmpty(message="닉네임을 입력하세요.")
 	private String membernick;		 //4.닉네임
-	@NotEmpty(message="이메일을 입력하세요.")
 	private String memberemail;	 //5.이메일
-	@NotEmpty(message="성별을 클릭하세요.")
 	private String membergender;	 //6.성별
-	
-	@Length(min=8, max=8, message="8자리 연속 입력." )
 	private int memberbirth;		 //7.생년월일
 	private Timestamp memberregdt; //8.가입일
 	private int memberadmin;		 //9.운영자여부(기본 0)
