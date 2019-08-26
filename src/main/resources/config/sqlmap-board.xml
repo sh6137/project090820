@@ -5,22 +5,17 @@
 <mapper namespace="boardDAO">
         <select id="list" resultType="ProductVO">
                 SELECT * FROM 
-        	(SELECT * FROM PRODUCT_TB ORDER BY PRO_LIKE_CNT DESC)<![CDATA[ WHERE ROWNUM <=3]]>   
+        	(SELECT * FROM PRODUCTTB ORDER BY PROLIKECNT DESC)<![CDATA[ WHERE ROWNUM <=3]]>   
         </select>
         
         <select id="list2" resultType="ProductVO">
                 SELECT * FROM 
-        	(SELECT * FROM PRODUCT_TB ORDER BY PRO_READ_CNT DESC)<![CDATA[ WHERE ROWNUM <=3]]>   
+        	(SELECT * FROM PRODUCTTB ORDER BY PROREADCNT DESC)<![CDATA[ WHERE ROWNUM <=3]]>   
         </select>
         
         <insert id="insert" parameterType="productVO">
-        	INSERT INTO PRODUCT_TB 
-        	(PRO_NO, PRO_NAME, PRO_CATE, PRO_SUBCAT, PRO_TEXT, PRO_READ_CNT, 
-        	PRO_LIKE_CNT, PRO_THUMBNAIL, PRO_SYSTEM_THUMBNAIL, 
-        	PRO_FILENAME, PRO_FILESYSTEMNAME) 
-        	VALUES 
-        	(#{proNo}, #{proName}, #{proCate}, #{proSubCat}, #{proText}, #{proReadCnt}, 
-        	#{proLikeCnt}, #{proThumbnail}, #{proSysThumbnail}, 
-        	#{proFileName}, #{proFileSysName})
+        	INSERT INTO PRODUCTTB 
+        	(PRONO, PRONAME, PROCATE, PROTEXT, PROREGDATE, PROFILENAME) VALUES 
+        	(PRODUCTTB_SEQ.nextval, #{proName}, #{proCate}, #{proText}, SYSDATE ,#{proFileName})
         </insert>
 </mapper>

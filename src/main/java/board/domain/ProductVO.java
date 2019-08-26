@@ -3,6 +3,7 @@ package board.domain;
 import java.util.Date;
 
 import org.apache.ibatis.type.Alias;
+import org.springframework.web.multipart.MultipartFile;
 
 @Alias("ProductVO")
 public class ProductVO {
@@ -13,14 +14,20 @@ public class ProductVO {
 	private String proText;
 	private int proReadCnt;
 	private int proLikeCnt;
-//	private Date proRegDate;
+	private Date proRegDate;
 	private String proThumbnail;
 	private String proSysThumbnail;
 	private String proFileName;
 	private String proFileSysName;
 	
-	public ProductVO() {}
+	private MultipartFile proMultipart;
 
+	public MultipartFile getProMultipart() {
+		return proMultipart;
+	}
+	public void setProMultipart(MultipartFile proMultipart) {
+		this.proMultipart = proMultipart;
+	}
 	public int getProNo() {
 		return proNo;
 	}
@@ -63,12 +70,12 @@ public class ProductVO {
 	public void setProLikeCnt(int proLikeCnt) {
 		this.proLikeCnt = proLikeCnt;
 	}
-//	public Date getProRegDate() {
-//		return proRegDate;
-//	}
-//	public void setProRegDate(Date proRegDate) {
-//		this.proRegDate = proRegDate;
-//	}
+	public Date getProRegDate() {
+		return proRegDate;
+	}
+	public void setProRegDate(Date proRegDate) {
+		this.proRegDate = proRegDate;
+	}
 	public String getProThumbnail() {
 		return proThumbnail;
 	}

@@ -96,21 +96,19 @@
       </div>
 </div>
 <div class="center">
-<form action="<c:url value="/board/write"/>" method="POST">
+<form action="<c:url value="/board/write"/>" method="POST" enctype="multipart/form-data">
 <table border="1">
-	<tr><td>게시물번호<input type="text" name="proNo" ></td></tr>
-	<tr><td>제품이름<input type="text" name="proName"></td></tr>
-	<tr><td>카테고리<input type="text" name="proCate"></td></tr>
-	<tr><td>제품하위카테고리<input type="text" name="proSubCat"></td></tr>
-	<tr><td>내용<input type="text" name="proText"></td></tr>
-	<tr><td>조회수<input type="text" name="proReadCnt"></td></tr>
-	<tr><td>좋아요수<input type="text" name="proLikeCnt"></td></tr>
-	<!-- <tr><td>게시일<input type="text" name="proRegDate"></td></tr> -->
-	<tr><td>썸네일이름<input type="text" name="proThumbnail"></td></tr>
-	<tr><td>썸네일시스템이름<input type="text" name="proSysThumbnail"></td></tr>
-	<tr><td>파일이름<input type="text" name="proFileName"></td></tr>
-	<tr><td>파일시스템이름<input type="text" name="proFileSysName"></td></tr>
-	<tr><td><input type="submit" value="등록">	
+	<tr><td><h1>제품 등록</h1></td></tr>
+	<tr><td>이름<input type="text" name="proName">
+	<select name="proCate"><option>카테고리</option>
+	<option value="menu1">카테고리</option>
+	<option value="menu2">카테고리</option>
+	<option value="menu3">카테고리</option></select></td></tr>
+	<tr><td><textarea name="proText" rows="16" cols="125"></textarea></td></tr>
+	
+	<tr><td>파일<input type="file" name="proMultipart"></td></tr>
+	
+	<tr><td><input type="submit" value="제품 등록">	
 </table>
 </form>
 </div>
