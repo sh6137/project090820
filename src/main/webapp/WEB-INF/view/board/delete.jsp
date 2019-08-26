@@ -20,15 +20,13 @@
  
       <div id="loginer" align="center">
         <div id="form">
-          <form action="<c:url value='/delete' />" method="post">
-            <fieldset>
-              <legend>회원 탈퇴</legend> 
-             
-              	패스워드 : <input type="password" name="memberpass" placeholder="Enter Your Password" required/>
-             &nbsp;&nbsp; 
-      		<button type="submit"> 회원탈퇴 </button> 
-            </fieldset>
-          </form>
+          <form action="/project090820/board/delete" method="post" >
+           
+                계정을 삭제하시겠습니까?<br>
+                비밀번호  : <input type="password" name="memberpass" />
+                <input type="submit" value="삭제"> <br>
+               <a href="<c:url value='/main' />">메인으로</a>
+        </form>
         </div>
       </div>
  

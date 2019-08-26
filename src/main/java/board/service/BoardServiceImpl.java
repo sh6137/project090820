@@ -21,9 +21,14 @@ public class BoardServiceImpl implements BoardService {
 	public int delete(BoardVO boardVO) {
 		return boardDao.delete(boardVO);
 	}
-  
+    
     @Override
 	public void insert(BoardVO boardVO) {
 		boardDao.insert(boardVO);
+	}
+    
+    @Override
+	public int loginCheck(BoardVO boardVO) {
+		return boardDao.loginCheck(boardVO);
 	}
 }

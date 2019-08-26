@@ -69,7 +69,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="<c:url value='/login' />">로그인</a>
-          <a class="dropdown-item" href="login/IdPassword.jsp">아이디/패스워드 찾기</a>
+          <a class="dropdown-item" href="login/IdPassword.jsp"> 패스워드 찾기</a>
           <a class="dropdown-item" href="<c:url value='/reg' />">회원가입</a>
         </div>
       </li>

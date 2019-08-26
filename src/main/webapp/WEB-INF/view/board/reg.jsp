@@ -22,7 +22,7 @@
       <!-- 로그인 폼 CSS -->
       <div id="loginer" align="center">
         <div id="form">
-        	<!-- 요청주소 -->
+        	<!-- 요청경로의 mapping이 잘 되있어야 함! 매우 중요! -->
           <form action="/project090820/board/reg" method="post" >
             <fieldset>
               <legend>회원 가입</legend> <!-- 이름 , id, password, password1, email, address,   -->

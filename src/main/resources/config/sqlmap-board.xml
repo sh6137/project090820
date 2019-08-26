@@ -12,4 +12,11 @@
                 </selectKey>
         </insert>
         
+     	 <delete id="delete" parameterType="BoardVO">
+                DELETE FROM MEMBERTB WHERE MEMBERID = #{memberid}
+                AND MEMBERPASS = #{memberpass}
+        </delete>
+        
+        
+        
 </mapper>
