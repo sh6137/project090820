@@ -82,8 +82,9 @@ public class BoardController {
 	
 	@RequestMapping(value="/board/reg", method=RequestMethod.POST)
 	public String insert(BoardVO BoardVO){
-		boardService.insert1 (BoardVO);
-		return "redirect:/board/reg";
+		System.out.println(BoardVO.getMember_id());
+		boardService.insert (BoardVO);
+		return "redirect:/board/login";
 	}
 	
 	

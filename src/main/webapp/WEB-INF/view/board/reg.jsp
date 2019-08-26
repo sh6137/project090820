@@ -21,7 +21,7 @@
       <!-- 로그인 폼 CSS -->
       <div id="loginer" align="center">
         <div id="form">
-          <form action="<c:url value='/main' />" method="post" >
+          <form action="<c:url value='/reg' />" method="post" >
             <fieldset>
               <legend>회원 가입</legend> <!-- 이름 , id, password, password1, email, address,   -->
               <table>
@@ -43,7 +43,7 @@
                <input type="radio" name="member_gender" value="여자" required/>   여자
               </td></tr> 
               <tr><td>
-                                생년월일 : <input type="text" name="member_birth" placeholder="8자리연속입력" required/>
+                                생년월일 : <input type="password" name="member_birth" placeholder="8자리연속입력" required/>
               </td></tr>
               <tr><td>
                                 운영자여부 : <input type="radio" name="member_admin" value=0 required/>    운영자

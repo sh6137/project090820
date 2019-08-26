@@ -23,7 +23,7 @@ public class BoardServiceImpl implements BoardService {
 	}
   
     @Override
-	public void insert1(BoardVO boardVO) {
+	public void insert(BoardVO boardVO) {
 		boardDao.insert(boardVO);
 	}
 }

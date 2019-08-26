@@ -20,7 +20,7 @@
  
       <div id="loginer" align="center">
         <div id="form">
-          <form action="deleteProc.jsp" method="post">
+          <form action="<c:url value='/delete' />" method="post">
             <fieldset>
               <legend>회원 탈퇴</legend> 
              
