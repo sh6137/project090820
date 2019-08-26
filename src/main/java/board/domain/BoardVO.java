@@ -21,105 +21,87 @@ public class BoardVO {
 	 * private String writer;
 	 */
 	
-	private int member_no; 			 //1.회원번호
-	
+	private int memberno; 			 //1.회원번호
 	@NotEmpty(message="아이디를 입력하세요.")
-	private String member_id;		 //2.아이디
+	private String memberid;		 //2.아이디
 	
 	@NotEmpty(message="패스워드를 입력하세요.")
-	private String member_pass;		 //3.비밀번호
+	private String memberpass;		 //3.비밀번호
 	
 	@NotEmpty(message="닉네임을 입력하세요.")
-	private String member_nick;		 //4.닉네임
+	private String membernick;		 //4.닉네임
 	@NotEmpty(message="이메일을 입력하세요.")
-	private String member_email;	 //5.이메일
+	private String memberemail;	 //5.이메일
 	@NotEmpty(message="성별을 클릭하세요.")
-	private String member_gender;	 //6.성별
+	private String membergender;	 //6.성별
 	
 	@Length(min=8, max=8, message="8자리 연속 입력." )
-	private int member_birth;		 //7.생년월일
-	private Timestamp member_reg_dt; //8.가입일
-	private int member_admin;		 //9.운영자여부(기본 0)
-	private String member_like;		 //10.좋아요한 제품
+	private int memberbirth;		 //7.생년월일
+	private Timestamp memberregdt; //8.가입일
+	private int memberadmin;		 //9.운영자여부(기본 0)
+	private String memberlike;		 //10.좋아요한 제품
 	
-	public int getMember_no() {
-		return member_no;
+	
+	public int getMemberno() {
+		return memberno;
 	}
-
-	public void setMember_no(int member_no) {
-		this.member_no = member_no;
+	public void setMemberno(int memberno) {
+		this.memberno = memberno;
 	}
-
-	public String getMember_id() {
-		return member_id;
+	public String getMemberid() {
+		return memberid;
 	}
-
-	public void setMember_id(String member_id) {
-		this.member_id = member_id;
+	public void setMemberid(String memberid) {
+		this.memberid = memberid;
 	}
-
-	public String getMember_pass() {
-		return member_pass;
+	public String getMemberpass() {
+		return memberpass;
 	}
-
-	public void setMember_pass(String member_pass) {
-		this.member_pass = member_pass;
+	public void setMemberpass(String memberpass) {
+		this.memberpass = memberpass;
 	}
-
-	public String getMember_nick() {
-		return member_nick;
+	public String getMembernick() {
+		return membernick;
 	}
-
-	public void setMember_nick(String member_nick) {
-		this.member_nick = member_nick;
+	public void setMembernick(String membernick) {
+		this.membernick = membernick;
 	}
-
-	public String getMember_email() {
-		return member_email;
+	public String getMemberemail() {
+		return memberemail;
 	}
-
-	public void setMember_email(String member_email) {
-		this.member_email = member_email;
+	public void setMemberemail(String memberemail) {
+		this.memberemail = memberemail;
 	}
-
-	public String getMember_gender() {
-		return member_gender;
+	public String getMembergender() {
+		return membergender;
 	}
-
-	public void setMember_gender(String member_gender) {
-		this.member_gender = member_gender;
+	public void setMembergender(String membergender) {
+		this.membergender = membergender;
 	}
-
-	public int getMember_birth() {
-		return member_birth;
+	public int getMemberbirth() {
+		return memberbirth;
 	}
-
-	public void setMember_birth(int member_birth) {
-		this.member_birth = member_birth;
+	public void setMemberbirth(int memberbirth) {
+		this.memberbirth = memberbirth;
 	}
-
-	public Timestamp getMember_reg_dt() {
-		return member_reg_dt;
+	public Timestamp getMemberregdt() {
+		return memberregdt;
 	}
-
-	public void setMember_reg_dt(Timestamp member_reg_dt) {
-		this.member_reg_dt = member_reg_dt;
+	public void setMemberregdt(Timestamp memberregdt) {
+		this.memberregdt = memberregdt;
 	}
-
-	public int getMember_admin() {
-		return member_admin;
+	public int getMemberadmin() {
+		return memberadmin;
 	}
-
-	public void setMember_admin(int member_admin) {
-		this.member_admin = member_admin;
+	public void setMemberadmin(int memberadmin) {
+		this.memberadmin = memberadmin;
 	}
-
-	public String getMember_like() {
-		return member_like;
+	public String getMemberlike() {
+		return memberlike;
 	}
-
-	public void setMember_like(String member_like) {
-		this.member_like = member_like;
-	}        
+	public void setMemberlike(String memberlike) {
+		this.memberlike = memberlike;
+	}
+	
         
 }

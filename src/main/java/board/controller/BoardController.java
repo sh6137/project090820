@@ -82,9 +82,18 @@ public class BoardController {
 	
 	@RequestMapping(value="/board/reg", method=RequestMethod.POST)
 	public String insert(BoardVO BoardVO){
-		System.out.println(BoardVO.getMember_id());
-		boardService.insert (BoardVO);
-		return "redirect:/board/login";
+		System.out.println(BoardVO.getMemberno());
+		System.out.println(BoardVO.getMemberid());
+		System.out.println(BoardVO.getMemberpass());
+		System.out.println(BoardVO.getMembernick());
+		System.out.println(BoardVO.getMemberemail());
+		System.out.println(BoardVO.getMembergender());
+		System.out.println(BoardVO.getMemberbirth());
+		System.out.println(BoardVO.getMemberregdt());
+		System.out.println(BoardVO.getMemberadmin());
+		System.out.println(BoardVO.getMemberlike());
+		boardService.insert(BoardVO);
+		return "redirect:/project090820/login";
 	}
 	
 	

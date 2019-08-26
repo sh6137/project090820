@@ -4,12 +4,11 @@
 
 <mapper namespace="boardDAO">
         <insert id="insert" parameterType="BoardVO">
-                INSERT INTO MEMBER_TB 
-                (member_no, member_id, member_pass, member_nick, member_email, member_gender, member_birth, member_reg_dt, member_admin, member_like)
-                VALUES
-                (MEMBER_TB_SEQ.nextval, #{member_id}, #{member_pass}, #{member_nick}, #{member_email}, #{member_gender}, #{member_birth}, sysdate, #{member_admin}, #{member_like})
-                <selectKey keyProperty="seq" resultType="Integer">
-                        SELECT NVL(MAX(member_no), 0) FROM MEMBER_TB
+                INSERT INTO MEMBERTB 
+                (MEMBERNO, MEMBERID, MEMBERPASS, MEMBERNICK, MEMBEREMAIL, MEMBERGENDER, MEMBERBIRTH, MEMBERREGDT, MEMBERADMIN) 
+                VALUES (MEMBERTB_SEQ.nextval, #{MEMBERID}, #{MEMBERPASS}, #{MEMBERNICK}, #{MEMBEREMAIL}, #{MEMBERGENDER}, #{MEMBERBIRTH}, SYSDATE, #{MEMBERADMIN})
+               <selectKey keyProperty="memberno" resultType="Integer">
+                        SELECT NVL(MAX(MEMBERNO), 0) FROM MEMBERTB
                 </selectKey>
         </insert>
         
