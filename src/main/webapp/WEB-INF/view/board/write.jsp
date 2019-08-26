@@ -106,7 +106,7 @@
 	<option value="menu3">카테고리</option></select></td></tr>
 	<tr><td><textarea name="proText" rows="16" cols="125"></textarea></td></tr>
 	
-	<tr><td>파일<input type="file" name="proMultipart"></td></tr>
+	<tr><td><input type="file" name="proMultipart"></td></tr>
 	
 	<tr><td><input type="submit" value="제품 등록">	
 </table>
