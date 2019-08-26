@@ -17,6 +17,8 @@
                 AND MEMBERPASS = #{memberpass}
         </delete>
         
+        <select>
         
+        </select>
         
 </mapper>
