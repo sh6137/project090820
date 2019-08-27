@@ -38,22 +38,12 @@ public class BoardController {
 	
 	@RequestMapping(value="/board/reg", method=RequestMethod.POST)
 	public String insert(BoardVO BoardVO){
-		System.out.println(BoardVO.getMemberno());
-		System.out.println(BoardVO.getMemberid());
-		System.out.println(BoardVO.getMemberpass());
-		System.out.println(BoardVO.getMembernick());
-		System.out.println(BoardVO.getMemberemail());
-		System.out.println(BoardVO.getMembergender());
-		System.out.println(BoardVO.getMemberbirth());
-		System.out.println(BoardVO.getMemberregdt());
-		System.out.println(BoardVO.getMemberadmin());
-		System.out.println(BoardVO.getMemberlike());
 		boardService.insert(BoardVO);
 		return "redirect:/login";
 	}
 	
 	
-	//게정 삭제 요청을 처리할 메서드
+	//계정 삭제 요청을 처리할 메서드
 		@RequestMapping(value="/board/delete", method=RequestMethod.GET)
 		public String delete(@PathVariable String memberid, Model model){
 			model.addAttribute("delete", memberid);

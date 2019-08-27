@@ -27,8 +27,4 @@ public class BoardServiceImpl implements BoardService {
 		boardDao.insert(boardVO);
 	}
     
-    @Override
-	public int loginCheck(BoardVO boardVO) {
-		return boardDao.loginCheck(boardVO);
-	}
 }

@@ -8,6 +8,5 @@ public interface BoardDao {
 	
 	public abstract void insert(BoardVO boardVO);
 	
-	public abstract int loginCheck(BoardVO boardVO);
 	
 }

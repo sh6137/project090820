@@ -17,8 +17,6 @@
                 AND MEMBERPASS = #{memberpass}
         </delete>
         
-        <select>
-        
-        </select>
+        <!-- select를 써야함! -->
         
 </mapper>
