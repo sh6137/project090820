@@ -3,9 +3,6 @@ package board.domain;
 import java.sql.Timestamp;
 
 import org.apache.ibatis.type.Alias;
-import org.hibernate.validator.constraints.Length;
-//import org.hibernate.validator.constraints.NotEmpty;
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Alias("BoardVO")
 public class BoardVO {
