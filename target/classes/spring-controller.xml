@@ -22,6 +22,7 @@
 	<mvc:view-controller path="/reg" view-name="/board/reg"/>
 	<mvc:view-controller path="/danaom" view-name="/board/danaom"/>
 	<mvc:view-controller path="/delete" view-name="/board/delete"/>
+	<mvc:view-controller path="/regok" view-name="/board/regok"/>
 	
 	
 

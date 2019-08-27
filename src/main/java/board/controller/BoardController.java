@@ -39,7 +39,7 @@ public class BoardController {
 	@RequestMapping(value="/board/reg", method=RequestMethod.POST)
 	public String insert(BoardVO BoardVO){
 		boardService.insert(BoardVO);
-		return "redirect:/login";
+		return "redirect:/regok";
 	}
 	
 	
