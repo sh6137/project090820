@@ -17,10 +17,6 @@
                 AND MEMBERPASS = #{memberpass}
         </delete>
         
-<<<<<<< HEAD
         <!-- select를 써야함! -->
-=======
-        
->>>>>>> parent of 82a3128... kang
-        
+
 </mapper>
