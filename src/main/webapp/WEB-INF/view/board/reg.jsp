@@ -57,7 +57,7 @@
               <tr><td>
               <button type="submit">회원 가입</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <button type="reset">다시 입력</button>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="<c:url value='/main' />">메인으로</a>
+              <button type="button" onClick="/project090820/board/main"> 메인으로</button>
               </td></tr>
               
               </table>
