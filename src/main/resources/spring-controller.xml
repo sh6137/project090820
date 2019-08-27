@@ -13,9 +13,14 @@
 	<mvc:default-servlet-handler />
 
 	<mvc:view-resolvers>
-		<mvc:jsp prefix="/WEB-INF/view/"/>
+		<mvc:jsp prefix="/WEB-INF/view/" />
 	</mvc:view-resolvers>
-
+	
+	<bean id="boardController"
+		class="board.controller.BoardController">
+		<!-- <property name="productVO" ref="productVO"></property>-->
+		<property name="productReplyService" ref="productReplyService"></property> 
+	</bean>
 <!-- 	<bean id="boardController" class="board.controller.BoardController">
 		<property name="boardService" ref="boardService" />
 	</bean> -->

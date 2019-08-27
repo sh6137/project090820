@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="productReplyDao">
+	<insert id="insert" parameterType="replyVO">
+		INSERT INTO PRODUCT_TB
+		(pro_no, pro_name, pro_cate, pro_subcat, pro_text, pro_read_cnt,
+		pro_like_cnt, pro_regdate, pro_thumbnail, pro_system_thumbnail,
+		pro_filename, pro_filesystemname)
+		VALUES
+		(PRODUCT_TB_SEQ.nextval, #{pro_name}, #{pro_cate}, #{pro_subcat}, #{pro_text},
+		0, 0, SYSDATE, #{pro_thumbnail}, #{pro_systen_thumbnail},
+		#{pro_filename}, #{pro_filesystemname})
+		<selectKey keyProperty="proNum" resultType="Integer"
+			order="AFTER">
+			SELECT PRO_NO FROM
+			(SELECT * FROM PRODUCT_TB ORDER BY PRO_NO DESC)
+			WHERE ROWNUM = 1
+		</selectKey>
+	</insert>
+
+	<select id="list" resultType="replyVO">
+		SELECT * FROM
+		REPLYTB where RELOCATION='test_location' and REPOSTNO='11'
+	</select>
+	
+</mapper>

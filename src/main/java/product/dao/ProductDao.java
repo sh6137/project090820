@@ -16,5 +16,5 @@ public class ProductDao {
      
 	 public void insert(ProductVO ProductVO) {
          sqlSessionTemplate.insert("insert", ProductVO);
- }
+	 }
 }

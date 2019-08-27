@@ -1,14 +1,19 @@
 package board.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import board.domain.ProductVO;
+import board.service.ProductReplyService;
 
 @Controller
+//@SessionAttributes("productVO")
 public class BoardController {
 	/*
 	 * private BoardService boardService;
@@ -16,11 +21,16 @@ public class BoardController {
 	 * public void setBoardService(BoardService boardService) { this.boardService =
 	 * boardService; }
 	 */
-	private ProductVO productVO;
+	private ProductReplyService productReplyService;
+//	private ProductVO productVO;
 	
-	public void setProductVO(ProductVO productVO) {
-		this.productVO = productVO;
+	public void setProductReplyService(ProductReplyService productReplyService) {
+		this.productReplyService = productReplyService;
 	}
+	
+//	public void setProductVO(ProductVO productVO) {
+//		this.productVO = productVO;
+//	}
 	
 	@RequestMapping(value = "/product/read")
 	public String proRead() {
@@ -28,13 +38,20 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/product/write", method = RequestMethod.GET)
-	public String proWriteForm(@ModelAttribute("productVO")ProductVO data) {
+	public String proWriteForm(Model model) {
+		model.addAttribute("productVO", new ProductVO());
 		return "product/write";
 	}
 	
 	@RequestMapping(value = "/product/write", method = RequestMethod.POST)
-	public String proWriteProc(ProductVO productVO) {
+	public String proWriteProc(@Valid ProductVO productVO, BindingResult bindingResult) {
 		return "product/write";
+	}
+	
+	@RequestMapping(value = "/product/reply")
+	public String proReply(Model model) {
+		model.addAttribute("replyList", productReplyService.list());
+		return "product/reply";
 	}
 
 	/*

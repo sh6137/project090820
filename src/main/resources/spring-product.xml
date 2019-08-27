@@ -24,10 +24,14 @@
 	</bean>
 
 	<bean id="productVO" class="board.domain.ProductVO" />
-
-	<bean id="boardController"
-		class="board.controller.BoardController">
-		<property name="productVO" ref="productVO"></property>
+	<bean id="replyVO" class="board.domain.ReplyVO" />
+	
+	<bean id="productReplyDao" class="product.dao.ProductReplyDao">
+	<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
+	</bean>
+	
+	<bean id="productReplyService" class="board.service.ProductReplyService">
+		<property name="productReplyDao" ref="productReplyDao"/>
 	</bean>
 
 <!-- 	<bean id="sqlSessionFactory"
