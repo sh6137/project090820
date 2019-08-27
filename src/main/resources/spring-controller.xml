@@ -24,9 +24,9 @@
 	<mvc:view-controller path="/delete" view-name="/board/delete"/>
 	<mvc:view-controller path="/regok" view-name="/board/regok"/>
 	
-	
-
 	<bean id="boardController" class="board.controller.BoardController">
 		<property name="boardService" ref="boardService" />
 	</bean>
+	
+	
 </beans>
