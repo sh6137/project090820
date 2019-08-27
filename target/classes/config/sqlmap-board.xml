@@ -2,10 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<<<<<<< Updated upstream
 <mapper namespace="boardDAO">
         <select id="list" resultType="boardVO">
                 SELECT * FROM BOARD
                 ORDER BY seq
+=======
+<mapper namespace="board">
+        <select id="listAll" resultType="NoticeBoardDto">
+                select notice_no, notice_user, notice_title,notice_reg_date, notice_read_cnt
+                from Noticeboard
+                order by notice_no desc
+>>>>>>> Stashed changes
         </select>
         
         <select id="select" parameterType="int" resultType="boardVO">

@@ -4,8 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< Updated upstream
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>목록</title>
+=======
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+>>>>>>> Stashed changes
 </head>
 <body>
         <table border="1">
