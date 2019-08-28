@@ -68,7 +68,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="login/logout.jsp">로그아웃</a>
           <a class="dropdown-item" href="login/IdPassword.jsp">아이디/패스워드 찾기</a>
-          <a class="dropdown-item" href="login/delete.jsp">회원탈퇴</a>
+          <a class="dropdown-item" href="<c:url value='/delete' />">회원탈퇴</a>
         </div>
       </li>
     </ul>
