@@ -33,7 +33,7 @@ public class BoardController {
 	@RequestMapping(value="/board/reg", method=RequestMethod.GET)
 	public String insert(Model model){
 		model.addAttribute("insert", new BoardVO());
-		return "board/reg";
+		return "/reg";
 	}
 	
 	@RequestMapping(value="/board/reg", method=RequestMethod.POST)
@@ -62,7 +62,7 @@ public class BoardController {
 		@RequestMapping(value="/board/delete", method=RequestMethod.GET)
 		public String delete(@PathVariable String memberid, Model model){
 			model.addAttribute("delete", memberid);
-			return "/board/delete";
+			return "/delete";
 		}
 		@RequestMapping(value="/board/delete", method=RequestMethod.POST)
 		public String delete(String memberid, String memberpass, Model model){
@@ -76,7 +76,7 @@ public class BoardController {
 			if(rowCount == 0){
 				model.addAttribute("memberid", memberid);
 				model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
-				return "/board/delete";
+				return "/deleteok";
 			}
 			else{
 				return "redirect:/main";
