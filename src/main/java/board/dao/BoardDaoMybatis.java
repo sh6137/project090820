@@ -27,5 +27,8 @@ public class BoardDaoMybatis implements BoardDao {
                 sqlSessionTemplate.insert("insert", boardVO);
         }
        
-
+        @Override
+        public boolean loginCheck(BoardVO boardVO) {
+        	return sqlSessionTemplate.equals(boardVO);
+        }
 }

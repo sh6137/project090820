@@ -7,5 +7,6 @@ public interface BoardService {
 	public abstract int delete(BoardVO boardVO);
 
 	public abstract void insert(BoardVO boardVO);
-	
+
+	public abstract boolean loginCheck(BoardVO boardVO);
 }

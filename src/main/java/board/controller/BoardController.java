@@ -42,6 +42,21 @@ public class BoardController {
 		return "redirect:/regok";
 	}
 	
+	//로그인 체크를 위해 요청 처리
+	@RequestMapping(value="/board/login", method=RequestMethod.GET)
+	public String loginCheck(Model model){
+		model.addAttribute("loginCheck", new BoardVO());
+		return "board/login";
+	}
+	
+	@RequestMapping(value="/board/login", method=RequestMethod.POST)
+	public String loginCheck(BoardVO BoardVO) {
+		boardService.loginCheck(BoardVO);
+		return "redirect:/danaom";
+	}
+	
+	
+	
 	
 	//계정 삭제 요청을 처리할 메서드
 		@RequestMapping(value="/board/delete", method=RequestMethod.GET)

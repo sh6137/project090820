@@ -29,7 +29,6 @@
               <table>
 			  <tr><td>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디 : </td><td><input type="text" name="memberid" placeholder="Id" required/>  
-              <input type="button" value="중복확인" onClick="idCheck(this.form.member_id.value)"/>
               <tr><td>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 : </td><td><input type="password" name="memberpass" placeholder="Password" required/></td></tr> 
               <tr><td>

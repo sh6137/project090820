@@ -20,6 +20,7 @@
 	<mvc:view-controller path="/main" view-name="/board/main"/>
 	<mvc:view-controller path="/login" view-name="/board/login"/>
 	<mvc:view-controller path="/loginok" view-name="/board/loginok"/>
+	<mvc:view-controller path="/logout" view-name="/board/logout"/>
 	<mvc:view-controller path="/reg" view-name="/board/reg"/>
 	<mvc:view-controller path="/regok" view-name="/board/regok"/>
 	<mvc:view-controller path="/danaom" view-name="/board/danaom"/>

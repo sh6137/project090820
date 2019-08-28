@@ -29,7 +29,7 @@
 <tr align="center">
 <td width="120" height="100"><a class="btn btn-iight" href="#" role="button"><span style="font-size:13pt">최근 본 상품</span></a></td>
 <td width="120" height="100"><a class="btn btn-iight" href="#" role="button"><span style="font-size:13pt">관심<br>상품 </span></a></td>
-<td width="120" height="100"><a class="btn btn-iight" href="login/logout.jsp" role="button"><span style="font-size:13pt">로 그 아 웃</span></a></td>
+<td width="120" height="100"><a class="btn btn-iight" href="<c:url value="/logout" />" role="button"><span style="font-size:13pt">로 그 아 웃</span></a></td>
 </tr> 
 
 </table></div>
@@ -99,9 +99,9 @@
 <div class="right">
 
 <section class="main_partner_v2" id="main_brandAd" data-log-actionid-area="main_partner" data-log-actionid-label="btn" data-is-ab-send="5">
+	<table>
 	<ul id="main_ul_main_brandAd_0"> 
 	<h4>쇼핑하러 바로가기</h4>
-	<table>
 	<tr><td>
 	
 	<a href="<c:url value='https://www.shinsegae.com' />" data-log-index="1">
