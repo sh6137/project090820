@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
     
-  <link rel="stylesheet" type="text/css" href="CSS/Main.css">
+   <link href="<c:url value="/resources/css/Main.css"/>" rel="stylesheet">
     <title>Hello, Main!</title>
   </head>
 <body>
@@ -19,7 +19,7 @@
 <div class="top">
 <div class="top-left">다나옴</div>
 <div class="top-center">
-<div class="top-center-south"><table><tr align="center"><td align="center"><img src="logo/1.png" width="900" height="120"></td></tr></table></div>
+<div class="top-center-south"><table><tr align="center"><td align="center"><img src="<c:url value="/resources/1.png"/>" width="900" height="120"></td></tr></table></div>
 <div class="top-center-north" align="center">
 	<input type="text" placeholder="검색어 입력"/>
 	<button type="submit">검색</button></div>
