@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원 탈퇴</title>
+<title>로그인 성공!!</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -13,11 +13,11 @@
 <div id="loginer" align="center">
         <div id="form">
 <fieldset>
-           <legend>계정삭제완료</legend>
-	<p>회원정보가 삭제 되었습니다.<br></p>
-	<p>이용해주셔서 감사합니다. <br></p>
+           <legend>로그인 성공</legend>
+	<p>로그인 되었습니다<br></p>
+	<p> 반갑습니다. <br></p>
 
-<a href="<c:url value='/main' />">메인으로</a>
+<a href="<c:url value='/danaom' />">메인으로</a>
 </fieldset>
 </div>
 </div>
