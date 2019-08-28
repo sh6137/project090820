@@ -13,7 +13,7 @@
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
     
   <link href="<c:url value="/resources/css/Main.css"/>" rel="stylesheet">
-    <title>Hello, Main!</title>
+    <title>Hello, Main!</title> 
   </head>
 <body>
 
