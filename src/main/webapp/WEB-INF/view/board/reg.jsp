@@ -28,27 +28,27 @@
               <legend>회원 가입</legend> <!-- 이름 , id, password, password1, email, address,   -->
               <table>
 			  <tr><td>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디 : </td><td><input type="text" name="memberid" placeholder="Id" required/>  
+   	 &nbsp;&nbsp;&nbsp;아이디 : </td><td><input type="text" name="memberid" placeholder="Id" required/>  
               <tr><td>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 : </td><td><input type="password" name="memberpass" placeholder="Password" required/></td></tr> 
+     &nbsp;&nbsp;&nbsp;비밀번호 : </td><td><input type="password" name="memberpass" placeholder="Password" required/></td></tr> 
               <tr><td>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;닉네임 : </td><td><input type="text" name="membernick" placeholder="Nickname" required/></td></tr> 
+      &nbsp;&nbsp;&nbsp;닉네임 : </td><td><input type="text" name="membernick" placeholder="Nickname" required/></td></tr> 
               <tr><td>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이메일 : </td><td><input type="text" name="memberemail" placeholder="Email" required/></td></tr>
+      &nbsp;&nbsp;&nbsp;이메일 : </td><td><input type="text" name="memberemail" placeholder="Email" required/></td></tr>
               </table>
              
               <table>             
               <tr><td>
-                                성별 : 
+               &nbsp;&nbsp;&nbsp; 성별 : 
                <input type="radio" name="membergender" value="남자" required/>   남자 
                <input type="radio" name="membergender" value="여자" required/>   여자
               </td></tr> 
               <tr><td>
-                                생년월일 : <input type="password" name="memberbirth" placeholder="8자리연속입력" required/>
+               &nbsp;&nbsp;&nbsp;  생년월일 : <input type="password" name="memberbirth" placeholder="8자리연속입력" required/>
               </td></tr>
               <tr><td>
-                                운영자여부 : <input type="radio" name="memberadmin" value=0 required/>    운영자
-                      <input type="radio" name="memberadmin" value=1 required/>	회원
+               &nbsp;&nbsp;&nbsp;운영자여부 : <input type="radio" name="memberadmin" value=0 required/>    운영자
+              <input type="radio" name="memberadmin" value=1 required/>	회원
               </td></tr> 
              </table>
              

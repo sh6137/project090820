@@ -8,5 +8,5 @@ public interface BoardService {
 
 	public abstract void insert(BoardVO boardVO);
 
-	public abstract boolean loginCheck(BoardVO boardVO);
+	public abstract String loginCheck(BoardVO boardVO);
 }

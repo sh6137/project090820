@@ -28,7 +28,7 @@ public class BoardServiceImpl implements BoardService {
 	}
     
     @Override
-    public boolean loginCheck(BoardVO boardVO) {
+    public String loginCheck(BoardVO boardVO) {
     	return boardDao.loginCheck(boardVO);
     }
     

@@ -1,20 +1,13 @@
 package board.controller;
 
-import java.util.List;
-
-import javax.validation.Valid;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.bind.support.SessionStatus;
 
 import board.domain.BoardVO;
 import board.service.BoardService;
@@ -44,42 +37,47 @@ public class BoardController {
 	
 	//로그인 체크를 위해 요청 처리
 	@RequestMapping(value="/board/login", method=RequestMethod.GET)
-	public String loginCheck(Model model){
-		model.addAttribute("loginCheck", new BoardVO());
+	public String loginCheck(){
 		return "board/login";
 	}
 	
 	@RequestMapping(value="/board/login", method=RequestMethod.POST)
-	public String loginCheck(BoardVO BoardVO) {
-		boardService.loginCheck(BoardVO);
-		return "redirect:/danaom";
+	public String loginCheck(BoardVO boardVO, Model model) {
+		//String memberpass = request.getparameter("memberpass")의 개념이랑 똑같음.
+		String memberpass = boardService.loginCheck(boardVO);
+		
+		if(memberpass.equals(boardVO.getMemberpass())){
+			model.addAttribute("boardVO", boardVO); //이것만 설정해두면 세션은 자동으로 설정될듯. 정 모르겠으면 10번 볼것!
+			return "redirect:/danaom";
+		} else 
+			return "redirect:/board/login";
 	}
-	
-	
-	
 	
 	//계정 삭제 요청을 처리할 메서드
 		@RequestMapping(value="/board/delete", method=RequestMethod.GET)
-		public String delete(@PathVariable String memberid, Model model){
-			model.addAttribute("delete", memberid);
-			return "/delete";
+		public String delete(){
+			return "board/delete";
 		}
 		@RequestMapping(value="/board/delete", method=RequestMethod.POST)
-		public String delete(String memberid, String memberpass, Model model){
-			int rowCount;
-			BoardVO boardVO = new BoardVO();
-			boardVO.setMemberid(memberid);
-			boardVO.setMemberpass(memberpass);
+		public String delete(@RequestParam(value="memberpass") String memberpass, Model model, HttpSession session){
+			//@RequestParam으로 요청받으면, 밸류값을 받아온다. 그리고 세션객체는 멤버변수에 추가만 해주면 알아서 지정될거임.
+			int rowCount = 0;
 			
-			rowCount = boardService.delete(boardVO);
+			BoardVO boardVO = (BoardVO) session.getAttribute("boardVO");
+			System.out.println(boardVO.getMemberpass());
+			
+			if(boardVO.getMemberpass().equals(memberpass)) {
+				rowCount = boardService.delete(boardVO);
+			}
 			
 			if(rowCount == 0){
-				model.addAttribute("memberid", memberid);
-				model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
-				return "/deleteok";
+//				model.addAttribute("memberid", );
+//				model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
+				return "board/delete";
 			}
 			else{
-				return "redirect:/main";
+				session.invalidate();
+				return "board/deleteok";
 				
 			}
 		}

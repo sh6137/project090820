@@ -18,7 +18,7 @@
         </delete>
         
         <!-- select를 써야함! -->
-		<select id="logincheck" parameterType="BoardVO">
+		<select id="logincheck" resultType="String" parameterType="BoardVO">
 				SELECT MEMBERPASS FROM MEMBERTB WHERE MEMBERID = #{memberid}
 		</select>
 		
