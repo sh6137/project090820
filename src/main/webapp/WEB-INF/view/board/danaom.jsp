@@ -99,9 +99,9 @@
 <div class="right">
 
 <section class="main_partner_v2" id="main_brandAd" data-log-actionid-area="main_partner" data-log-actionid-label="btn" data-is-ab-send="5">
-	<table>
 	<ul id="main_ul_main_brandAd_0"> 
 	<h4>쇼핑하러 바로가기</h4>
+	<table>
 	<tr><td>
 	
 	<a href="<c:url value='https://www.shinsegae.com' />" data-log-index="1">
