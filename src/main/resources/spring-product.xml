@@ -33,6 +33,8 @@
 	<bean id="productReplyService" class="board.service.ProductReplyService">
 		<property name="productReplyDao" ref="productReplyDao"/>
 	</bean>
+	
+	<bean id="replyPaging" class="reply.paging.ReplyPaging"/>
 
 <!-- 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">

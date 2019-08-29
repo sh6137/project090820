@@ -7,10 +7,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import board.domain.ProductVO;
 import board.service.ProductReplyService;
+import reply.paging.ReplyPaging;
 
 @Controller
 //@SessionAttributes("productVO")
@@ -22,10 +24,15 @@ public class BoardController {
 	 * boardService; }
 	 */
 	private ProductReplyService productReplyService;
+	private ReplyPaging replyPaging;
 //	private ProductVO productVO;
 	
 	public void setProductReplyService(ProductReplyService productReplyService) {
 		this.productReplyService = productReplyService;
+	}
+	
+	public void setReplyPaging(ReplyPaging replyPaging) {
+		this.replyPaging = replyPaging;
 	}
 	
 //	public void setProductVO(ProductVO productVO) {
@@ -49,8 +56,14 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/product/reply")
-	public String proReply(Model model) {
-		model.addAttribute("replyList", productReplyService.list());
+	public String proReply(Model model, @RequestParam(required=false) String pageNum) {
+		replyPaging.init(productReplyService.list());
+		if(pageNum == null) {
+			pageNum = "1";
+		}
+		model.addAttribute("replyList", replyPaging.paging(Integer.parseInt(pageNum)));
+		model.addAttribute("pageList", replyPaging.getPageList());
+		model.addAttribute("currentPage", pageNum);
 		return "product/reply";
 	}
 

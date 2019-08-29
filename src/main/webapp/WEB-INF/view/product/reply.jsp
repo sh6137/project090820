@@ -12,5 +12,8 @@
 	${replyVO.reNo} | ${replyVO.reUser} | ${replyVO.reText} | ${replyVO.reRegDt}
 	<br>
 </c:forEach>
+<c:forEach var="pageList" items="${pageList}">
+	[${pageList}] 
+</c:forEach>
 </body>
 </html>

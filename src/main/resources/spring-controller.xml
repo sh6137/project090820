@@ -20,6 +20,7 @@
 		class="board.controller.BoardController">
 		<!-- <property name="productVO" ref="productVO"></property>-->
 		<property name="productReplyService" ref="productReplyService"></property> 
+		<property name="replyPaging" ref="replyPaging"/>
 	</bean>
 <!-- 	<bean id="boardController" class="board.controller.BoardController">
 		<property name="boardService" ref="boardService" />
