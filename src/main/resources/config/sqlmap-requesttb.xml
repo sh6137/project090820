@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="requesttbDAO">
+        <select id="list" resultType="requesttbVO">
+                SELECT * FROM REQUESTTB
+                ORDER BY REQNO
+        </select>
+        
+        <select id="select" parameterType="int" resultType="requesttbVO">
+                SELECT * FROM
+                REQUESTTB WHERE REQNO = #{reqNo}
+        </select>
+        
+        <insert id="insert" parameterType="requesttbVO">
+                INSERT INTO REQUESTTB 
+                (REQNO, REQTITLE, REQUSER, REQTEXT, REQREADCNT, REQREGDT, REQPASSWORD)
+                VALUES
+                (REQUESTTB_SEQ.nextval, 
+			#{reqTitle}, #{reqUser}, #{reqText}, 0, SYSDATE, #{reqPassword})
+                <selectKey keyProperty="reqNo" resultType="Integer">
+                        SELECT NVL(MAX(reqNo), 0) FROM REQUESTTB
+                </selectKey>
+        </insert>
+        
+        <update id="update" parameterType="requesttbVO">
+                UPDATE REQUESTTB SET REQTITLE = #{reqTitle},
+                REQTEXT = #{reqText},
+                REQUSER = #{reqUser}
+                WHERE REQNO = #{reqNo} AND REQPASSWORD = #{reqPassword}
+        </update>
+        
+        <update id="updateCount" parameterType="int">
+                UPDATE REQUESTTB SET REQREADCNT = REQREADCNT + 1 WHERE REQNO = #{reqNo}
+        </update>
+        
+        <delete id="delete" parameterType="requesttbVO">
+                DELETE FROM REQUESTTB WHERE REQNO = #{reqNo}
+                AND REQPASSWORD = #{reqPassword}
+        </delete>
+        
+        <delete id="deleteAll">
+                DELETE FROM REQUESTTB
+        </delete>
+</mapper>

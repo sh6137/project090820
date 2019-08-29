@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="questioncategorytbDAO">
+        <select id="list" resultType="questioncategorytbVO">
+                SELECT * FROM QUESTIONCATEGORYTB
+                ORDER BY QUECATENUM
+        </select>
+        
+        <select id="select" parameterType="int" resultType="questioncategorytbVO">
+                SELECT * FROM
+                QUESTIONCATEGORYTB WHERE QUECATENUM = #{quecateNum}
+        </select>
+        
+        <insert id="insert" parameterType="questioncategorytbVO">
+                INSERT INTO QUESTIONCATEGORYTB 
+                (QUECATENUM, QUECATECAT, QUECATEPASS)
+                VALUES
+                (QUESTIONCATEGORYTB_SEQ.nextval, #{quecateCat}, #{quecatePass})
+                <selectKey keyProperty="quecateNum" resultType="Integer">
+                        SELECT NVL(MAX(quecateNum), 0) FROM QUESTIONCATEGORYTB
+                </selectKey>
+        </insert>
+        
+        <update id="update" parameterType="questioncategorytbVO">
+                UPDATE QUESTIONCATEGORYTB SET QUECATECAT = #{quecateCat}
+                
+                WHERE QUECATENUM = #{quecateNum} AND QUECATEPASS = #{quecatePass}
+        </update>
+        
+        
+        <delete id="delete" parameterType="questioncategorytbVO">
+                DELETE FROM QUESTIONCATEGORYTB WHERE QUECATENUM = #{quecateNum}
+                AND QUECATEPASS = #{quecatePass}
+        </delete>
+        
+        <delete id="deleteAll">
+                DELETE FROM QUESTIONCATEGORYTB
+        </delete>
+</mapper>
