@@ -40,11 +40,13 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/board/login", method=RequestMethod.POST)
-	public String loginCheck(BoardVO boardVO, Model model) {
+	public String loginCheck(BoardVO boardVO, Model model,  HttpSession session) {
 		//String memberpass = request.getparameter("memberpass")의 개념이랑 똑같음.
 		String memberpass = boardService.loginCheck(boardVO);
-		
 		if(memberpass.equals(boardVO.getMemberpass())){
+			
+			session.setAttribute("pass", boardVO.getMemberpass());
+			
 			model.addAttribute("boardVO", boardVO); //이것만 설정해두면 세션은 자동으로 설정될듯. 정 모르겠으면 10번 볼것!
 			return "redirect:/danaom"; //로그인 된 창으로 구현!
 		} else 
@@ -86,28 +88,32 @@ public class BoardController {
 		}
 	
 	@RequestMapping(value="/board/changepassword", method=RequestMethod.POST)
-	public String update(@RequestParam(value="memberpass") String memberpass, Model model, HttpSession session) {
+	public String update(@RequestParam(value="memberpass") String memberpass, Model model, HttpSession session, BoardVO boardVO) {
 		//String memberpass = request.getparameter("memberpass")의 개념이랑 똑같음.
 		int rowCount = 0;
 		
-		BoardVO boardVO = (BoardVO) session.getAttribute("boardVO");
-		System.out.println(boardVO.getMemberpass());
-				
-		if(boardVO.getMemberpass().equals(memberpass)) {
-			rowCount = boardService.update(boardVO);
-		}
+		//BoardVO boardVO = (BoardVO) session.getAttribute("boardVO");
+		//System.out.println(boardVO.getMemberpass());
+		System.out.println("VO비밀번호="+boardVO.getMemberpass());
+		System.out.println("세션비밀번호="+session.getAttribute("pass"));
+		//if(boardVO.getMemberpass().equals(session.getAttribute("pass"))) {
+			//rowCount = boardService.update(boardVO);
+			boardVO.setMemberpass(boardVO.getMemberpass());
+		//}
 		
 		//오류 날때
-		if(rowCount == 0){
-//			model.addAttribute("memberid", );
-//			model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
+		//if(rowCount == 0){
+			//model.addAttribute("memberid", );
+			//model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
 			return "board/changepassword";
-		}
+		//}
 		//정상 동작할때
-		else	
-			return "redirect:board/danaom";
+		//else	
+			//return "redirect:board/danaom";
 				
 	}	
+	
+
 }	
 	
 

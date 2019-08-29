@@ -22,8 +22,8 @@
 				SELECT MEMBERPASS FROM MEMBERTB WHERE MEMBERID = #{memberid}
 		</select>
 		
-		<update id="changepassword" parameterType="BoardVO">
-				UPDATE MEMBERTB SET MEMBERPASS = #{memberpass} WHERE MEMBERID =#{memberid}
+		<update id="update" parameterType="BoardVO">
+				update MEMBERTB set MEMBERPASS = #{memberpass} where MEMBERID = #{memberid}
 		</update>
 		
 </mapper>

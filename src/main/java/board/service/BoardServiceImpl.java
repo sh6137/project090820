@@ -1,5 +1,7 @@
 package board.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import board.dao.BoardDao;
@@ -17,6 +19,7 @@ public class BoardServiceImpl implements BoardService {
 		this.boardDao = boardDao;
 	}
    
+	
     @Override
 	public int delete(BoardVO boardVO) {
 		return boardDao.delete(boardVO); //0이면 그대로 1이면 삭제
@@ -31,10 +34,11 @@ public class BoardServiceImpl implements BoardService {
     public String loginCheck(BoardVO boardVO) {
     	return boardDao.loginCheck(boardVO);
     }
+
+	@Override
+	public int update(BoardVO boardVO) {
+		return boardDao.update(boardVO);
+	}
     
-    @Override
-    public int update(BoardVO boardVO) {
-    	return boardDao.update(boardVO);
-    }
-    
+  
 }
