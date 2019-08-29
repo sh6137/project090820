@@ -22,8 +22,7 @@
 <div id="loginer" align="center">
         <div id="form">
 		<fieldset>
-		<legend>로그아웃 완료!</legend>
-성공적으로 로그아웃 되었습니다. <br><br>
+		<legend>로그아웃 완료!</legend> 성공적으로 로그아웃 되었습니다. <br><br>
 <a href="<c:url value="/login" />"> 로그인 페이지로 이동    | </a>
 <a href="<c:url value="/main" />"> 메인 페이지로 이동 </a>
 </fieldset>
