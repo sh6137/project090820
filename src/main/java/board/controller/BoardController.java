@@ -81,39 +81,28 @@ public class BoardController {
 			}
 		}	
 	
-	//비밀번호 요청 처리할 메소드
+	//비밀번호 변경 요청 처리할 메소드
 	@RequestMapping(value="/board/changepassword", method=RequestMethod.GET)
 	public String update(){
 				return "board/changepassword";
 		}
 	
 	@RequestMapping(value="/board/changepassword", method=RequestMethod.POST)
-	public String update(@RequestParam(value="memberpass") String memberpass, Model model, HttpSession session, BoardVO boardVO) {
-		//String memberpass = request.getparameter("memberpass")의 개념이랑 똑같음.
+	public String update(@RequestParam(value="memberpass") String memberpass, HttpSession session, BoardVO boardVO) {
 		int rowCount = 0;
 		
-		//BoardVO boardVO = (BoardVO) session.getAttribute("boardVO");
-		//System.out.println(boardVO.getMemberpass());
-		System.out.println("VO비밀번호="+boardVO.getMemberpass());
-		System.out.println("세션비밀번호="+session.getAttribute("pass"));
-		//if(boardVO.getMemberpass().equals(session.getAttribute("pass"))) {
-			//rowCount = boardService.update(boardVO);
-			boardVO.setMemberpass(boardVO.getMemberpass());
-		//}
-		
-		//오류 날때
-		//if(rowCount == 0){
-			//model.addAttribute("memberid", );
-			//model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
-			return "board/changepassword";
-		//}
-		//정상 동작할때
-		//else	
-			//return "redirect:board/danaom";
+		boardVO = (BoardVO)session.getAttribute("boardVO");
+		System.out.println(boardVO.getMemberpass());
 				
-	}	
-	
-
+		if(boardVO.getMemberpass().equals(memberpass)) {
+			rowCount = boardService.update(boardVO);
+		}
+		
+		if(rowCount == 0){
+			return "board/changepassword";
+				}
+		else return "board/changepasswordok";
+	}
 }	
 	
 
