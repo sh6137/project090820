@@ -31,7 +31,9 @@
 		<property name="configLocation" value="classpath:config/mybatis-config.xml" />
 		<property name="mapperLocations">
 			<list>
-				<value>classpath:config/sqlmap-questeion_tb.xml</value>
+				<value>classpath:config/sqlmap-questiontb.xml</value>
+				<value>classpath:config/sqlmap-requesttb.xml</value>
+				<value>classpath:config/sqlmap-questioncategorytb.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -41,12 +43,50 @@
 		<constructor-arg ref="sqlSessionFactory" />
 	</bean>
 	
-	<bean id="boardDao" class="board.dao.BoardDaoMybatis">
+	<bean id="questiontbDao" class="board.dao.QuestiontbDaoMybatis">
 	<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
 	</bean>
 	
-	<bean id="boardService" class="board.service.BoardServiceImpl">
-		<property name="boardDao" ref="boardDao"/>
+	<bean id="questiontbService" class="board.service.QuestiontbServiceImpl">
+		<property name="questiontbDao" ref="questiontbDao"/>
 	</bean>
+	
+	
+	<bean id="questiontbServiceImpl" class="board.service.QuestiontbServiceImpl">
+		<property name="questiontbDao" ref="questiontbDao"/>
+	</bean>
+	
+	
+	<!-- 제품등록요청  -->
+	
+	<bean id="requesttbDao" class="board.dao.RequesttbDaoMybatis">
+	<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
+	</bean>
+	
+	<bean id="requesttbService" class="board.service.RequesttbServiceImpl">
+		<property name="requesttbDao" ref="requesttbDao"/>
+	</bean>
+	
+	
+	<bean id="requesttbServiceImpl" class="board.service.RequesttbServiceImpl">
+		<property name="requesttbDao" ref="requesttbDao"/>
+	</bean>
+	
+	
+	<!-- 카테고리 목록 -->
+	
+	<bean id="questioncategorytbDao" class="board.dao.QuestioncategorytbDaoMybatis">
+		<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="questioncategorytbService" class="board.service.QuestioncategorytbServiceImpl">
+		<property name="questioncategorytbDao" ref="questioncategorytbDao"/>
+	</bean>
+	
+	<bean id="questioncategorytbServiceImpl" class="board.service.QuestioncategorytbServiceImpl">
+		<property name="questioncategorytbDao" ref="questioncategorytbDao"/>
+	</bean>
+	
 	
 </beans>
