@@ -22,7 +22,7 @@
       <!-- 로그인 폼 CSS -->
       <div id="loginer" align="center">
         <div id="form">
-          <form action="/project090820/board/login" method="post" >
+          <form action="${pageContext.request.contextPath}/board/login" method="post" >
             <fieldset>
               <legend>로그인!</legend>
               <table><tr><td>

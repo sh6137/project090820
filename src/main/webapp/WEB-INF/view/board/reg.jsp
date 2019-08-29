@@ -23,7 +23,7 @@
       <div id="loginer" align="center">
         <div id="form">
         	<!-- 요청경로의 mapping이 잘 되있어야 함! 매우 중요! -->
-          <form action="/project090820/board/reg" method="post" >
+          <form action="${pageContext.request.contextPath}/board/reg" method="post" >
             <fieldset>
               <legend>회원 가입</legend> <!-- 이름 , id, password, password1, email, address,   -->
               <table>
@@ -56,7 +56,7 @@
               <tr><td>
               <button type="submit">회원 가입</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <button type="reset">다시 입력</button>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button type="button" onClick="/project090820/board/main"> 메인으로</button>
+              <input type="button" value="메인으로" onclick="location.href='${pageContext.request.contextPath}/main'"/>
               </td></tr>
               
               </table>

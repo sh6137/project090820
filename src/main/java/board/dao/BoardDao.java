@@ -9,4 +9,6 @@ public interface BoardDao {
 	public abstract void insert(BoardVO boardVO);
 	
 	public abstract String loginCheck(BoardVO boardVO);
+	
+	public abstract int update(BoardVO boardVO);
 }

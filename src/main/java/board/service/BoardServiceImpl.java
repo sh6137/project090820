@@ -19,7 +19,7 @@ public class BoardServiceImpl implements BoardService {
    
     @Override
 	public int delete(BoardVO boardVO) {
-		return boardDao.delete(boardVO);
+		return boardDao.delete(boardVO); //0이면 그대로 1이면 삭제
 	}
     
     @Override
@@ -30,6 +30,11 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public String loginCheck(BoardVO boardVO) {
     	return boardDao.loginCheck(boardVO);
+    }
+    
+    @Override
+    public int update(BoardVO boardVO) {
+    	return boardDao.update(boardVO);
     }
     
 }

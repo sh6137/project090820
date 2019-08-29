@@ -99,7 +99,7 @@
 ② '회사' 를 이루어지는 구매자와 판매자 간의 거래와 관련하여 판매 의사 또는 구매 의사의 존부 및 진정성, 등록 상품의 품질, 완전성, 안정성, 적법성 및 타인의 권리에 대한 비침해성, 구매자 또는 판매자가 입력하는 정보 및 그 정보를 통하여 링크된 URL에 게재된 자료의 진실성 또는 적법성 등 일체에 대하여 보증하지 아니하며, 
 이와 관련한 일체의 위험과 책임은 해당 이용자가 전적으로 부담합니다.<br><br>
 
-본 개정약관은 2016년 5월 25일부터 시행합니다											
+본 개정약관은 2019년 9월 7일부터 시행합니다.											
 </fieldset>
 
 <div class="checkbox_wrap">
@@ -109,11 +109,11 @@
 <!--1702 웹접근성 포커스 (Tab키) 이동 시 클래스 focus 추가 탭키 이동 관련 개발 필요 -->
 <input class="input_check focus" type="checkbox" id="danawa-member-joinStep-checkBox-agree-all" title="[체크박스]" required/>
 </div>
-<a href="<c:url value="/reg" />">회원가입하기</a>
-<a href="<c:url value="/main" />">메인으로 돌아가기</a>
+
+<input type="button" value="회원가입하기" onclick="location.href='${pageContext.request.contextPath}/reg'"/>
+<input type="button" value="메인으로" onclick="location.href='${pageContext.request.contextPath}/main'"/>
 </fieldset>
 </div>
 </div>
-</form>
 </body>
 </html>

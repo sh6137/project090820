@@ -17,16 +17,16 @@
 	</mvc:view-resolvers>
 	
 	<!-- 뷰 컨트롤러! 프로젝트 경로 설정  JSP파일 설정!--> 
-	<mvc:view-controller path="/agree" view-name="/board/agree"/>
+    <mvc:view-controller path="/agree" view-name="/board/agree"/>
 	<mvc:view-controller path="/main" view-name="/board/main"/>
 	<mvc:view-controller path="/login" view-name="/board/login"/>
-	<mvc:view-controller path="/loginok" view-name="/board/loginok"/>
 	<mvc:view-controller path="/logout" view-name="/board/logout"/>
 	<mvc:view-controller path="/reg" view-name="/board/reg"/>
 	<mvc:view-controller path="/regok" view-name="/board/regok"/>
 	<mvc:view-controller path="/danaom" view-name="/board/danaom"/>
 	<mvc:view-controller path="/delete" view-name="/board/delete"/>
 	<mvc:view-controller path="/deleteok" view-name="/board/deleteok"/>
+	<mvc:view-controller path="/changepassword" view-name="/board/changepassword"/>
 		
 	<bean id="boardController" class="board.controller.BoardController">
 		<property name="boardService" ref="boardService" />

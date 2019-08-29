@@ -21,12 +21,12 @@
  
       <div id="loginer" align="center">
         <div id="form">
-          <form action="${pageContext.request.contextPath}/board/delete" method="post" >
+          <form action="${pageContext.request.contextPath}/board/changepassword" method="post" >
            <fieldset>
-           <legend>계정삭제</legend>
-                계정을 삭제하시겠습니까?<br>
+           <legend>비밀번호 변경</legend>
+                비밀번호를 변경하시겠습니까?<br><br>
                 비밀번호  : <input type="password" name="memberpass" />
-                <input type="submit" value="삭제"> <br>
+                <input type="submit" value="비밀번호 변경"> <br><br>
                <a href="<c:url value='/danaom' />">메인으로</a>
         </form>
         </fieldset>
