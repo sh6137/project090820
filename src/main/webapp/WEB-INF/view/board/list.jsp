@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<!-- ↑ fn:replace 선언 -->
 <html lang="UTF-8">
   <head>
     <!-- Required meta tags -->
@@ -13,6 +15,37 @@
    <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
     <title>Hello, Main!</title>
   </head>
+  
+<script>
+
+//이전 버튼 이벤트
+
+function fn_prev(page, range, rangeSize) {
+		var page = ((range - 2) * rangeSize) + 1;
+		var range = range - 1;
+		var url = "${pageContext.request.contextPath}/board/list";
+		url = url + "?page=" + page;
+		url = url + "&range=" + range;
+		location.href = url;
+	}
+  //페이지 번호 클릭
+	function fn_pagination(page, range, rangeSize, searchType, keyword) {
+		var url = "${pageContext.request.contextPath}/board/list";
+		url = url + "?page=" + page;
+		url = url + "&range=" + range;
+		location.href = url;	
+	}
+	//다음 버튼 이벤트
+	function fn_next(page, range, rangeSize) {
+		var page = parseInt((range * rangeSize)) + 1;
+		var range = parseInt(range) + 1;
+		var url = "${pageContext.request.contextPath}/board/list";
+		url = url + "?page=" + page;
+		url = url + "&range=" + range;
+		location.href = url;
+	}
+</script>
+
 <body>
 
 <div class="top">
@@ -97,29 +130,37 @@
 </div>
 <div class="center">
 <table border="1">
-	<tr><td colspan="3" align="center">좋아요 많은 게시물</td></tr>
+	 <%-- <c:forEach var="board3" items="${boardList3}" varStatus="status"> --%>
+	 <c:forEach var="board3" items="${boardList3}" varStatus="loop">
 	<tr align="center">
-	 <c:forEach var="board" items="${boardList}" varStatus="loop">
-		<td width="900" height="140"><img src="http://localhost:8080/resources/img/${board.proFileName}" width="295" height="195"></td>
-	</c:forEach> 
+		<td width="50" height="50">${board3.proNo}</td>
+		<td width="120" height="50"><img src="http://localhost:8080/resources/img/${board3.proFileName}" width="100" height="50"></td>
+		<td width="120" height="50">${board3.proName}</td>
+		<td width="610" height="50">${board3.proText}</td>
+		
+		<!-- jstl줄바꿈 -->
 	</tr>
-	<tr align="center">
-	<c:forEach var="board" items="${boardList}" varStatus="loop">
-		<td width="900" height="30">${board.proName}</td>
-	</c:forEach>
-	</tr>
-	<tr><td colspan="3" align="center">조회수 많은 게시물</td></tr>
-	<tr align="center">
-	 <c:forEach var="board2" items="${boardList2}" varStatus="loop">
-		<td width="900" height="140"><img src="http://localhost:8080/resources/img/${board2.proFileName}" width="295" height="195"></td>
-	</c:forEach> 
-	</tr>
-	<tr align="center">
-	<c:forEach var="board2" items="${boardList2}" varStatus="loop">
-		<td width="900" height="30">${board2.proName}</td>
-	</c:forEach>
-	</tr>
-</table>
+	</c:forEach>	
+	</table>
+	 	        <!-- pagination{s} -->
+
+	<div id="paginationBox">
+		<ul class="pagination">
+			<c:if test="${pagination.prev}">
+				<li class="page-item"><a class="page-link" href="#" onClick="fn_prev('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}')">Previous</a></li>
+			</c:if>				
+			<c:forEach begin="${pagination.startPage}" end="${pagination.endPage+1}" var="idx">
+				<li class="page-item <c:out value="${pagination.page == idx ? 'active' : ''}"/> "><a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.range}', '${pagination.rangeSize}')"> ${idx} </a></li>
+			</c:forEach>
+				
+			<c:if test="${pagination.next}">
+				<li class="page-item"><a class="page-link" href="#" onClick="fn_next('${pagination.range}', 
+				'${pagination.range}', '${pagination.rangeSize}')" >Next</a></li>
+			</c:if>
+		</ul>
+	</div>
+
+	<!-- pagination{e} -->
 </div>
 <div class="right">
 </div>

@@ -5,17 +5,35 @@
 <mapper namespace="boardDAO">
         <select id="list" resultType="ProductVO">
                 SELECT * FROM 
-        	(SELECT * FROM PRODUCTTB ORDER BY PROLIKECNT DESC)<![CDATA[ WHERE ROWNUM <=3]]>   
+        	(SELECT * FROM PRODUCTTB ORDER BY PROLIKECNT DESC nulls last)<![CDATA[ WHERE ROWNUM <=3]]>   
         </select>
         
         <select id="list2" resultType="ProductVO">
                 SELECT * FROM 
-        	(SELECT * FROM PRODUCTTB ORDER BY PROREADCNT DESC)<![CDATA[ WHERE ROWNUM <=3]]>   
+        	(SELECT * FROM PRODUCTTB ORDER BY PROREADCNT DESC nulls last)<![CDATA[ WHERE ROWNUM <=3]]>   
         </select>
         
-        <insert id="insert" parameterType="productVO">
+        <insert id="insert" parameterType="ProductVO">
         	INSERT INTO PRODUCTTB 
         	(PRONO, PRONAME, PROCATE, PROTEXT, PROREGDATE, PROFILENAME) VALUES 
         	(PRODUCTTB_SEQ.nextval, #{proName}, #{proCate}, #{proText}, SYSDATE ,#{proFileName})
         </insert>
+        
+        <select id="list3" resultType="ProductVO">
+      <!-- 
+        SELECT * FROM 
+			(SELECT PRONO, PROFILENAME, PRONAME, PROTEXT FROM PRODUCTTB ORDER BY PRONO DESC nulls last)
+			 -->
+     	SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT PRONO, PROFILENAME, PRONAME, PROTEXT FROM PRODUCTTB ORDER BY PRONO DESC) DATA)
+     	WHERE RNUM <![CDATA[ >= ]]> #{startList} AND RNUM <![CDATA[ <= ]]> #{count}
+        
+     	 </select>
+        
+        <select id="getListCnt" resultType="int">
+		SELECT
+			count(*) as listCnt
+		FROM
+			PRODUCTTB 
+		</select>
+        
 </mapper>

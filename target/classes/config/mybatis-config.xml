@@ -15,5 +15,6 @@
 
 	<typeAliases>
 		<typeAlias alias="ProductVO" type="board.domain.ProductVO" />
+		<typeAlias alias="pagination" type="board.pagination.Pagination"/>
 	</typeAliases>
 </configuration>

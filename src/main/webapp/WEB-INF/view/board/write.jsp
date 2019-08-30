@@ -18,7 +18,7 @@
 <div class="top">
 <div class="top-left">다나옴</div>
 <div class="top-center">
-<div class="top-center-south"><table><tr align="center"><td align="center"><img src="<c:url value="/resources/css/dada.png" />" width="900" height="120"></td></tr></table></div>
+<div class="top-center-south"><table><tr align="center"><td align="center"><img src="<c:url value="/resources/img/dada.png" />" width="900" height="120"></td></tr></table></div>
 <div class="top-center-north" align="center">
 	<input type="text" placeholder="검색어 입력"/>
 	<button type="submit">검색</button></div>
@@ -46,13 +46,13 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Main</a>
+        <a class="nav-link" href="/board/main">Main</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">제품 목록 게시판</a>
+        <a class="nav-link" href="/board/list">제품 목록 게시판</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="#">제품 등록/삭제/수정</a>
+        <a class="nav-link" href="/board/write">제품 등록/삭제/수정</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="#">고객 요청/게시판</a>
@@ -65,9 +65,9 @@
           Dropdown link
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="login/login.jsp">회원가입</a>
-          <a class="dropdown-item" href="login/IdPassword.jsp">로그인</a>
-          <a class="dropdown-item" href="login/reg.jsp">아이디/패스워드 찾기</a>
+          <a class="dropdown-item" href="#">회원가입</a>
+          <a class="dropdown-item" href="#.jsp">로그인</a>
+          <a class="dropdown-item" href="#">아이디/패스워드 찾기</a>
         </div>
       </li>
     </ul>
@@ -108,7 +108,7 @@
 	
 	<tr><td><input type="file" name="proMultipart"></td></tr>
 	
-	<tr><td><input type="submit" value="제품 등록">	
+	<tr><td><input type="submit" value="사진 등록">	
 </table>
 </form>
 </div>
@@ -122,4 +122,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
-</html>

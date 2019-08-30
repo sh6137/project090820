@@ -65,7 +65,7 @@
 	</bean>
 	
 	<bean id="uploadPath" class="java.lang.String">
-		<constructor-arg value="D:\upload"/>
+		<constructor-arg value="E:\국비 자바 오후 최봉규\JSP\eclipse-jee-2019-03-R-win32-x86_64\eclipse\springwork\project090820\src\main\webapp\resources\img"/>
 	</bean>
 	
 </beans>

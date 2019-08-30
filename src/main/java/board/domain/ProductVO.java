@@ -1,6 +1,7 @@
 package board.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import org.apache.ibatis.type.Alias;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,7 +22,7 @@ public class ProductVO {
 	private String proFileSysName;
 	
 	private MultipartFile proMultipart;
-
+	
 	public MultipartFile getProMultipart() {
 		return proMultipart;
 	}
