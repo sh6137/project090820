@@ -34,7 +34,7 @@
               <tr><td>
       &nbsp;&nbsp;&nbsp;닉네임 : </td><td><input type="text" name="membernick" placeholder="Nickname" required/></td></tr> 
               <tr><td>
-      &nbsp;&nbsp;&nbsp;이메일 : </td><td><input type="text" name="memberemail" placeholder="Email" required/></td></tr>
+      &nbsp;&nbsp;&nbsp;이메일 : </td><td><input type="email" name="memberemail" placeholder="Email" required/></td></tr>
               </table>
              
               <table>             

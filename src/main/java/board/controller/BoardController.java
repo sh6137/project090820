@@ -88,13 +88,22 @@ public class BoardController {
 		}
 	
 	@RequestMapping(value="/board/changepassword", method=RequestMethod.POST)
-	public String update(@RequestParam(value="memberpass") String memberpass, HttpSession session, BoardVO boardVO) {
+	public String update(@RequestParam(value="memberpass") String memberpass, String memberemail, String membernick, HttpSession session, BoardVO boardVO) {
 		int rowCount = 0;
 		
 		boardVO = (BoardVO)session.getAttribute("boardVO");
 		System.out.println(boardVO.getMemberpass());
-				
+		System.out.println(boardVO.getMemberemail());
+		System.out.println(boardVO.getMembernick());
 		if(boardVO.getMemberpass().equals(memberpass)) {
+			rowCount = boardService.update(boardVO);
+		}
+		
+		else if(boardVO.getMemberemail().equals(memberemail)) {
+			rowCount = boardService.update(boardVO);
+		}
+		
+		else if(boardVO.getMembernick().equals(membernick)) {
 			rowCount = boardService.update(boardVO);
 		}
 		

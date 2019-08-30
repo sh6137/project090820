@@ -23,7 +23,7 @@
 		</select>
 		
 		<update id="update" parameterType="BoardVO">
-				UPDATE MEMBERTB SET MEMBERPASS = #{memberpass} WHERE MEMBERID = #{memberid}
+				UPDATE MEMBERTB SET MEMBERPASS = #{memberpass}, MEMBEREMAIL = #{memberemail}, MEMBERNICK = #{membernick} WHERE MEMBERID = #{memberid}
 		</update>
 		
 </mapper>

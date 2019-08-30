@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>비밀번호 변경</title>
+<title>회원정보 변경</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/login.css">
@@ -23,11 +23,12 @@
         <div id="form">
           <form action="${pageContext.request.contextPath}/board/changepassword" method="post" >
            <fieldset>
-           <legend>비밀번호 변경</legend>
-                비밀번호를 변경하시겠습니까?<br><br>
-                비밀번호  : <input type="password" name="memberpass" />
-                <input type="submit" value="비밀번호 변경"> <br><br>
-               <a href="<c:url value='/danaom' />">메인으로</a>
+           <legend>회원정보 변경</legend>     
+               비밀번호  : <input type="password" name="memberpass" /> <br><br>
+       	 이메일  : <input type="text" name="memberemail" /> <br><br>
+       	 닉네임  : <input type="text" name="membernick" />  <br><br>  
+               <input type="submit" value="회원정보 변경"> &nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="button" value="메인으로" onclick="location.href='${pageContext.request.contextPath}/danaom'"/>
         </form>
         </fieldset>
         </div>

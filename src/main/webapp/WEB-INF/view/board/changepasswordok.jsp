@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>비밀번호 변경완료!!!</title>
+<title>회원정보 변경완료!!!</title>
 </head>
 <body>
 <div id="loginer" align="center">
 <div id="form">
 <fieldset>
-        <legend>비밀번호 변경완료</legend>
-		<p>비밀번호가 변경 되었습니다.<br></p>
+        <legend>회원정보 변경완료</legend>
+		<p>회원정보가 변경 되었습니다.<br></p>
 <a href="<c:url value="/danaom" />">메인으로</a>
 </fieldset>
 </div>

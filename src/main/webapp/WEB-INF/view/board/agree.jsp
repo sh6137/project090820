@@ -7,6 +7,17 @@
 <meta charset="UTF-8">
 <title>약관 동의</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
+<script>
+function chx(){
+	if(document.checkbox.checked == false){
+		alert("약관에 동의를 하셔야 가입이 가능합니다.");
+		return false;
+	}
+	else{
+	redirect:"${pageContext.request.contextPath}/board/reg";
+	}
+}
+</script>
 </head>
 <body>
 
@@ -105,13 +116,15 @@
 <div class="checkbox_wrap">
 <!-- 웹접근성을 위해 input의 id값과 label의 for값을 동일하게 해주세요.-->
 <!-- 1702 라벨 클릭 시 클래스 on 추가  -->
-<label for="danawa-member-joinStep-checkBox-agree-all" class="lb_chk_box" title="다나옴 회원가입 약관에 모두 동의합니다. 필수 입력 항목"><strong>다나옴 회원가입 약관에 동의합니다.</strong></label>
+<label for="danawa-member-joinStep-checkBox-agree-all" class="lb_chk_box" name="checkbox" title="다나옴 회원가입 약관에 모두 동의합니다. 필수 입력 항목"><strong>다나옴 회원가입 약관에 동의합니다.</strong></label>
 <!--1702 웹접근성 포커스 (Tab키) 이동 시 클래스 focus 추가 탭키 이동 관련 개발 필요 -->
 <input class="input_check focus" type="checkbox" id="danawa-member-joinStep-checkBox-agree-all" title="[체크박스]" required/>
 </div>
 
-<input type="button" value="회원가입하기" onclick="location.href='${pageContext.request.contextPath}/reg'"/>
-<input type="button" value="메인으로" onclick="location.href='${pageContext.request.contextPath}/main'"/>
+<input type="button" value="회원가입하기" onclick="chx()"/>
+<input type="button" value="메인으로" id="button"onclick="location.href='${pageContext.request.contextPath}/main'"/>
+
+
 </fieldset>
 </div>
 </div>

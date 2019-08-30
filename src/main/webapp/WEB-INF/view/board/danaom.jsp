@@ -67,7 +67,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="<c:url value='/logout' />">로그아웃</a>
-          <a class="dropdown-item" href="<c:url value='/changepassword' />">비밀번호 변경</a>
+          <a class="dropdown-item" href="<c:url value='/changepassword' />">회원정보 변경</a>
           <a class="dropdown-item" href="<c:url value='/delete' />">회원탈퇴</a>
         </div>
       </li>
