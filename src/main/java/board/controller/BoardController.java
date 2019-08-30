@@ -40,7 +40,12 @@ public class BoardController {
 //	}
 	
 	@RequestMapping(value = "/product/read")
-	public String proRead() {
+	public String proRead(Model model, @RequestParam String location, 
+			@RequestParam String postNo,
+			@RequestParam(required=false, defaultValue="1") String pageNum) {
+		model.addAttribute("location", location);
+		model.addAttribute("postNo", postNo);
+		model.addAttribute("pageNum", pageNum);
 		return "product/read";
 	}
 
@@ -56,14 +61,25 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/product/reply")
-	public String proReply(Model model, @RequestParam(required=false) String pageNum) {
-		replyPaging.init(productReplyService.list());
-		if(pageNum == null) {
-			pageNum = "1";
+	public String proReply(Model model, 
+			@RequestParam(required=false, defaultValue="1") String pageNum,
+			@RequestParam String location, 
+			@RequestParam String postNo,
+			@RequestParam(required=false) String reText) {
+		System.out.println(reText);
+		String member = "tmpMember";
+		String memberNo = "15";
+		if(reText != null) {
+			int result = productReplyService.insert(location, postNo, reText, member, memberNo);
+			System.out.println(result);
 		}
+		model.addAttribute("location", location);
+		model.addAttribute("postNo", postNo);
+		replyPaging.init(productReplyService.list(location, postNo));
 		model.addAttribute("replyList", replyPaging.paging(Integer.parseInt(pageNum)));
 		model.addAttribute("pageList", replyPaging.getPageList());
 		model.addAttribute("currentPage", pageNum);
+		System.out.println("test");
 		return "product/reply";
 	}
 

@@ -1,5 +1,6 @@
 package product.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -15,7 +16,11 @@ public class ProductReplyDao {
      	 this.sqlSessionTemplate = sqlSessionTemplate;
      }
      
-	 public List<ReplyVO> list() {
-         return sqlSessionTemplate.selectList("productReplyDao.list");
+	 public List<ReplyVO> list(HashMap<String, Object> map) {
+         return sqlSessionTemplate.selectList("productReplyDao.list", map);
+	 }
+	 
+	 public int insert(HashMap<String, Object> map) {
+         return sqlSessionTemplate.insert("productReplyDao.insert", map);
 	 }
 }
