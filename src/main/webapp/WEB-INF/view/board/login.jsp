@@ -33,7 +33,7 @@
               <button type="submit"> 로그인 </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
               
               <a href="IdFind.jsp">| 아이디</a> 혹은 <a href="PasswordFind.jsp">비밀번호</a>를 잊어버리셨습니까? &nbsp;  |  
-              <a href="<c:url value="/agree" />"> 회원 가입 하러 가기 &nbsp; | </a>
+              <a href="<c:url value="/reg" />"> 회원 가입 하러 가기 &nbsp; | </a>
               <a href="<c:url value="/main" />">메인으로</a>
             </fieldset>
           </form>
