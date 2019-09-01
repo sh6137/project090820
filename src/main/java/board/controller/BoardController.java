@@ -40,12 +40,11 @@ public class BoardController {
 //	}
 	
 	@RequestMapping(value = "/product/read")
-	public String proRead(Model model, @RequestParam String location, 
-			@RequestParam String postNo,
-			@RequestParam(required=false, defaultValue="1") String pageNum) {
+	public String proRead(Model model, 
+			@RequestParam String location, 
+			@RequestParam String postNo) {
 		model.addAttribute("location", location);
 		model.addAttribute("postNo", postNo);
-		model.addAttribute("pageNum", pageNum);
 		return "product/read";
 	}
 
@@ -67,12 +66,12 @@ public class BoardController {
 			@RequestParam String postNo,
 			@RequestParam(required=false) String reText) {
 		System.out.println(reText);
-		String member = "tmpMember";
-		String memberNo = "15";
-		if(reText != null) {
-			int result = productReplyService.insert(location, postNo, reText, member, memberNo);
-			System.out.println(result);
-		}
+//		String member = "tmpMember";
+//		String memberNo = "15";
+//		if(reText != null) {
+//			int result = productReplyService.insert(location, postNo, reText, member, memberNo);
+//			System.out.println(result);
+//		}
 		model.addAttribute("location", location);
 		model.addAttribute("postNo", postNo);
 		replyPaging.init(productReplyService.list(location, postNo));

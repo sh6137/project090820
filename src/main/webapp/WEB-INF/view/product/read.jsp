@@ -10,7 +10,7 @@
 	$(document).ready(function(){
 		$.ajax({
 			type : "GET",
-			url : "${pageContext.request.contextPath}/product/reply?location=${location}&postNo=${postNo}&pageNum=${pageNum}",
+			url : "${pageContext.request.contextPath}/product/reply?location=${location}&postNo=${postNo}",
 			dataType : "text",
 			error : function(){
 				alert("통신실패");

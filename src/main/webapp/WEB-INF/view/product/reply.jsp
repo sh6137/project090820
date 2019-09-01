@@ -11,8 +11,8 @@
 	$(document).ready(function(){
 		$("form").on("submit", function(event){
 			event.preventDefault();
-			$("#div1").load("${pageContext.request.contextPath}/product/read?location=${location}&postNo=${postNo}&pageNum=${pageList[pageList.size()-1]}");
-		})
+			$("#div1").load("${pageContext.request.contextPath}/product/reply?location=${location}&postNo=${postNo}&pageNum=${pageList[pageList.size()-1]}&reText=$(\"#reTextId\")");
+		});
 	});
 </script>
 </head>
@@ -29,7 +29,7 @@
 		<script type="text/javascript" charset="utf-8">
 			$(document).ready(function(){
 				$("#pageMove${pageList}").click(function(){
-					$("#div1").load("${pageContext.request.contextPath}/product/read?location=${location}&postNo=${postNo}&pageNum=${pageList}");
+					$("#div1").load("${pageContext.request.contextPath}/product/reply?location=${location}&postNo=${postNo}&pageNum=${pageList}");
 				});
 			});
 		</script>
@@ -39,7 +39,7 @@
 		<script type="text/javascript" charset="utf-8">
 			$(document).ready(function(){
 				$("#pageMove${pageList}").click(function(){
-					$("#div1").load("${pageContext.request.contextPath}/product/read?location=${location}&postNo=${postNo}&pageNum=${pageList}");
+					$("#div1").load("${pageContext.request.contextPath}/product/reply?location=${location}&postNo=${postNo}&pageNum=${pageList}");
 				});
 			});
 		</script>
@@ -48,10 +48,9 @@
 	</c:choose> 
 </c:forEach>
 <form method="post">
-	<input type="text" name="reText" size="50">
+	<input type="text" name="reText" id="reTextId" size="50">
 	<input type="submit" value="댓글 등록"/>
 </form>
 </div>
-${pageList[pageList.size()-1]}
 </body>
 </html>
