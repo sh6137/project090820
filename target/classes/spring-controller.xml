@@ -25,8 +25,8 @@
 	<mvc:view-controller path="/danaom" view-name="/board/danaom"/>
 	<mvc:view-controller path="/delete" view-name="/board/delete"/>
 	<mvc:view-controller path="/deleteok" view-name="/board/deleteok"/>
-	<mvc:view-controller path="/changepassword" view-name="/board/changepassword"/>
-	<mvc:view-controller path="/changepasswordok" view-name="/board/changepasswordok"/>
+	<mvc:view-controller path="/changeinfo" view-name="/board/changeinfo"/>
+	<mvc:view-controller path="/changeinfook" view-name="/board/changeinfook"/>
 	
 	<bean id="boardController" class="board.controller.BoardController">
 		<property name="boardService" ref="boardService" />

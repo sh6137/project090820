@@ -80,14 +80,29 @@ public class BoardController {
 		return "board/deleteok";
 			}
 		}	
+	//아이디 중복 확인 메소드!
+	//닉네임 중복 확인 메소드!
+	//비밀번호 찾기 혹은 확인 메소드!
+	//
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	//비밀번호 변경 요청 처리할 메소드
-	@RequestMapping(value="/board/changepassword", method=RequestMethod.GET)
+	@RequestMapping(value="/board/changeinfo", method=RequestMethod.GET)
 	public String update(){
-				return "board/changepassword";
+				return "board/changeinfo";
 		}
 	
-	@RequestMapping(value="/board/changepassword", method=RequestMethod.POST)
+	@RequestMapping(value="/board/changeinfo", method=RequestMethod.POST)
 	public String update(@RequestParam(value="memberpass") String memberpass, String memberemail, String membernick, HttpSession session, BoardVO boardVO) {
 		int rowCount = 0;
 		
@@ -108,9 +123,9 @@ public class BoardController {
 		}
 		
 		if(rowCount == 0){
-			return "board/changepassword";
+			return "board/changeinfo";
 				}
-		else return "board/changepasswordok";
+		else return "board/changeinfook";
 	}
 }	
 	
