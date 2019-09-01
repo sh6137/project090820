@@ -67,7 +67,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="<c:url value='/logout' />">로그아웃</a>
-          <a class="dropdown-item" href="<c:url value='/changepassword' />">회원정보 변경</a>
+          <a class="dropdown-item" href="<c:url value='/changeinfo' />">회원정보 변경</a>
           <a class="dropdown-item" href="<c:url value='/delete' />">회원탈퇴</a>
         </div>
       </li>
@@ -147,8 +147,8 @@
 	<a href="<c:url value='http://www.nike.com' />" onclick="doCommonStat('MAINMB130101');" data-log-index="9">	
 	<img src="resources/14.jpg" alt="나이키" width="270" height="50"></a>
 	</td></tr>
-	</table>
 	</ul>
+	</table>
 </section>
 
 </div>
