@@ -55,7 +55,7 @@ public class BoardController {
             PrintWriter out = response.getWriter();
             out.println("<script>alert('ID와 비밀번호를 확인하세요!.'); history.go(-1);</script>");
             out.flush();
-			return "redirect:board/login"; //로그인 검증 창으로 리다이렉트 시킨다!
+			return "board/login"; //로그인 검증 창으로 리다이렉트 시킨다!
 		}
 	}
 	

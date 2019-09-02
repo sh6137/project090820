@@ -128,7 +128,7 @@ function CheckForm(name){
 <!-- 1702 라벨 클릭 시 클래스 on 추가  -->
 <label title="다나옴 회원가입 약관에 모두 동의합니다.필수 체크 항목"><strong>다나옴 회원가입 약관에 동의합니다.</strong></label>
 <!--1702 웹접근성 포커스 (Tab키) 이동 시 클래스 focus 추가 탭키 이동 관련 개발 필요 -->
-<input type="checkbox" id="agree" name="checkbox" title="다나옴 회원가입 약관에 모두 동의합니다.필수 체크 항목" required/>
+<input type="radio" id="agree" name="checkbox" title="다나옴 회원가입 약관에 모두 동의합니다.필수 체크 항목" required/>
 </div>
       <!-- 로그인 폼 CSS -->
       <div id="loginer" align="center">

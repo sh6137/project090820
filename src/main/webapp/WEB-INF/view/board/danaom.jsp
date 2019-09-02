@@ -16,9 +16,7 @@
   </head>
 <body>
 
-<script>
-alert('로그인 되었습니다.');
-</script>
+
 
 <div class="top">
 <div class="top-left">다나옴</div>
