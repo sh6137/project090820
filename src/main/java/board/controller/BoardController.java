@@ -44,13 +44,17 @@ public class BoardController {
 		//String memberpass = request.getparameter("memberpass")의 개념이랑 똑같음.
 		String memberpass = boardService.loginCheck(boardVO);
 		if(memberpass.equals(boardVO.getMemberpass())){
-			
 			session.setAttribute("pass", boardVO.getMemberpass());
-			
 			model.addAttribute("boardVO", boardVO); //이것만 설정해두면 세션은 자동으로 설정될듯. 정 모르겠으면 10번 볼것!
 			return "redirect:/danaom"; //로그인 된 창으로 구현!
-		} else 
+		} else {
+//		response.setContentType("text/html; charset=UTF-8");
+//		PrintWriter out = response.getWriter();
+//		out.println("<script>alert('로그인 정보를 확인해주세요.'); history.go(-1);</script>");
+//		out.flush();
+
 			return "redirect:/board/login"; //로그인 검증 창으로 리다이렉트 시킨다!
+		}
 	}
 	
 	//계정 삭제 요청을 처리할 메서드
@@ -59,9 +63,10 @@ public class BoardController {
 			return "board/delete";
 	}
 	@RequestMapping(value="/board/delete", method=RequestMethod.POST)
-	public String delete(@RequestParam(value="memberpass") String memberpass, Model model, HttpSession session){
-	//@RequestParam으로 요청받으면, 밸류값을 받아온다. 그리고 세션객체는 멤버변수에 추가만 해주면 알아서 지정될거임.
-	int rowCount = 0;
+	public String delete(@RequestParam(value="memberpass") String memberpass, Model model, HttpSession session
+			){
+		//@RequestParam으로 요청받으면, 밸류값을 받아온다. 그리고 세션객체는 멤버변수에 추가만 해주면 알아서 지정될거임.
+		int rowCount = 0;
 			
 	BoardVO boardVO = (BoardVO) session.getAttribute("boardVO");
 	System.out.println(boardVO.getMemberpass());
@@ -79,7 +84,8 @@ public class BoardController {
 		session.invalidate();
 		return "board/deleteok";
 			}
-		}	
+	}	
+	
 	//아이디 중복 확인 메소드!
 	//닉네임 중복 확인 메소드!
 	//비밀번호 찾기 혹은 확인 메소드!
@@ -107,9 +113,9 @@ public class BoardController {
 		int rowCount = 0;
 		
 		boardVO = (BoardVO)session.getAttribute("boardVO");
-		System.out.println(boardVO.getMemberpass());
-		System.out.println(boardVO.getMemberemail());
-		System.out.println(boardVO.getMembernick());
+//		System.out.println(boardVO.getMemberpass());
+//		System.out.println(boardVO.getMemberemail());
+//		System.out.println(boardVO.getMembernick());
 		if(boardVO.getMemberpass().equals(memberpass)) {
 			rowCount = boardService.update(boardVO);
 		}

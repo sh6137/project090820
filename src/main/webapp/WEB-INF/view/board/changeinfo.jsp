@@ -22,7 +22,7 @@
       <div id="loginer" align="center">
         <div id="form">
           <form action="${pageContext.request.contextPath}/board/changeinfo" method="post" >
-           <fieldset>
+        <fieldset>
            <legend>회원정보 변경</legend>     
                비밀번호  : <input type="password" name="memberpass" /> <br><br>
        	 이메일  : <input type="text" name="memberemail" /> <br><br>

@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="css/index.css">
 	<link href="<c:url value="/resources/css/Main.css"/>">
 <title>치면 다 나온다!다나옴 로그인</title>
-    
- 
+
 <!-- 링크 색상 없애기 -->
     <style type="text/css">
      a:link { color: black; text-decoration: none;}
