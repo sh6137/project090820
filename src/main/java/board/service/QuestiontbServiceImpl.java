@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import board.dao.QuestiontbDao;
 import board.domain.QuestiontbVO;
 import board.pagination.Pagination;
+import board.pagination.Search;
 
 @Service
 public class QuestiontbServiceImpl implements QuestiontbService {
@@ -22,8 +23,8 @@ public class QuestiontbServiceImpl implements QuestiontbService {
 	}
 	
 	@Override
-	public List<QuestiontbVO> list(Pagination pagination) {
-		return questiontbDao.list(pagination);
+	public List<QuestiontbVO> list(Search search) {
+		return questiontbDao.list(search);
 		
 	}
 
@@ -50,9 +51,9 @@ public class QuestiontbServiceImpl implements QuestiontbService {
 	}
 
 	@Override
-	public int getListCnt() {
+	public int getListCnt(Search search) {
 		// TODO Auto-generated method stub
-		return questiontbDao.getListCnt();
+		return questiontbDao.getListCnt(search);
 	}
 
 	

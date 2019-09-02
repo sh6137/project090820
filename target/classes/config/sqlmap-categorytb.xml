@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="categorytbDAO">
+        <select id="list" resultType="categorytbVO">
+                SELECT * FROM CATEGORYTB
+                ORDER BY CATENO
+        </select>
+        
+        <select id="select" parameterType="int" resultType="categorytbVO">
+                SELECT * FROM
+                CATEGORYTB WHERE CATENO = #{cateNo}
+        </select>
+        
+        <insert id="insert" parameterType="categorytbVO">
+                INSERT INTO CATEGORYTB 
+                (CATENO, CATENAME, CATESUBCATE)
+                VALUES
+                (CATEGORYTB_SEQ.nextval, #{cateName}, #{catesubCate})
+                <selectKey keyProperty="cateNo" resultType="Integer">
+                        SELECT NVL(MAX(cateNo), 0) FROM CATEGORYTB
+                </selectKey>
+        </insert>
+        
+        <update id="update" parameterType="categorytbVO">
+                UPDATE CATEGORYTB SET CATENAME = #{cateName},
+                CATESUBCATE = #{catesubCate}
+                WHERE CATENO = #{cateNo}
+        </update>
+        
+        
+        <delete id="delete" parameterType="categorytbVO">
+                DELETE FROM CATEGORYTB WHERE CATENO = #{cateNo}
+               
+        </delete>
+        
+        <delete id="deleteAll">
+                DELETE FROM CATEGORYTB
+        </delete>
+</mapper>

@@ -4,16 +4,38 @@
 
 <mapper namespace="questiontbDAO">
         <select id="list" resultType="questiontbVO" >
-        <!-- SELECT * FROM QUESTIONTB WHERE ROWNUM <![CDATA[ >= ]]> #{startList} and ROWNUM <![CDATA[ <= ]]> #{listSize} ORDER BY QUENO -->
+       
         
-        
-        SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT * FROM QUESTIONTB ORDER by QUENO DESC) DATA)
-     	WHERE RNUM <![CDATA[ >= ]]> #{startList} AND RNUM <![CDATA[ <= ]]> #{count}
-        
-        
-        
-        <!-- SELECT * FROM QUESTIONTB ORDER BY QUENO 
-         -->
+        <!-- SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT * FROM QUESTIONTB ORDER by QUENO DESC) DATA) -->  
+     	
+		<if test="keyword == null">
+		SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT * FROM QUESTIONTB ORDER by QUENO DESC) DATA)
+		WHERE RNUM <![CDATA[ >= ]]> #{startList} AND RNUM <![CDATA[ <= ]]> #{count}
+		</if>
+		<if test="keyword != null and keyword != '' ">
+			<if test="searchType=='queTitle'">
+				SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT * FROM QUESTIONTB ORDER by QUENO DESC) DATA)
+				WHERE REGEXP_LIKE (QUETITLE, #{keyword})
+				
+			</if>
+			<if test="searchType=='queCategory'">
+				SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT * FROM QUESTIONTB ORDER by QUENO DESC) DATA)
+				WHERE REGEXP_LIKE (QUECATEGORY, #{keyword})
+				
+			</if>
+			<if test="searchType=='queUser'">
+				SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT * FROM QUESTIONTB ORDER by QUENO DESC) DATA)
+				WHERE REGEXP_LIKE (QUEUSER, #{keyword})
+				
+			</if>
+     	</if>
+     	<!--  AND RNUM <![CDATA[ >= ]]> #{startList} AND RNUM <![CDATA[ <= ]]> #{count} -->
+	
+
+			
+
+		<!--  SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT * FROM QUESTIONTB ORDER by QUENO DESC) DATA)  
+     	WHERE RNUM <![CDATA[ >= ]]> #{startList} AND RNUM <![CDATA[ <= ]]> #{count} -->
         </select>
        
         
@@ -22,6 +44,30 @@
 			count(*) as listCnt
 		FROM
 			QUESTIONTB 
+			
+			<if test="keyword != null and keyword != '' ">
+
+			<if test="searchType=='queTitle'">
+
+				WHERE REGEXP_LIKE (QUETITLE, #{keyword})
+
+			</if>
+
+			<if test="searchType=='queUser'">
+
+				WHERE REGEXP_LIKE (QUEUSER, #{keyword})
+
+			</if>
+
+			<if test="searchType=='queCategory'">
+
+				WHERE REGEXP_LIKE (QUECATEGORY, #{keyword})
+
+			</if>
+
+      </if>
+
+			
 		</select>
         
         

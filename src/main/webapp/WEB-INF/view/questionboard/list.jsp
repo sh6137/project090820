@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
         pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,5 +80,22 @@ function fn_prev(page, range, rangeSize) {
 	</div>
 
 	<!-- pagination{e} -->
+	
+	<!--search{s} -->
+	<form:form commandName="questiontbVO" method="POST">
+	<form:select path="searchType">
+		<form:option value="queTitle" label="제목" />
+		<form:option value="queCategory" label="카테고리" />
+		<form:option value="queUser" label="작성자" />
+		<form:input path="keyword" /> 
+	</form:select>
+		<input type="submit" value="검색">
+	
+	</form:form>
+	
+	
+	
+	
+	<!--search{e} -->
 </body>
 </html>

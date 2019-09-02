@@ -34,6 +34,7 @@
 				<value>classpath:config/sqlmap-questiontb.xml</value>
 				<value>classpath:config/sqlmap-requesttb.xml</value>
 				<value>classpath:config/sqlmap-questioncategorytb.xml</value>
+				<value>classpath:config/sqlmap-categorytb.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -73,7 +74,7 @@
 	</bean>
 	
 	
-	<!-- 카테고리 목록 -->
+	<!-- 질문카테고리 목록 -->
 	
 	<bean id="questioncategorytbDao" class="board.dao.QuestioncategorytbDaoMybatis">
 		<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
@@ -86,6 +87,21 @@
 	
 	<bean id="questioncategorytbServiceImpl" class="board.service.QuestioncategorytbServiceImpl">
 		<property name="questioncategorytbDao" ref="questioncategorytbDao"/>
+	</bean>
+	
+	
+	<!-- 카테고리 목록 -->
+	<bean id="categorytbDao" class="board.dao.CategorytbDaoMybatis">
+		<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="categorytbService" class="board.service.CategorytbServiceImpl">
+		<property name="categorytbDao" ref="categorytbDao"/>
+	</bean>
+	
+	<bean id="categorytbServiceImpl" class="board.service.CategorytbServiceImpl">
+		<property name="categorytbDao" ref="categorytbDao"/>
 	</bean>
 	
 	

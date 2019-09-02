@@ -15,5 +15,7 @@
 		<typeAlias alias="requesttbVO" type="board.domain.RequesttbVO" />
 		<typeAlias alias="questioncategorytbVO" type="board.domain.QuestioncategorytbVO"/>
 		<typeAlias alias="pagination" type="board.pagination.Pagination"/>
+		<typeAlias alias="search" type="board.pagination.Search"/>
+		<typeAlias alias="categorytbVO" type="board.domain.CategorytbVO"/>
 	</typeAliases>
 </configuration>

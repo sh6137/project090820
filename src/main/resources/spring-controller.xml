@@ -30,7 +30,9 @@
 		<property name="requesttbService" ref="requesttbServiceImpl" />
 	</bean>
 	
-	
+	<bean id="categorytbController" class="board.controller.CategorytbController">
+		<property name="categorytbService" ref="categorytbServiceImpl"/>
+	</bean>
 	
 	
 </beans>

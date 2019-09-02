@@ -3,12 +3,12 @@ package board.dao;
 import java.util.List;
 
 import board.domain.QuestiontbVO;
-import board.pagination.Pagination;
+import board.pagination.Search;
 
 
 
 public interface QuestiontbDao {
-	public abstract List<QuestiontbVO> list(Pagination pagination);
+	public abstract List<QuestiontbVO> list(Search search);
 	
 	public abstract int delete(QuestiontbVO QuestiontbVO);
 	
@@ -22,6 +22,6 @@ public interface QuestiontbDao {
 	
 	public abstract int updateReadCount(int queno);
 	
-	public abstract int getListCnt();
+	public abstract int getListCnt(Search search);
 }
 

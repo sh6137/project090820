@@ -46,7 +46,7 @@ public class QuestioncategorytbDaoMybatis implements QuestioncategorytbDao {
 
 	@Override
 	public QuestioncategorytbVO select(int quecateNum) {
-		QuestioncategorytbVO vo = (QuestioncategorytbVO) sqlSessionTemplate.selectOne("select", quecateNum);
+		QuestioncategorytbVO vo = (QuestioncategorytbVO) sqlSessionTemplate.selectOne("questioncategorytbDAO.select", quecateNum);
 		return vo;
 	}
 

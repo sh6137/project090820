@@ -17,6 +17,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import board.domain.QuestioncategorytbVO;
 import board.domain.QuestiontbVO;
 import board.pagination.Pagination;
+import board.pagination.Search;
 import board.service.QuestioncategorytbService;
 import board.service.QuestiontbService;
 
@@ -40,6 +41,9 @@ public class QuestiontbController {
 	public String list(Model model, HttpSession session
 			, @RequestParam(required = false, defaultValue = "1") int page
 			, @RequestParam(required = false, defaultValue = "1") int range
+			, @RequestParam(required = false, defaultValue = "title") String searchType
+			, @RequestParam(required = false) String keyword
+			
 			) {
 		
 		/*
@@ -48,19 +52,29 @@ public class QuestiontbController {
 		 * System.out.println(questiontbService.list().get(0).getQueNo());
 		 */
 		
+		Search search = new Search();
+
+		search.setSearchType(searchType);
+
+		search.setKeyword(keyword);
+		System.out.println(searchType);
+		
+		System.out.println(keyword);
 		//전체 게시글 개수
 
-		int listCnt = questiontbService.getListCnt();
+		int listCnt = questiontbService.getListCnt(search);
 		int test = 2;
 		//Pagination 객체생성
 		Pagination pagination = new Pagination();
 		pagination.pageInfo(page, range, listCnt);
-		model.addAttribute("pagination", pagination);
-		System.out.println(questiontbService.list(pagination).size());
+		search.pageInfo(page, range, listCnt);
+
+		model.addAttribute("pagination", search);
+	//	System.out.println(questiontbService.list(pagination).size());
 		
-		
-		model.addAttribute("questiontbList", questiontbService.list(pagination));
-		
+		model.addAttribute("questiontbVO", new QuestiontbVO());
+		model.addAttribute("questiontbList", questiontbService.list(search));
+		System.out.println("list:"+questiontbService.list(search));
 		
 		System.out.println(listCnt);
 		System.out.println("page"+page);

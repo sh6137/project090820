@@ -7,8 +7,10 @@ import org.apache.ibatis.type.Alias;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import board.pagination.Search;
+
 @Alias("QuestiontbVO")
-public class QuestiontbVO {
+public class QuestiontbVO extends Search {
 	private int queNo;
 	
 	@Length(min=2, max=5, message="제목은 2자이상, 5자 미만 입력해야 합니다.")

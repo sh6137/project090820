@@ -6,7 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
 import board.domain.QuestiontbVO;
-import board.pagination.Pagination;;
+import board.pagination.Pagination;
+import board.pagination.Search;;
 
 @Repository
 public class QuestiontbDaoMybatis implements QuestiontbDao {
@@ -22,8 +23,8 @@ public class QuestiontbDaoMybatis implements QuestiontbDao {
         }
 
         @Override
-        public List<QuestiontbVO> list(Pagination pagination) {
-                return sqlSessionTemplate.selectList("questiontbDAO.list", pagination);
+        public List<QuestiontbVO> list(Search search) {
+                return sqlSessionTemplate.selectList("questiontbDAO.list", search);
         }
         @Override
         public int delete(QuestiontbVO QuestiontbVO) {
@@ -52,7 +53,7 @@ public class QuestiontbDaoMybatis implements QuestiontbDao {
         }
 
 		@Override
-		public int getListCnt() {
+		public int getListCnt(Search search) {
 			
 			return sqlSessionTemplate.selectOne("questiontbDAO.getListCnt");
 		}

@@ -2,10 +2,12 @@ package board.pagination;
 
 import org.apache.ibatis.type.Alias;
 
-@Alias("Pagination")
-public class Pagination {
+import board.domain.QuestiontbVO;
 
-	private int listSize = 1;                //초기값으로 목록개수를 10으로 셋팅
+@Alias("Pagination")
+public class Pagination  {
+
+	private int listSize = 5;                //초기값으로 목록개수를 10으로 셋팅
 	private int count;
 	private int rangeSize = 10;            //초기값으로 페이지범위를 10으로 셋팅
 	private int page;
