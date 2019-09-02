@@ -128,7 +128,7 @@ function CheckForm(name){
 <!-- 1702 라벨 클릭 시 클래스 on 추가  -->
 <label title="다나옴 회원가입 약관에 모두 동의합니다.필수 체크 항목"><strong>다나옴 회원가입 약관에 동의합니다.</strong></label>
 <!--1702 웹접근성 포커스 (Tab키) 이동 시 클래스 focus 추가 탭키 이동 관련 개발 필요 -->
-<input type="radio" id="agree" name="checkbox" title="다나옴 회원가입 약관에 모두 동의합니다.필수 체크 항목" required/>
+<input type="checkbox" id="agree" name="checkbox" title="다나옴 회원가입 약관에 모두 동의합니다.필수 체크 항목" required/>
 </div>
       <!-- 로그인 폼 CSS -->
       <div id="loginer" align="center">
@@ -139,11 +139,11 @@ function CheckForm(name){
               <legend>회원 가입</legend> <!-- 이름 , id, password, password1, email, address,   -->
               <table>
 			  <tr><td>
-   	 &nbsp;&nbsp;&nbsp;아이디 : </td><td><input type="text" name="memberid" placeholder="Id" required/>  
+   	 &nbsp;&nbsp;&nbsp;아이디 : </td><td><input type="text" name="memberid" placeholder="Id" required/> <input type="button" value="중복확인" onClick="#"/></td></tr> 
               <tr><td>
      &nbsp;&nbsp;&nbsp;비밀번호 : </td><td><input type="password" name="memberpass" placeholder="Password" required/></td></tr> 
               <tr><td>
-      &nbsp;&nbsp;&nbsp;닉네임 : </td><td><input type="text" name="membernick" placeholder="Nickname" required/></td></tr> 
+      &nbsp;&nbsp;&nbsp;닉네임 : </td><td><input type="text" name="membernick" placeholder="Nickname" required/> <input type="button" value="중복확인" onClick="#"/></td></tr> 
               <tr><td>
       &nbsp;&nbsp;&nbsp;이메일 : </td><td><input type="email" name="memberemail" placeholder="Email" required/></td></tr>
               </table>
