@@ -1,5 +1,8 @@
 package board.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,11 +39,11 @@ public class BoardController {
 	//로그인 체크를 위해 요청 처리
 	@RequestMapping(value="/board/login", method=RequestMethod.GET)
 	public String loginCheck(){
-		return "board/login";
+		return "/login";
 	}
 	
 	@RequestMapping(value="/board/login", method=RequestMethod.POST)
-	public String loginCheck(BoardVO boardVO, Model model,  HttpSession session) {
+	public String loginCheck(BoardVO boardVO, Model model,  HttpSession session, HttpServletResponse response) throws IOException {
 		//String memberpass = request.getparameter("memberpass")의 개념이랑 똑같음.
 		String memberpass = boardService.loginCheck(boardVO);
 		if(memberpass.equals(boardVO.getMemberpass())){
@@ -48,12 +51,11 @@ public class BoardController {
 			model.addAttribute("boardVO", boardVO); //이것만 설정해두면 세션은 자동으로 설정될듯. 정 모르겠으면 10번 볼것!
 			return "redirect:/danaom"; //로그인 된 창으로 구현!
 		} else {
-//		response.setContentType("text/html; charset=UTF-8");
-//		PrintWriter out = response.getWriter();
-//		out.println("<script>alert('로그인 정보를 확인해주세요.'); history.go(-1);</script>");
-//		out.flush();
-
-			return "redirect:/board/login"; //로그인 검증 창으로 리다이렉트 시킨다!
+			response.setContentType("text/html; charset=UTF-8");
+            PrintWriter out = response.getWriter();
+            out.println("<script>alert('ID와 비밀번호를 확인하세요!.'); history.go(-1);</script>");
+            out.flush();
+			return "redirect:board/login"; //로그인 검증 창으로 리다이렉트 시킨다!
 		}
 	}
 	
@@ -86,20 +88,14 @@ public class BoardController {
 			}
 	}	
 	
-	//아이디 중복 확인 메소드!
-	//닉네임 중복 확인 메소드!
-	//비밀번호 찾기 혹은 확인 메소드!
-	//
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+//	//아이디 중복 확인 메소드!
+//	public String idCheck() {}
+//	
+//	//닉네임 중복 확인 메소드!
+//	public String nickCheck() {}
+//	
+//	//비밀번호 찾기 혹은 확인 메소드!
+//	public String findPassword() {}
 	
 	
 	//비밀번호 변경 요청 처리할 메소드
