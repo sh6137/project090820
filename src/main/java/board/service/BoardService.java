@@ -1,6 +1,5 @@
 package board.service;
 
-import java.util.List;
 
 import board.domain.BoardVO;
 
@@ -13,4 +12,8 @@ public interface BoardService {
 	public abstract String loginCheck(BoardVO boardVO);
 	
 	public abstract int update(BoardVO boardVO);
+	
+	public abstract BoardVO idCheck(String memberid);
+	
+	public abstract BoardVO nickCheck(String membernick);
 }

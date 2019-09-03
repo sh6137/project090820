@@ -1,9 +1,6 @@
 package board.service;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
-
 import board.dao.BoardDao;
 import board.domain.BoardVO;
 
@@ -40,5 +37,14 @@ public class BoardServiceImpl implements BoardService {
 		return boardDao.update(boardVO);
 	}
     
+	@Override
+	public BoardVO idCheck(String memberid) {
+		return boardDao.idCheck(memberid);
+	}
+	
+	@Override
+	public BoardVO nickCheck(String membernick) {
+		return boardDao.nickCheck(membernick);
+	}
   
 }

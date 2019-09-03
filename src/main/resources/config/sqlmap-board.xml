@@ -22,6 +22,16 @@
 				SELECT MEMBERPASS FROM MEMBERTB WHERE MEMBERID = #{memberid}
 		</select>
 		
+		<!-- 위의 로그인체크랑 약간 다름! 아이디체크랑 닉네임체크는... -->
+		<select id="idcheck" resultType="BoardVO" parameterType="String">
+				SELECT * FROM MEMBERTB WHERE MEMBERID = #{memberid}
+		</select>
+		
+		<select id="nickcheck" resultType="BoardVO" parameterType="String">
+				SELECT * FROM MEMBERTB WHERE MEMBERNICK = #{membernick}
+		</select>
+		
+		
 		<update id="update" parameterType="BoardVO">
 				UPDATE MEMBERTB SET MEMBERPASS = #{memberpass}, MEMBEREMAIL = #{memberemail}, MEMBERNICK = #{membernick} WHERE MEMBERID = #{memberid}
 		</update>

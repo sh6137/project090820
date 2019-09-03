@@ -129,6 +129,35 @@ public class BoardController {
 				}
 		else return "board/changeinfook";
 	}
+	
+	@RequestMapping(value="/board/idCheck")
+	public String idCheck(Model model, String id) {
+		System.out.println("확인");
+		BoardVO boardVO = boardService.idCheck(id);
+		if(boardVO != null) {
+			model.addAttribute("check", 0);
+		}else {
+			model.addAttribute("check", 1);
+		}
+		model.addAttribute("id", id);
+		
+		return "board/idCheck";
+	}
+	
+	@RequestMapping(value="/board/nickCheck")
+	public String nickCheck(Model model, String nick) {
+		System.out.println("확인");
+		BoardVO boardVO = boardService.nickCheck(nick);
+		if(boardVO != null) {
+			model.addAttribute("check", 0);
+		}else {
+			model.addAttribute("check", 1);
+		}
+		model.addAttribute("nick", nick);
+		
+		return "board/nickCheck";
+	}
+	
 }	
 	
 

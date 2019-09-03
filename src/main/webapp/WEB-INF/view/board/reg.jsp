@@ -11,13 +11,46 @@
     <link rel="stylesheet" href="css/login.css">
     
 <script> 
-function CheckForm(name){ 
-   var chk1;
-   chk1 = document.checkbox.checkbox.checked;
-   if(chk1==""){
-    alert('약관에 동의를 하셔야 가입 됩니다.');
-    return false;
-   } 
+function idCheck(id){
+	if(id == ""){
+		alert("아이디를 입력해주세요");
+		document.name.id.focus();
+	}
+	else{
+		var popWidth = 300;
+		var popHeight = 200;
+		var winHeight = document.body.clientHeight;
+		var winWidth = document.body.clientWidht;
+		var winX = window.screenLeft;
+		var winY = window.screenTop;
+		var popX = winX + (winWidth - popWidth)/2;
+		var popY = winY + (winHeight - popHeight)/2;
+		var url = "board/idCheck?id=" + id;
+		window.open(url, "post",
+				"left="+popX+", top="+popY+", width="+popWidth + ", height="+popHeight);
+	}
+	
+function nickCheck(nick){
+	if(nick ==""){
+		alert("닉네임을 입력해주세요")
+		document.name.nick.focus();
+	}
+	
+	else{
+		var popWidth = 300;
+		var popHeight = 200;
+		var winHeight = document.body.clientHeight;
+		var winWidth = document.body.clientWidht;
+		var winX = window.screenLeft;
+		var winY = window.screenTop;
+		var popX = winX + (winWidth - popWidth)/2;
+		var popY = winY + (winHeight - popHeight)/2;
+		var url = "board/nickCheck?nick=" + nick;
+		window.open(url, "post",
+				"left="+popX+", top="+popY+", width="+popWidth + ", height="+popHeight);
+		}
+	}	
+	
 }
 </script>
 <!-- 링크 색상 없애기 -->
@@ -123,6 +156,7 @@ function CheckForm(name){
 
 </div>
 </div>
+          <form action="${pageContext.request.contextPath}/board/reg" name="name" method="post" >
 <div class="checkbox_wrap">
 <!-- 웹접근성을 위해 input의 id값과 label의 for값을 동일하게 해주세요.-->
 <!-- 1702 라벨 클릭 시 클래스 on 추가  -->
@@ -134,16 +168,15 @@ function CheckForm(name){
       <div id="loginer" align="center">
         <div id="form">
         	<!-- 요청경로의 mapping이 잘 되있어야 함! 매우 중요! -->
-          <form action="${pageContext.request.contextPath}/board/reg" name="name" method="post" >
             <fieldset>
               <legend>회원 가입</legend> <!-- 이름 , id, password, password1, email, address,   -->
               <table>
 			  <tr><td>
-   	 &nbsp;&nbsp;&nbsp;아이디 : </td><td><input type="text" name="memberid" placeholder="Id" required/> <input type="button" value="중복확인" onClick="#"/></td></tr> 
+   	 &nbsp;&nbsp;&nbsp;아이디 : </td><td><input type="text" name="memberid" placeholder="Id" required/> <input type="button" value="중복확인" onClick="idCheck(this.form.memberid.value) "/></td></tr> 
               <tr><td>
      &nbsp;&nbsp;&nbsp;비밀번호 : </td><td><input type="password" name="memberpass" placeholder="Password" required/></td></tr> 
               <tr><td>
-      &nbsp;&nbsp;&nbsp;닉네임 : </td><td><input type="text" name="membernick" placeholder="Nickname" required/> <input type="button" value="중복확인" onClick="#"/></td></tr> 
+      &nbsp;&nbsp;&nbsp;닉네임 : </td><td><input type="text" name="membernick" placeholder="Nickname" required/> <input type="button" value="중복확인" onClick="nickCheck(this.form.membernick.value) "/></td></tr> 
               <tr><td>
       &nbsp;&nbsp;&nbsp;이메일 : </td><td><input type="email" name="memberemail" placeholder="Email" required/></td></tr>
               </table>
@@ -172,9 +205,9 @@ function CheckForm(name){
               </table>
               
             </fieldset>
-          </form>
         </div>
       </div>
+          </form>
  
       <!-- 하단 -->
       <div id="footer">

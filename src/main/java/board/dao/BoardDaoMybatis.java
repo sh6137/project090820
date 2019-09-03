@@ -39,5 +39,13 @@ public class BoardDaoMybatis implements BoardDao {
 			return sqlSessionTemplate.update("update", boardVO);
 		}
         
+        @Override
+        public BoardVO idCheck(String memberid) {
+        	return sqlSessionTemplate.selectOne("idcheck", memberid);
+        }
         
+        @Override
+        public BoardVO nickCheck(String membernick) {
+        	return sqlSessionTemplate.selectOne("nickcheck", membernick);
+        }
 }

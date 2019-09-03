@@ -16,7 +16,7 @@
 		<mvc:jsp prefix="/WEB-INF/view/"/>
 	</mvc:view-resolvers>
 	
-	<!-- 뷰 컨트롤러! 프로젝트 경로 설정  JSP파일 설정!--> 
+	<!-- 뷰 컨트롤러! 프로젝트 경로 설정  JSP파일 설정! 왼쪽으로 설정해두면 뷰네임으로 간다.--> 
 	<mvc:view-controller path="/main" view-name="/board/main"/>
 	<mvc:view-controller path="/login" view-name="/board/login"/>
 	<mvc:view-controller path="/logout" view-name="/board/logout"/>
@@ -27,8 +27,11 @@
 	<mvc:view-controller path="/deleteok" view-name="/board/deleteok"/>
 	<mvc:view-controller path="/changeinfo" view-name="/board/changeinfo"/>
 	<mvc:view-controller path="/changeinfook" view-name="/board/changeinfook"/>
+	<mvc:view-controller path="/idCheck" view-name="/board/idCheck"/>
+	<mvc:view-controller path="/nickCheck" view-name="/board/nickCheck"/>
 	
 	<bean id="boardController" class="board.controller.BoardController">
+	
 		<property name="boardService" ref="boardService" />
 	</bean>
 	
