@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/login.css">
     
 <script> 
-function idCheck(id){
+ function idCheck(id){
 	if(id == ""){
 		alert("아이디를 입력해주세요");
 		document.name.id.focus();
@@ -28,11 +28,11 @@ function idCheck(id){
 		var url = "board/idCheck?id=" + id;
 		window.open(url, "post",
 				"left="+popX+", top="+popY+", width="+popWidth + ", height="+popHeight);
-	}
-	
+	} 
+ }
 function nickCheck(nick){
 	if(nick ==""){
-		alert("닉네임을 입력해주세요")
+		alert("닉네임을 입력해주세요");
 		document.name.nick.focus();
 	}
 	
@@ -51,7 +51,6 @@ function nickCheck(nick){
 		}
 	}	
 	
-}
 </script>
 <!-- 링크 색상 없애기 -->
     <style type="text/css">
