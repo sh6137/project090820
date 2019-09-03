@@ -27,19 +27,19 @@ public class BoardController {
 	@RequestMapping(value="/board/reg", method=RequestMethod.GET)
 	public String insert(Model model){
 		model.addAttribute("insert", new BoardVO());
-		return "/reg";
+		return "board/reg";
 	}
 	
 	@RequestMapping(value="/board/reg", method=RequestMethod.POST)
 	public String insert(BoardVO BoardVO){
 		boardService.insert(BoardVO);
-		return "redirect:/regok";
+		return "board/regok";
 	}
 	
 	//로그인 체크를 위해 요청 처리
 	@RequestMapping(value="/board/login", method=RequestMethod.GET)
 	public String loginCheck(){
-		return "/login";
+		return "board/login";
 	}
 	
 	@RequestMapping(value="/board/login", method=RequestMethod.POST)
@@ -49,7 +49,7 @@ public class BoardController {
 		if(memberpass.equals(boardVO.getMemberpass())){
 			session.setAttribute("pass", boardVO.getMemberpass());
 			model.addAttribute("boardVO", boardVO); //이것만 설정해두면 세션은 자동으로 설정될듯. 정 모르겠으면 10번 볼것!
-			return "redirect:/danaom"; //로그인 된 창으로 구현!
+			return "board/danaom"; //로그인 된 창으로 구현! //redirect:board/danaom
 		} else {
 			response.setContentType("text/html; charset=UTF-8");
             PrintWriter out = response.getWriter();

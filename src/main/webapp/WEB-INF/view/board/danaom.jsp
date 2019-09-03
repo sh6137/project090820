@@ -34,7 +34,8 @@
 <td width="120" height="100"><a class="btn btn-iight" href="<c:url value="/logout" />" role="button"><span style="font-size:13pt">로 그 아 웃</span></a></td>
 </tr> 
 
-</table></div>
+</table>
+</div>
 </div>
 
 <div class="top-middle">
@@ -68,9 +69,9 @@
           Dropdown link
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="<c:url value='/logout' />">로그아웃</a>
-          <a class="dropdown-item" href="<c:url value='/changeinfo' />">회원정보 변경</a>
-          <a class="dropdown-item" href="<c:url value='/delete' />">회원탈퇴</a>
+          <a class="dropdown-item" href="<c:url value="board/logout" />">로그아웃</a>
+          <a class="dropdown-item" href="<c:url value="board/changeinfo" />">회원정보 변경</a>
+          <a class="dropdown-item" href="<c:url value="board/delete" />">회원탈퇴</a>
         </div>
       </li>
     </ul>

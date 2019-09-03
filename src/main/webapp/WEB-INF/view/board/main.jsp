@@ -97,7 +97,11 @@
         <a href="#" class="list-group-item list-group-item-action bg-light">사무,취미,게임</a>
       </div>
 </div>
-<div class="center">center</div>
+<div class="center">center
+
+
+
+</div>
 <div class="right">
 
 <section class="main_partner_v2" id="main_brandAd" data-log-actionid-area="main_partner" data-log-actionid-label="btn" data-is-ab-send="5">

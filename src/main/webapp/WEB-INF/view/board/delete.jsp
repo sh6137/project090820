@@ -27,9 +27,9 @@
                 계정을 삭제하시겠습니까?<br>
                 비밀번호  : <input type="password" name="memberpass" />
                 <input type="submit" value="삭제"> <br>
-               <a href="<c:url value='/danaom' />">메인으로</a>
-        </form>
+               <a href="<c:url value="board/danaom" />">메인으로</a>
         </fieldset>
+        </form>
         </div>
       </div>
  
