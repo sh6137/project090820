@@ -16,7 +16,7 @@
 				alert("통신실패");
 			},
 			success : function(data){
-				$("#Reply_Area").html(data);
+				$("#replyArea").html(data);
 			}
 		});
 	});
@@ -24,7 +24,7 @@
 </head>
 <body>
 test
-	<div id="Reply_Area"></div>
+	<div id="replyArea"></div>
 test
 </body>
 </html>

@@ -8,12 +8,33 @@
 <title>reply</title>
 <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" charset="utf-8">
-	$(document).ready(function(){
-		$("form").on("submit", function(event){
-			event.preventDefault();
-			$("#div1").load("${pageContext.request.contextPath}/product/reply?location=${location}&postNo=${postNo}&pageNum=${pageList[pageList.size()-1]}&reText=$(\"#reTextId\")");
-		});
+	$('input[type="text"]').keydown(function() {
+	  if (event.keyCode == 13) {
+	    event.preventDefault();
+	    send();
+	  };
 	});
+
+	function send(){
+		if(document.getElementsByName('reText')[0].value == ""){
+			alert("내용을 입력하세요!");
+			return false;
+		}
+		var formData = $("#form1").serialize();
+		/* if(document.()) */
+		$.ajax({
+			type : "POST",
+			url : "${pageContext.request.contextPath}/product/reply?location=${location}&postNo=${postNo}&pageNum=${pageList[pageList.size()-1]}",
+			data : formData,
+			dataType : "text",
+			error : function(){
+				alert("통신실패2");
+			},
+			success : function(data){
+				$("#div1").html(data);
+			}
+		});
+	}
 </script>
 </head>
 <body>
@@ -47,9 +68,9 @@
 	</c:otherwise>
 	</c:choose> 
 </c:forEach>
-<form method="post">
-	<input type="text" name="reText" id="reTextId" size="50">
-	<input type="submit" value="댓글 등록"/>
+<form method="post" id="form1" onsubmit="return false">
+	<input type="text" name="reText" size="50"/>
+	<input type="button" value="댓글 등록" onclick="send();"/>
 </form>
 </div>
 </body>
