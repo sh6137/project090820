@@ -13,7 +13,7 @@
 <fieldset>
         <legend>회원정보 변경완료</legend>
 		<p>회원정보가 변경 되었습니다.<br></p>
-<a href="<c:url value="/danaom" />">메인으로</a>
+<a href="<c:url value="/board/danaom" />">메인으로</a>
 </fieldset>
 </div>
 </div>

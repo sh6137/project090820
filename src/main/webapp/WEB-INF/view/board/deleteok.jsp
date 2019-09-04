@@ -17,7 +17,7 @@
 	<p>회원정보가 삭제 되었습니다.<br></p>
 	<p>이용해주셔서 감사합니다. <br></p>
 
-<a href="<c:url value="/main" />">메인으로</a>
+<a href="<c:url value="/board/main" />">메인으로</a>
 </fieldset>
 </div>
 </div>

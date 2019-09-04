@@ -17,7 +17,9 @@
 	</mvc:view-resolvers>
 	
 	<!-- 뷰 컨트롤러! 프로젝트 경로 설정  JSP파일 설정! 왼쪽으로 설정해두면 뷰네임으로 간다.--> 
+	
 	<mvc:view-controller path="/board/main" view-name="/board/main"/>
+	<mvc:view-controller path="/board/danaom" view-name="/board/danaom"/>
 	<mvc:view-controller path="/board/login" view-name="/board/login"/>
 	<mvc:view-controller path="/board/logout" view-name="/board/logout"/>
 	<mvc:view-controller path="/board/reg" view-name="/board/reg"/>
@@ -29,6 +31,7 @@
 	<mvc:view-controller path="/board/changeinfook" view-name="/board/changeinfook"/>
 	<mvc:view-controller path="/board/idCheck" view-name="/board/idCheck"/>
 	<mvc:view-controller path="/board/nickCheck" view-name="/board/nickCheck"/>
+	
 	
 	<bean id="boardController" class="board.controller.BoardController">
 	

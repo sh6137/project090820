@@ -24,8 +24,8 @@
 		<fieldset> 
               <legend>회원등록완료</legend> 
               	    회원 가입이 완료 되었습니다. <br><br>
-              <a href="<c:url value='/main' />">메인으로</a> &nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="<c:url value='/login' />">로그인하기</a>
+              <a href="<c:url value="/board/main" />">메인으로</a> &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="<c:url value="/board/login" />">로그인하기</a>
 		</fieldset>
 </div>
 </div>

@@ -25,7 +25,7 @@
 		var winY = window.screenTop;
 		var popX = winX + (winWidth - popWidth)/2;
 		var popY = winY + (winHeight - popHeight)/2;
-		var url = "board/idCheck?id=" + id;
+		var url = "/board/idCheck?id=" + id;
 		window.open(url, "post",
 				"left="+popX+", top="+popY+", width="+popWidth + ", height="+popHeight);
 	} 
@@ -45,7 +45,7 @@ function nickCheck(nick){
 		var winY = window.screenTop;
 		var popX = winX + (winWidth - popWidth)/2;
 		var popY = winY + (winHeight - popHeight)/2;
-		var url = "board/nickCheck?nick=" + nick;
+		var url = "/board/nickCheck?nick=" + nick;
 		window.open(url, "post",
 				"left="+popX+", top="+popY+", width="+popWidth + ", height="+popHeight);
 		}
@@ -199,7 +199,7 @@ function nickCheck(nick){
               <tr><td>
               <button type="submit">회원 가입</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <button type="reset">다시 입력</button>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="button" value="메인으로" onclick="location.href='${pageContext.request.contextPath}/main'"/>
+              <input type="button" value="메인으로" onclick="location.href='${pageContext.request.contextPath}/board/main'"/>
               </td></tr>
               </table>
               

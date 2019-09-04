@@ -27,19 +27,19 @@ public class BoardController {
 	@RequestMapping(value="/board/reg", method=RequestMethod.GET)
 	public String insert(Model model){
 		model.addAttribute("insert", new BoardVO());
-		return "board/reg";
+		return "/board/reg";
 	}
 	
 	@RequestMapping(value="/board/reg", method=RequestMethod.POST)
 	public String insert(BoardVO BoardVO){
 		boardService.insert(BoardVO);
-		return "board/regok";
+		return "/board/regok";
 	}
 	
 	//로그인 체크를 위해 요청 처리
 	@RequestMapping(value="/board/login", method=RequestMethod.GET)
 	public String loginCheck(){
-		return "board/login";
+		return "/board/login";
 	}
 	
 	@RequestMapping(value="/board/login", method=RequestMethod.POST)
@@ -49,20 +49,20 @@ public class BoardController {
 		if(memberpass.equals(boardVO.getMemberpass())){
 			session.setAttribute("pass", boardVO.getMemberpass());
 			model.addAttribute("boardVO", boardVO); //이것만 설정해두면 세션은 자동으로 설정될듯. 정 모르겠으면 10번 볼것!
-			return "board/danaom"; //로그인 된 창으로 구현! //redirect:board/danaom
+			return "/board/danaom"; //로그인 된 창으로 구현! //redirect:board/danaom
 		} else {
 			response.setContentType("text/html; charset=UTF-8");
             PrintWriter out = response.getWriter();
             out.println("<script>alert('ID와 비밀번호를 확인하세요!.'); history.go(-1);</script>");
             out.flush();
-			return "board/login"; //로그인 검증 창으로 리다이렉트 시킨다!
+			return "/board/login"; //로그인 검증 창으로 리다이렉트 시킨다!
 		}
 	}
 	
 	//계정 삭제 요청을 처리할 메서드
 	@RequestMapping(value="/board/delete", method=RequestMethod.GET)
 	public String delete(){
-			return "board/delete";
+			return "/board/delete";
 	}
 	@RequestMapping(value="/board/delete", method=RequestMethod.POST)
 	public String delete(@RequestParam(value="memberpass") String memberpass, Model model, HttpSession session
@@ -80,11 +80,11 @@ public class BoardController {
 	if(rowCount == 0){
 //		model.addAttribute("memberid", );
 //		model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
-		return "board/delete";
+		return "/board/delete";
 			}
 	else{
 		session.invalidate();
-		return "board/deleteok";
+		return "/board/deleteok";
 			}
 	}	
 	
@@ -101,7 +101,7 @@ public class BoardController {
 	//비밀번호 변경 요청 처리할 메소드
 	@RequestMapping(value="/board/changeinfo", method=RequestMethod.GET)
 	public String update(){
-				return "board/changeinfo";
+				return "/board/changeinfo";
 		}
 	
 	@RequestMapping(value="/board/changeinfo", method=RequestMethod.POST)
@@ -125,9 +125,9 @@ public class BoardController {
 		}
 		
 		if(rowCount == 0){
-			return "board/changeinfo";
+			return "/board/changeinfo";
 				}
-		else return "board/changeinfook";
+		else return "/board/changeinfook";
 	}
 	
 	@RequestMapping(value="/board/idCheck")
@@ -141,7 +141,7 @@ public class BoardController {
 		}
 		model.addAttribute("id", id);
 		
-		return "board/idCheck";
+		return "/board/idCheck";
 	}
 	
 	@RequestMapping(value="/board/nickCheck")
@@ -155,7 +155,7 @@ public class BoardController {
 		}
 		model.addAttribute("nick", nick);
 		
-		return "board/nickCheck";
+		return "/board/nickCheck";
 	}
 	
 }	
