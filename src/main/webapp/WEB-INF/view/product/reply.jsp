@@ -24,7 +24,7 @@
 		/* if(document.()) */
 		$.ajax({
 			type : "POST",
-			url : "${pageContext.request.contextPath}/product/reply?location=${location}&postNo=${postNo}&pageNum=${pageList[pageList.size()-1]}",
+			url : "${pageContext.request.contextPath}/product/reply?location=${location}&postNo=${postNo}",
 			data : formData,
 			dataType : "text",
 			error : function(){
@@ -34,6 +34,9 @@
 				$("#div1").html(data);
 			}
 		});
+		if(${result} != 1){
+			alert("댓글 등록 실패");
+		}
 	}
 </script>
 </head>

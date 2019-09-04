@@ -1,6 +1,7 @@
 package reply.paging;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import board.domain.ReplyVO;
@@ -13,12 +14,13 @@ public class ReplyPaging {
 	public void init(List<ReplyVO> voList){ //DB에서 받아온 댓글 리스트에 번호 재 부여, 페이지 수 결정
 		this.voList = voList;
 		pageList = new ArrayList<Integer>();
-		int size = this.voList.size();
-		for(int i = 0; i < size; i++) {
+		int listSize = this.voList.size();
+		for(int i = 0; i < listSize; i++) {
 			ReplyVO tmp = this.voList.get(i);
 			tmp.setReNo(i + 1);
 		}
-		for(int i = 0; i <= voList.size() / pageSize; i++) {
+		Collections.reverse(this.voList);
+		for(int i = 0; i <= listSize / pageSize; i++) {
 			pageList.add(i, i+1);
 		}
 		if(voList.size() % pageSize == 0) {		//댓글 수가 페이지 크기로 나누어 떨어지면 마지막 페이지 삭제

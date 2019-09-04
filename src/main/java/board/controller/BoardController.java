@@ -68,10 +68,12 @@ public class BoardController {
 		System.out.println(reText);
 		String member = "tmpMember";
 		String memberNo = "15";
+		int result = 1;
 		if(reText != null) {
-			int result = productReplyService.insert(location, postNo, reText, member, memberNo);
+			result = productReplyService.insert(location, postNo, reText, member, memberNo);
 			System.out.println(result);
 		}
+		model.addAttribute("result", result);
 		model.addAttribute("location", location);
 		model.addAttribute("postNo", postNo);
 		replyPaging.init(productReplyService.list(location, postNo));
