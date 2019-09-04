@@ -25,7 +25,7 @@
 		var winY = window.screenTop;
 		var popX = winX + (winWidth - popWidth)/2;
 		var popY = winY + (winHeight - popHeight)/2;
-		var url = "/board/idCheck?id=" + id;
+		var url = "${pageContext.request.contextPath}/board/idCheck?id=" + id;
 		window.open(url, "post",
 				"left="+popX+", top="+popY+", width="+popWidth + ", height="+popHeight);
 	} 
@@ -45,7 +45,7 @@ function nickCheck(nick){
 		var winY = window.screenTop;
 		var popX = winX + (winWidth - popWidth)/2;
 		var popY = winY + (winHeight - popHeight)/2;
-		var url = "/board/nickCheck?nick=" + nick;
+		var url = "${pageContext.request.contextPath}/board/nickCheck?nick=" + nick;
 		window.open(url, "post",
 				"left="+popX+", top="+popY+", width="+popWidth + ", height="+popHeight);
 		}

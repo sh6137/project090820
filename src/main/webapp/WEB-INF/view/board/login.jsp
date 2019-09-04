@@ -4,6 +4,16 @@
 
 <html>
 <head>
+
+<script>
+function re(){
+	if(${re}==0){
+		alert("test");
+	}
+}
+
+</script>
+
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/index.css">
@@ -42,5 +52,6 @@
       <div id="footer">
         <p align="center">&copy; Copyright 2019 By son DANAOM</p>
       </div>
+      <script> re(); </script>
   </body>
 </html>

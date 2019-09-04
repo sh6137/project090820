@@ -19,7 +19,7 @@
         
         <!-- select를 써야함! -->
 		<select id="logincheck" resultType="String" parameterType="BoardVO">
-				SELECT MEMBERPASS FROM MEMBERTB WHERE MEMBERID = #{memberid}
+				 SELECT MEMBERPASS FROM MEMBERTB WHERE MEMBERID = #{memberid}
 		</select>
 		
 		<!-- 위의 로그인체크랑 약간 다름! 아이디체크랑 닉네임체크는... -->

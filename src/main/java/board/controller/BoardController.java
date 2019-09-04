@@ -46,17 +46,26 @@ public class BoardController {
 	public String loginCheck(BoardVO boardVO, Model model,  HttpSession session, HttpServletResponse response) throws IOException {
 		//String memberpass = request.getparameter("memberpass")의 개념이랑 똑같음.
 		String memberpass = boardService.loginCheck(boardVO);
-		if(memberpass.equals(boardVO.getMemberpass())){
-			session.setAttribute("pass", boardVO.getMemberpass());
-			model.addAttribute("boardVO", boardVO); //이것만 설정해두면 세션은 자동으로 설정될듯. 정 모르겠으면 10번 볼것!
-			return "/board/danaom"; //로그인 된 창으로 구현! //redirect:board/danaom
-		} else {
-			response.setContentType("text/html; charset=UTF-8");
-            PrintWriter out = response.getWriter();
-            out.println("<script>alert('ID와 비밀번호를 확인하세요!.'); history.go(-1);</script>");
-            out.flush();
-			return "/board/login"; //로그인 검증 창으로 리다이렉트 시킨다!
+		int re = 1;
+		if(memberpass == null) {
+			re = 0;
 		}
+		model.addAttribute("re", re);
+		if(memberpass != null) {
+			if(memberpass.equals(boardVO.getMemberpass())){
+				session.setAttribute("pass", boardVO.getMemberpass());
+				model.addAttribute("boardVO", boardVO); //이것만 설정해두면 세션은 자동으로 설정될듯. 정 모르겠으면 10번 볼것!
+				return "/board/danaom"; //로그인 된 창으로 구현! //redirect:board/danaom
+			} 
+			else {
+				response.setContentType("text/html; charset=UTF-8");
+				PrintWriter out = response.getWriter();
+				out.println("<script>alert('ID와 비밀번호를 확인하세요!.'); history.go(-1);</script>");
+				out.flush();
+				return "/board/login"; //로그인 검증 창으로 리다이렉트 시킨다!
+			}	
+		}
+		return "/board/login";
 	}
 	
 	//계정 삭제 요청을 처리할 메서드
