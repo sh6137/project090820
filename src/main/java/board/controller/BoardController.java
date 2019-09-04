@@ -46,11 +46,14 @@ public class BoardController {
 	public String loginCheck(BoardVO boardVO, Model model,  HttpSession session, HttpServletResponse response) throws IOException {
 		//String memberpass = request.getparameter("memberpass")의 개념이랑 똑같음.
 		String memberpass = boardService.loginCheck(boardVO);
+		
 		int re = 1;
 		if(memberpass == null) {
 			re = 0;
 		}
+		
 		model.addAttribute("re", re);
+		
 		if(memberpass != null) {
 			if(memberpass.equals(boardVO.getMemberpass())){
 				session.setAttribute("pass", boardVO.getMemberpass());
