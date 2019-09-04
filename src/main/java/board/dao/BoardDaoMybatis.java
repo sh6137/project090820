@@ -1,7 +1,5 @@
 package board.dao;
 
-import java.util.List;
-
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -19,7 +17,9 @@ public class BoardDaoMybatis implements BoardDao {
         public void setSqlMapClient(SqlSessionTemplate sqlSessionTemplate) {
                 this.sqlSessionTemplate = sqlSessionTemplate;
         }
-
+        
+        //메서드 재정의 하고 sqlsession선언! sqlsession의 자체 객체가 있으면 그거 써서 sql-쿼리문에다가 맵핑 
+        
         @Override
         public int delete(BoardVO boardVO) {
                 return sqlSessionTemplate.delete("delete", boardVO);

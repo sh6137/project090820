@@ -7,25 +7,16 @@ import org.apache.ibatis.type.Alias;
 @Alias("BoardVO")
 public class BoardVO {
         
-	/*
-	 * @Length(min=2, max=5, message="제목은 2자 이상, 5자 미만 입력해야 합니다.") 
-	 * private String title;
-	 * 
-	 * @NotEmpty(message="내용을 입력하세요.") 
-	 * private String content;
-	 * 
-	 * @NotEmpty(message="작성자를 입력하세요.") 
-	 * private String writer;
-	 */
+	//테이블의 변수 선언!
 	
 	private int memberno; 			 //1.회원번호
 	private String memberid;		 //2.아이디
 	private String memberpass;		 //3.비밀번호
 	private String membernick;		 //4.닉네임
-	private String memberemail;	 //5.이메일
+	private String memberemail;	 	 //5.이메일
 	private String membergender;	 //6.성별
 	private int memberbirth;		 //7.생년월일
-	private Timestamp memberregdt; //8.가입일
+	private Timestamp memberregdt; 	 //8.가입일
 	private int memberadmin;		 //9.운영자여부(기본 0)
 	private String memberlike;		 //10.좋아요한 제품
 	

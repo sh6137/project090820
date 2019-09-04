@@ -8,7 +8,7 @@
 <script>
 function re(){
 	if(${re}==0){
-		alert("test");
+		alert("ID와 패스워드를 확인하세요!");
 	}
 }
 

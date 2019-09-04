@@ -16,6 +16,7 @@ public class BoardServiceImpl implements BoardService {
 		this.boardDao = boardDao;
 	}
    
+	//추상메서드 선언하고 반환도 같이 할것!
 	
     @Override
 	public int delete(BoardVO boardVO) {

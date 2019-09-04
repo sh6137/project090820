@@ -1,9 +1,8 @@
 package board.dao;
 
-import java.util.List;
-
 import board.domain.BoardVO;
 
+//메서드 선언!
 public interface BoardDao {
 
 	public abstract int delete(BoardVO boardVO);
