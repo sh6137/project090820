@@ -1,11 +1,14 @@
 package board.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
-import board.domain.BoardVO;
+import board.domain.ProductVO;
+import board.pagination.Pagination;
 
 @Repository
 public class BoardDaoMybatis implements BoardDao {
@@ -20,34 +23,33 @@ public class BoardDaoMybatis implements BoardDao {
                 this.sqlSessionTemplate = sqlSessionTemplate;
         }
 
-        @Override
-        public List<BoardVO> list() {
-                return sqlSessionTemplate.selectList("list");
-        }
-        @Override
-        public int delete(BoardVO boardVO) {
-                return sqlSessionTemplate.delete("delete", boardVO);
-        }
-        @Override
-        public int deleteAll() {
-                return sqlSessionTemplate.delete("deleteAll");
-        }
-        @Override
-        public int update(BoardVO boardVO) {
-                return sqlSessionTemplate.update("update", boardVO);
-        }
-        @Override
-        public void insert(BoardVO boardVO) {
-                sqlSessionTemplate.insert("insert", boardVO);
-        }
-        @Override
-        public BoardVO select(int seq) {
-                BoardVO vo = (BoardVO) sqlSessionTemplate.selectOne("select", seq);
-                return vo;
-        }
-        @Override
-        public int updateReadCount(int seq) {
-                return sqlSessionTemplate.update("updateCount", seq);
-        }
+		@Override
+		public List<ProductVO> list() {
+			// TODO Auto-generated method stub
+			//selectList, insert등은 sqlSessionTemplate의 내장메서드
+			return sqlSessionTemplate.selectList("boardDAO.list");
+		}
+		
+		@Override
+		public List<ProductVO> list2() {
+			// TODO Auto-generated method stub
+			return sqlSessionTemplate.selectList("boardDAO.list2");
+		}
+
+		@Override
+		public void insert(ProductVO productVO) {
+			sqlSessionTemplate.insert("boardDAO.insert", productVO);
+		}
+
+		@Override
+		public List<ProductVO> list3(Pagination pagination) {
+			// TODO Auto-generated method stub
+			return sqlSessionTemplate.selectList("boardDAO.list3", pagination);
+		}
+
+		@Override
+		public int getListCnt() {
+			return sqlSessionTemplate.selectOne("boardDAO.getListCnt");
+		}
 
 }

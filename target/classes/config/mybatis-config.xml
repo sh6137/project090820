@@ -8,9 +8,14 @@
 		<setting name="cacheEnabled" value="false" />
 		<setting name="useGeneratedKeys" value="false" />
 		<setting name="mapUnderscoreToCamelCase" value="true" />
+		
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		<!-- 부적합한 열 유형:1111 해결방법 -->
 	</settings>
 
 	<typeAliases>
 		<typeAlias alias="replyVO" type="board.domain.ReplyVO" />
+		<typeAlias alias="ProductVO" type="board.domain.ProductVO" />
+		<typeAlias alias="pagination" type="board.pagination.Pagination"/>
 	</typeAliases>
 </configuration>

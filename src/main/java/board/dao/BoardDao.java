@@ -2,20 +2,22 @@ package board.dao;
 
 import java.util.List;
 
-import board.domain.BoardVO;
+import board.domain.ProductVO;
+import board.pagination.Pagination;
 
 public interface BoardDao {
-	public abstract List<BoardVO> list();
 	
-	public abstract int delete(BoardVO boardVO);
+	//조회수
+	public abstract List<ProductVO> list();
 	
-	public abstract int deleteAll();
+	//좋아요
+	public abstract List<ProductVO> list2();
 	
-	public abstract int update(BoardVO boardVO);
+	public abstract void insert(ProductVO productVO);
 	
-	public abstract void insert(BoardVO boardVO);
+	//제품목록
+	public abstract List<ProductVO> list3(Pagination pagination);
 	
-	public abstract BoardVO select(int seq);
-	
-	public abstract int updateReadCount(int seq);
+	public abstract int getListCnt();
+
 }

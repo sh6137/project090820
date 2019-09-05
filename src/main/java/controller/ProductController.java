@@ -1,4 +1,4 @@
-package board.controller;
+package controller;
 
 import javax.validation.Valid;
 
@@ -16,7 +16,7 @@ import reply.paging.ReplyPaging;
 
 @Controller
 //@SessionAttributes("productVO")
-public class BoardController {
+public class ProductController {
 	/*
 	 * private BoardService boardService;
 	 * 

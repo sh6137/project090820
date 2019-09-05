@@ -3,44 +3,37 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="boardDAO">
-        <select id="list" resultType="boardVO">
-                SELECT * FROM BOARD
-                ORDER BY seq
+        <select id="list" resultType="ProductVO">
+                SELECT * FROM 
+        	(SELECT * FROM PRODUCTTB ORDER BY PROLIKECNT DESC nulls last)<![CDATA[ WHERE ROWNUM <=3]]>   
         </select>
         
-        <select id="select" parameterType="int" resultType="boardVO">
-                SELECT * FROM
-                BOARD WHERE seq = #{seq}
+        <select id="list2" resultType="ProductVO">
+                SELECT * FROM 
+        	(SELECT * FROM PRODUCTTB ORDER BY PROREADCNT DESC nulls last)<![CDATA[ WHERE ROWNUM <=3]]>   
         </select>
         
-        <insert id="insert" parameterType="boardVO">
-                INSERT INTO BOARD 
-                (seq, title, content, writer, password, regDate, cnt)
-                VALUES
-                (BOARD_SEQ.nextval, 
-			#{title}, #{content}, #{writer}, #{password}, SYSDATE, 0)
-                <selectKey keyProperty="seq" resultType="Integer">
-                        SELECT NVL(MAX(seq), 0) FROM BOARD
-                </selectKey>
+        <insert id="insert" parameterType="ProductVO">
+        	INSERT INTO PRODUCTTB 
+        	(PRONO, PRONAME, PROCATE, PROTEXT, PROREGDATE, PROFILENAME) VALUES 
+        	(PRODUCTTB_SEQ.nextval, #{proName}, #{proCate}, #{proText}, SYSDATE ,#{proFileName})
         </insert>
         
-        <update id="update" parameterType="boardVO">
-                UPDATE BOARD SET title = #{title},
-                content = #{content},
-                writer = #{writer}
-                WHERE seq = #{seq} AND password = #{password}
-        </update>
+        <select id="list3" resultType="ProductVO">
+      <!-- 
+        SELECT * FROM 
+			(SELECT PRONO, PROFILENAME, PRONAME, PROTEXT FROM PRODUCTTB ORDER BY PRONO DESC nulls last)
+			 -->
+     	SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT PRONO, PROFILENAME, PRONAME, PROTEXT FROM PRODUCTTB ORDER BY PRONO DESC) DATA)
+     	WHERE RNUM <![CDATA[ >= ]]> #{startList} AND RNUM <![CDATA[ <= ]]> #{count}
         
-        <update id="updateCount" parameterType="int">
-                UPDATE BOARD SET cnt = cnt + 1 WHERE seq = #{seq}
-        </update>
+     	 </select>
         
-        <delete id="delete" parameterType="boardVO">
-                DELETE FROM BOARD WHERE seq = #{seq}
-                AND password = #{password}
-        </delete>
+        <select id="getListCnt" resultType="int">
+		SELECT
+			count(*) as listCnt
+		FROM
+			PRODUCTTB 
+		</select>
         
-        <delete id="deleteAll">
-                DELETE FROM BOARD
-        </delete>
 </mapper>

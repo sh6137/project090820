@@ -31,7 +31,7 @@
 		<property name="configLocation" value="classpath:config/mybatis-config.xml" />
 		<property name="mapperLocations">
 			<list>
-				<!-- <value>classpath:config/sqlmap-board.xml</value> -->
+				<value>classpath:config/sqlmap-board.xml</value>
 				<value>classpath:config/sqlmap-productReply.xml</value>
 			</list>
 		</property>
@@ -42,13 +42,25 @@
 		<constructor-arg ref="sqlSessionFactory" />
 	</bean>
 	
-	<!--
-	<bean id="productDao" class="product.dao.ProductDao">
+	<bean id="boardDao" class="board.dao.BoardDaoMybatis">
 	<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
-	</bean> -->
+	</bean>
 	
-<!-- 	<bean id="boardService" class="board.service.BoardServiceImpl">
-		<property name="productDao" ref="productDao"/>
-	</bean> -->
+	<bean id="boardService" class="board.service.BoardServiceImpl">
+		<property name="boardDao" ref="boardDao"/>
+	</bean>
 	
+	<!-- 아래는 CSS적용 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+	
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
+	<!-- 아래는 파일업로드ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<property name="maxUploadSize" value="31457280"></property>
+	</bean>
+	
+	<bean id="uploadPath" class="java.lang.String">
+		<constructor-arg value="E:\자바기반웹개발자 윤준호\uploadedimg"/>
+	</bean>
 </beans>

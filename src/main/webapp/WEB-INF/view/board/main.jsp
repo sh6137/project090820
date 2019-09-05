@@ -66,7 +66,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">회원가입</a>
-          <a class="dropdown-item" href="#.jsp">로그인</a>
+          <a class="dropdown-item" href="#">로그인</a>
           <a class="dropdown-item" href="#">아이디/패스워드 찾기</a>
         </div>
       </li>
@@ -96,21 +96,7 @@
       </div>
 </div>
 <div class="center">
-<form action="<c:url value="/board/write"/>" method="POST" enctype="multipart/form-data">
-<table border="1">
-	<tr><td><h1>제품 등록</h1></td></tr>
-	<tr><td>이름<input type="text" name="proName">
-	<select name="proCate"><option>카테고리</option>
-	<option value="menu1">카테고리</option>
-	<option value="menu2">카테고리</option>
-	<option value="menu3">카테고리</option></select></td></tr>
-	<tr><td><textarea name="proText" rows="16" cols="125"></textarea></td></tr>
-	
-	<tr><td><input type="file" name="proMultipart"></td></tr>
-	
-	<tr><td><input type="submit" value="사진 등록">	
-</table>
-</form>
+
 </div>
 <div class="right">
 </div>
@@ -122,3 +108,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
+</html>
