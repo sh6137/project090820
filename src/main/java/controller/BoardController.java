@@ -3,6 +3,7 @@ package controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,38 +46,44 @@ public class BoardController {
 	@RequestMapping(value = "/board/write-p", method = RequestMethod.POST)
 	public String write(ProductVO productVO, Model model, MultipartHttpServletRequest mtfRequest
 		) throws IOException, Exception{
-		MultipartFile multipartFile = productVO.getProMultipart();
 		List<MultipartFile> fileList = mtfRequest.getFiles("proMultipart");
 		
-		for(MultipartFile mf : fileList) {
-			String originFileName = mf.getOriginalFilename();
-			
-			System.out.println(originFileName);
-		}
-		/*
-		 * String saveName = "";
-		 * 
-		 * // 범용 식별자와 원본 이름을 합쳐 이름의 중복을 피한다. UUID uid = UUID.randomUUID(); String
-		 * savedName = uid.toString() + "_" + multipartFile.getOriginalFilename();
-		 */
-			if(multipartFile.getOriginalFilename() != "") {
-				
-			
-			File dir = new File("E:\\자바기반웹개발자 윤준호\\uploadedimg");
-			File file = new File(dir, multipartFile.getOriginalFilename());
-			
-			productVO.setProFileName(multipartFile.getOriginalFilename());
-			System.out.println(file.getName());
-			multipartFile.transferTo(file);
-			//model에 넣는 이유는 view(board/write)에서 쓰기위해서 하는 것 여기서는 필요없음
-			//model.addAttribute("proFileName", file.getAbsolutePath());
-			
-			boardService.write(productVO);
-			}else {
-				boardService.write(productVO);
-			}
+		String path = "C:\\Users\\KGITBANK06\\Documents\\git\\project090820\\src\\main\\webapp\\resources\\img";
+		String fileName = "";
+		String fileSystemName = "";
+		int size = fileList.size();
+		
+		UUID uid = UUID.randomUUID();
+		
+		for (MultipartFile mf : fileList) {
+			String savedName = uid.toString() + "_" + mf.getOriginalFilename();
+        	String originFileName = mf.getOriginalFilename(); // 원본 파일 명
+            long fileSize = mf.getSize(); // 파일 사이즈
+            size--;
+            System.out.println("originFileName : " + originFileName);
+            System.out.println("fileSize : " + fileSize);
+            if(fileName == "") {
+            	fileName = originFileName;
+            }else {
+            	fileName += originFileName;
+            }
+            if(fileSystemName == "") {
+            	fileSystemName = savedName;
+            }else {
+            	fileSystemName += savedName;
+            }
+            if(size > 0) {
+            	fileName += "*";
+            	fileSystemName += "*";
+            }
+            System.out.println(fileName);
+            System.out.println(fileSystemName);
+            mf.transferTo(new File(path, savedName));
+        }
+        productVO.setProFileName(fileName);
+        productVO.setProFileSysName(fileSystemName);
+        boardService.write(productVO);
 		return "redirect:/board/list-p";
-
 	}
 	
 	// List불러오기

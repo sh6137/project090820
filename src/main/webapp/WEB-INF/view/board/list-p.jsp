@@ -20,7 +20,7 @@
 
 //이전 버튼 이벤트
 
-function fn_prev(page, range, rangeSize) {
+	function fn_prev(page, range, rangeSize) {
 		var page = ((range - 2) * rangeSize) + 1;
 		var range = range - 1;
 		var url = "${pageContext.request.contextPath}/board/list-p";

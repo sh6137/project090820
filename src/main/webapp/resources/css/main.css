@@ -103,3 +103,7 @@
 .section{
 	font-family:'휴먼둥근헤드라인';
 }
+
+.nav-link{
+	cursor:pointer;
+}

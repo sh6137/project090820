@@ -21,7 +21,6 @@
 			return false;
 		}
 		var formData = $("#form1").serialize();
-		/* if(document.()) */
 		$.ajax({
 			type : "POST",
 			url : "${pageContext.request.contextPath}/product/reply?location=${location}&postNo=${postNo}",

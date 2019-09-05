@@ -33,6 +33,7 @@
 			<list>
 				<value>classpath:config/sqlmap-board.xml</value>
 				<value>classpath:config/sqlmap-productReply.xml</value>
+				<value>classpath:config/sqlmap-product.xml</value>
 			</list>
 		</property>
 	</bean>

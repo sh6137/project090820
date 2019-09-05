@@ -22,7 +22,7 @@
 
 	<select id="select" parameterType="int" resultType="productVO">
 		SELECT * FROM
-		PRODUCT_TB WHERE pro_no = #{pro_no}
+		PRODUCTTB WHERE prono = #{prono}
 	</select>
 	
 </mapper>

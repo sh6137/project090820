@@ -15,8 +15,8 @@
         
         <insert id="insert" parameterType="ProductVO">
         	INSERT INTO PRODUCTTB 
-        	(PRONO, PRONAME, PROCATE, PROTEXT, PROREGDATE, PROFILENAME) VALUES 
-        	(PRODUCTTB_SEQ.nextval, #{proName}, #{proCate}, #{proText}, SYSDATE ,#{proFileName})
+        	(PRONO, PRONAME, PROCATE, PROTEXT, PROREGDATE, PROFILENAME, PROFILESYSTEMNAME) VALUES 
+        	(PRODUCTTB_SEQ.nextval, #{proName}, #{proCate}, #{proText}, SYSDATE, #{proFileName}, #{proFileSysName})
         </insert>
         
         <select id="list3" resultType="ProductVO">

@@ -17,4 +17,8 @@ public class ProductDao {
 	 public void insert(ProductVO ProductVO) {
          sqlSessionTemplate.insert("insert", ProductVO);
 	 }
+	 
+	 public ProductVO select(String proNo) {
+		 return sqlSessionTemplate.selectOne("select", proNo);
+	 }
 }

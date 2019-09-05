@@ -12,9 +12,60 @@
     
    <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
     <title>Hello, Main!</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		function main(){
+			$.ajax({
+				type : "GET",
+				url : "${pageContext.request.contextPath}/board/main-p",
+				dataType : "text",
+				error : function(){
+					alert("통신실패");
+				},
+				success : function(data){
+					$("#center").html(data);
+				}
+			});
+		}
+		
+		function list(postNo){
+			$.ajax({
+				type : "GET",
+				url : "${pageContext.request.contextPath}/board/list-p",
+				dataType : "text",
+				error : function(){
+					alert("통신실패");
+				},
+				success : function(data){
+					$("#center").html(data);
+				}
+			});
+		}
+		
+		function proRead(postNo){
+			var url = '${pageContext.request.contextPath}/product/read?location=product&postNo='+postNo;
+			$.ajax({
+				type : "GET",
+				url : url,
+				dataType : "text",
+				error : function(){
+					alert("통신실패");
+				},
+				success : function(data){
+					$("#center").html(data);
+				}
+			});
+		}
+	</script>
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script>
+	main();
+	</script>
   </head>
 <body>
-
 <div class="top">
 <div class="top-left">다나옴</div>
 <div class="top-center">
@@ -46,10 +97,10 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="/board/main">Main</a>
+        <a class="nav-link" onclick="main();">Main</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/board/list">제품 목록 게시판</a>
+        <a class="nav-link" onclick="list();">제품 목록 게시판</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="/board/write">제품 등록/삭제/수정</a>
@@ -95,17 +146,13 @@
         <a href="#" class="list-group-item list-group-item-action bg-light">사무,취미,게임</a>
       </div>
 </div>
-<div class="center">
+<div class="center" id="center">
 
 </div>
 <div class="right">
 </div>
 </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
   </body>
 </html>
