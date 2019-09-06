@@ -19,6 +19,10 @@ public class ProductDao {
 	 }
 	 
 	 public ProductVO select(String proNo) {
-		 return sqlSessionTemplate.selectOne("select", proNo);
+		 return sqlSessionTemplate.selectOne("select", Integer.parseInt(proNo));
+	 }
+	 
+	 public void readUp(String proNo) {
+		 sqlSessionTemplate.update("readUp", Integer.parseInt(proNo));
 	 }
 }

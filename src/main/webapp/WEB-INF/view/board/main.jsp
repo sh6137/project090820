@@ -28,7 +28,7 @@
 			});
 		}
 		
-		function list(postNo){
+		function list(){
 			$.ajax({
 				type : "GET",
 				url : "${pageContext.request.contextPath}/board/list-p",

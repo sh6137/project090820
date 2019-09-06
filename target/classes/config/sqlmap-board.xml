@@ -15,8 +15,8 @@
         
         <insert id="insert" parameterType="ProductVO">
         	INSERT INTO PRODUCTTB 
-        	(PRONO, PRONAME, PROCATE, PROTEXT, PROREGDATE, PROFILENAME, PROFILESYSTEMNAME) VALUES 
-        	(PRODUCTTB_SEQ.nextval, #{proName}, #{proCate}, #{proText}, SYSDATE, #{proFileName}, #{proFileSysName})
+        	(PRONO, PRONAME, PROCATE, PROTEXT, PROREGDATE, PROFILENAME, PROFILESYSTEMNAME, PROTHUMBNAIL, PROSYSTEMTHUMBNAIL) VALUES 
+        	(PRODUCTTB_SEQ.nextval, #{proName}, #{proCate}, #{proText}, SYSDATE, #{proFileName}, #{proFileSystemName}, #{proThumbnail}, #{proSystemThumbnail)
         </insert>
         
         <select id="list3" resultType="ProductVO">
@@ -24,7 +24,7 @@
         SELECT * FROM 
 			(SELECT PRONO, PROFILENAME, PRONAME, PROTEXT FROM PRODUCTTB ORDER BY PRONO DESC nulls last)
 			 -->
-     	SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT PRONO, PROFILENAME, PRONAME, PROTEXT FROM PRODUCTTB ORDER BY PRONO DESC) DATA)
+     	SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT PRONO, PROFILENAME, PRONAME, PROTEXT, PROSYSTEMTHUMBNAIL FROM PRODUCTTB ORDER BY PRONO DESC) DATA)
      	WHERE RNUM <![CDATA[ >= ]]> #{startList} AND RNUM <![CDATA[ <= ]]> #{count}
         
      	 </select>

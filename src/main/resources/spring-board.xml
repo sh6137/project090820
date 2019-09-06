@@ -51,6 +51,8 @@
 		<property name="boardDao" ref="boardDao"/>
 	</bean>
 	
+	<bean id="separate" class="separate.Separate"></bean>
+	
 	<!-- 아래는 CSS적용 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
 	
 	<mvc:resources mapping="/resources/**" location="/resources/" />

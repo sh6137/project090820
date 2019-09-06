@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>${productVO.proName}</title>
 <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -23,7 +24,19 @@
 </script>
 </head>
 <body>
-test
+조회수 : ${productVO.proReadCnt}     좋아요 : ${productVO.proLikeCnt}
+<br>
+<c:forEach var="sysFiles" items="${sysFiles}" varStatus="status">
+	<img src="http://localhost:8080${pageContext.request.contextPath}/resources/img/${sysFiles}"><br>
+	${files[status.index]}
+	<br>
+</c:forEach>
+${productVO.proText}
+<br>
+<br>
+아래는 댓글페이지
+<br>
+<br>
 	<div id="replyArea"></div>
 test
 </body>

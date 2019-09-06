@@ -18,17 +18,15 @@
 	
 	<bean id="productController"
 		class="controller.ProductController">
-		<!-- <property name="productVO" ref="productVO"></property>-->
-		<property name="productReplyService" ref="productReplyService"></property> 
+		<property name="productReplyService" ref="productReplyService"></property>
+		<property name="productService" ref="productService"></property>  
 		<property name="replyPaging" ref="replyPaging"/>
+		<property name="productVO" ref="productVO"></property>
+		<property name="separate" ref="separate"></property>
 	</bean>
 	
 	<bean id="boardController" class="controller.BoardController">
 		<property name="boardService" ref="boardService" />
 	</bean>
-<!-- 	<bean id="boardController" class="board.controller.BoardController">
-		<property name="boardService" ref="boardService" />
-	</bean> -->
-	
 
 </beans>

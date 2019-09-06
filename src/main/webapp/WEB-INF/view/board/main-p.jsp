@@ -22,23 +22,29 @@
 	<tr><td colspan="3" align="center">좋아요 많은 게시물</td></tr>
 	<tr align="center">
 	 <c:forEach var="board" items="${boardList}" varStatus="loop">
-		<td width="900" height="140"><img src="http://localhost:8080/resources/img/${board.proFileName}" width="295" height="195"></td>
+		<td width="900" height="140"><img src="http://localhost:8080/${pageContext.request.contextPath}/resources/img/${board.proSystemThumbnail}" width="295" height="195"></td>
 	</c:forEach> 
 	</tr>
 	<tr align="center">
 	<c:forEach var="board" items="${boardList}" varStatus="loop">
-		<td width="900" height="30">${board.proName}</td>
+		<td width="900" height="30">
+		<a href="${pageContext.request.contextPath}/product/read?location=product&postNo=${board.proNo}"
+		onclick="window.open(this.href, '_blank', 'width=1000, height=900, toolbars=no'); return false;">${board.proName}</a>
+		</td>
 	</c:forEach>
 	</tr>
 	<tr><td colspan="3" align="center">조회수 많은 게시물</td></tr>
 	<tr align="center">
 	 <c:forEach var="board2" items="${boardList2}" varStatus="loop">
-		<td width="900" height="140"><img src="http://localhost:8080/resources/img/${board2.proFileName}" width="295" height="195"></td>
+		<td width="900" height="140"><img src="http://localhost:8080/${pageContext.request.contextPath}/resources/img/${board2.proSystemThumbnail}" width="295" height="195"></td>
 	</c:forEach> 
 	</tr>
 	<tr align="center">
 	<c:forEach var="board2" items="${boardList2}" varStatus="loop">
-		<td width="900" height="30">${board2.proName}</td>
+		<td width="900" height="30">
+		<a href="${pageContext.request.contextPath}/product/read?location=product&postNo=${board2.proNo}"
+		onclick="window.open(this.href, '_blank', 'width=1000, height=900, toolbars=no'); return false;">${board2.proName}</a>
+		</td>
 	</c:forEach>
 	</tr>
 </table>

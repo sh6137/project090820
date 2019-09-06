@@ -52,8 +52,10 @@
 	 <c:forEach var="board3" items="${boardList3}" varStatus="loop">
 	<tr align="center">
 		<td width="50" height="50">${board3.proNo}</td>
-		<td width="120" height="50"><img src="http://localhost:8080/${pageContext.request.contextPath}/resources/img/${board3.proFileName}" width="100" height="50"></td>
-		<td width="120" height="50">${board3.proName}</td>
+		<td width="120" height="50"><img src="http://localhost:8080/${pageContext.request.contextPath}/resources/img/${board3.proSystemThumbnail}" width="100" height="50"></td>
+		<td width="120" height="50">
+		<a href="${pageContext.request.contextPath}/product/read?location=product&postNo=${board3.proNo}"
+		onclick="window.open(this.href, '_blank', 'width=1000, height=900, toolbars=no'); return false;">${board3.proName}</a></td>
 		<td width="610" height="50">${board3.proText}</td>
 		
 		<!-- jstl줄바꿈 -->

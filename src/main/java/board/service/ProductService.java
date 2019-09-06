@@ -20,4 +20,8 @@ public class ProductService {
 	public ProductVO select(String proNo) {
 		return productDao.select(proNo);
 	}
+	
+	public void readUp(String proNo) {
+		productDao.readUp(proNo);
+	}
 }

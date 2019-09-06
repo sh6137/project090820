@@ -47,6 +47,7 @@ public class BoardController {
 	public String write(ProductVO productVO, Model model, MultipartHttpServletRequest mtfRequest
 		) throws IOException, Exception{
 		List<MultipartFile> fileList = mtfRequest.getFiles("proMultipart");
+		MultipartFile multipartFile = productVO.getProMultipart();
 		
 		String path = "C:\\Users\\KGITBANK06\\Documents\\git\\project090820\\src\\main\\webapp\\resources\\img";
 		String fileName = "";
@@ -80,8 +81,13 @@ public class BoardController {
             System.out.println(fileSystemName);
             mf.transferTo(new File(path, savedName));
         }
+		String sysThumbName = uid.toString() + "_" + multipartFile.getOriginalFilename();
+		productVO.setProThumbnail(multipartFile.getOriginalFilename());
+		productVO.setProSystemThumbnail(sysThumbName);
+		multipartFile.transferTo(new File(path, sysThumbName));
+		
         productVO.setProFileName(fileName);
-        productVO.setProFileSysName(fileSystemName);
+        productVO.setProFileSystemName(fileSystemName);
         boardService.write(productVO);
 		return "redirect:/board/list-p";
 	}

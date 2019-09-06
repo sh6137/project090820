@@ -30,8 +30,17 @@
 	<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
 	</bean>
 	
+	<bean id="productDao" class="product.dao.ProductDao">
+	<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
+	</bean>
+	
+	
 	<bean id="productReplyService" class="board.service.ProductReplyService">
 		<property name="productReplyDao" ref="productReplyDao"/>
+	</bean>
+	
+	<bean id="productService" class="board.service.ProductService">
+		<property name="productDao" ref="productDao"/>
 	</bean>
 	
 	<bean id="replyPaging" class="reply.paging.ReplyPaging"/>

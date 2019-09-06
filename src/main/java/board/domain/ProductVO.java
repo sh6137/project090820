@@ -16,9 +16,9 @@ public class ProductVO {
 	private int proLikeCnt;
 	private Date proRegDate;
 	private String proThumbnail;
-	private String proSysThumbnail;
+	private String proSystemThumbnail;
 	private String proFileName;
-	private String proFileSysName;
+	private String proFileSystemName;
 	
 	private MultipartFile proMultipart;
 	
@@ -82,11 +82,11 @@ public class ProductVO {
 	public void setProThumbnail(String proThumbnail) {
 		this.proThumbnail = proThumbnail;
 	}
-	public String getProSysThumbnail() {
-		return proSysThumbnail;
+	public String getProSystemThumbnail() {
+		return proSystemThumbnail;
 	}
-	public void setProSysThumbnail(String proSysThumbnail) {
-		this.proSysThumbnail = proSysThumbnail;
+	public void setProSystemThumbnail(String proSystemThumbnail) {
+		this.proSystemThumbnail = proSystemThumbnail;
 	}
 	public String getProFileName() {
 		return proFileName;
@@ -94,11 +94,11 @@ public class ProductVO {
 	public void setProFileName(String proFileName) {
 		this.proFileName = proFileName;
 	}
-	public String getProFileSysName() {
-		return proFileSysName;
+	public String getProFileSystemName() {
+		return proFileSystemName;
 	}
-	public void setProFileSysName(String proFileSysName) {
-		this.proFileSysName = proFileSysName;
+	public void setProFileSystemName(String proFileSystemName) {
+		this.proFileSystemName = proFileSystemName;
 	}
 	
 }

@@ -25,4 +25,8 @@
 		PRODUCTTB WHERE prono = #{prono}
 	</select>
 	
+	<update id="readUp" parameterType="int">
+		UPDATE PRODUCTTB set PROREADCNT = PROREADCNT + 1 WHERE PRONO = #{proNo}
+	</update>
+	
 </mapper>
