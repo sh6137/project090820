@@ -34,10 +34,8 @@
 ${productVO.proText}
 <br>
 <br>
-아래는 댓글페이지
 <br>
 <br>
 	<div id="replyArea"></div>
-test
 </body>
 </html>
