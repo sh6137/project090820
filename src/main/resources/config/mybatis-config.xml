@@ -11,6 +11,11 @@
 	</settings>
 
 	<typeAliases>
-		<typeAlias alias="boardVO" type="board.domain.BoardVO" />
+		<typeAlias alias="replytbVO" type="board.domain.ReplytbVO"/>
+		<typeAlias alias="noticetbVO" type="board.domain.NoticetbVO"/>
+		<typeAlias alias="questiontbVO" type="board.domain.QuestiontbVO" />
+		<typeAlias alias="requesttbVO" type="board.domain.RequesttbVO" />
+		<typeAlias alias="questioncategorytbVO" type="board.domain.QuestioncategorytbVO"/>
+		<typeAlias alias="pagination" type="board.pagination.Pagination"/>
 	</typeAliases>
 </configuration>

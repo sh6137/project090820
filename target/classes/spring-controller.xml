@@ -15,12 +15,31 @@
 	<mvc:view-resolvers>
 		<mvc:jsp prefix="/WEB-INF/view/"/>
 	</mvc:view-resolvers>
-
-<!-- 	<bean id="boardController" class="board.controller.BoardController">
-		<property name="boardService" ref="boardService" />
-	</bean> -->
 	
-	<bean id="boardController" class="board.controller.BoardController">
-		<property name="boardService" ref="boardServiceImpl"/>
+	<bean id="questioncategorytbController" class="board.controller.QuestioncategorytbController">
+		<property name="questioncategorytbService" ref="questioncategorytbServiceImpl"/>
 	</bean>
+	
+	<bean id="questiontbController" class="board.controller.QuestiontbController">
+		<property name="questiontbService" ref="questiontbServiceImpl" />
+		<property name="questioncategorytbService" ref="questioncategorytbServiceImpl"/>
+		
+	</bean>
+	
+	
+	<bean id="noticetbController" class="board.controller.NoticetbController">
+		<property name="noticetbService" ref="noticetbServiceImpl"/>
+	</bean>
+	
+	<bean id="replytbController" class="board.controller.ReplytbController">
+		<property name="replytbService" ref="replytbServiceImpl"/>
+	</bean>
+	
+	<bean id="requesttbController" class="board.controller.RequesttbController">
+		<property name="requesttbService" ref="requesttbServiceImpl" />
+	</bean>
+	
+	
+	
+	
 </beans>
