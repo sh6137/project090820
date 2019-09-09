@@ -31,7 +31,7 @@ function re(){
       <!-- 로그인 폼 CSS -->
       <div id="loginer" align="center">
         <div id="form">
-          <form action="${pageContext.request.contextPath}/board/login" method="post" >
+          <form action="${pageContext.request.contextPath}/membertb/login" method="post" >
             <fieldset>
               <legend>로그인!</legend>
               <table><tr><td>
@@ -41,8 +41,8 @@ function re(){
               </table>
               <button type="submit"> 로그인 </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
            
-              <a href="<c:url value="/board/reg" />">|  회원 가입 하러 가기 &nbsp; | </a>
-              <a href="<c:url value="/board/main" />">메인으로</a>
+              <a href="<c:url value="/membertb/reg" />">|  회원 가입 하러 가기 &nbsp; | </a>
+              <a href="<c:url value="/membertb/main" />">메인으로</a>
             </fieldset>
           </form>
         </div>

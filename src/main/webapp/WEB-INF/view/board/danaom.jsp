@@ -31,7 +31,7 @@
 <tr align="center">
 <td width="120" height="100"><a class="btn btn-iight" href="#" role="button"><span style="font-size:13pt">최근 본 상품</span></a></td>
 <td width="120" height="100"><a class="btn btn-iight" href="#" role="button"><span style="font-size:13pt">관심<br>상품 </span></a></td>
-<td width="120" height="100"><a class="btn btn-iight" href="<c:url value="/board/logout" />" role="button"><span style="font-size:13pt">로 그 아 웃</span></a></td>
+<td width="120" height="100"><a class="btn btn-iight" href="<c:url value="/membertb/logout" />" role="button"><span style="font-size:13pt">로 그 아 웃</span></a></td>
 </tr> 
 
 </table>
@@ -69,9 +69,9 @@
           Dropdown link
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="<c:url value="/board/logout" />">로그아웃</a>
-          <a class="dropdown-item" href="<c:url value="/board/changeinfo" />">회원정보 변경</a>
-          <a class="dropdown-item" href="<c:url value="/board/delete" />">회원탈퇴</a>
+          <a class="dropdown-item" href="<c:url value="/membertb/logout" />">로그아웃</a>
+          <a class="dropdown-item" href="<c:url value="/membertb/changeinfo" />">회원정보 변경</a>
+          <a class="dropdown-item" href="<c:url value="/membertb/delete" />">회원탈퇴</a>
         </div>
       </li>
     </ul>

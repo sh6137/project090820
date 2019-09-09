@@ -3,7 +3,7 @@ package membertb.dao;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
-import board.domain.BoardVO;
+import membertb.domain.membertbVO;
 
 @Repository
 public class membertbDaoMybatis implements membertbDao {

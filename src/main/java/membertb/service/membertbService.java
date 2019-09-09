@@ -4,7 +4,7 @@ import membertb.domain.membertbVO;
 
 
 
-public interface BoardService {
+public interface membertbService {
 
 	
  //추상메서드 선언!

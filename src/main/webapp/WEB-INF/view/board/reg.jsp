@@ -25,7 +25,7 @@
 		var winY = window.screenTop;
 		var popX = winX + (winWidth - popWidth)/2;
 		var popY = winY + (winHeight - popHeight)/2;
-		var url = "${pageContext.request.contextPath}/board/idCheck?id=" + id;
+		var url = "${pageContext.request.contextPath}/membertb/idCheck?id=" + id;
 		window.open(url, "post",
 				"left="+popX+", top="+popY+", width="+popWidth + ", height="+popHeight);
 	} 
@@ -45,7 +45,7 @@ function nickCheck(nick){
 		var winY = window.screenTop;
 		var popX = winX + (winWidth - popWidth)/2;
 		var popY = winY + (winHeight - popHeight)/2;
-		var url = "${pageContext.request.contextPath}/board/nickCheck?nick=" + nick;
+		var url = "${pageContext.request.contextPath}/membertb/nickCheck?nick=" + nick;
 		window.open(url, "post",
 				"left="+popX+", top="+popY+", width="+popWidth + ", height="+popHeight);
 		}
@@ -155,7 +155,7 @@ function nickCheck(nick){
 
 </div>
 </div>
-          <form action="${pageContext.request.contextPath}/board/reg" name="name" method="post" >
+          <form action="${pageContext.request.contextPath}/membertb/reg" name="name" method="post" >
 <div class="checkbox_wrap">
 <!-- 웹접근성을 위해 input의 id값과 label의 for값을 동일하게 해주세요.-->
 <!-- 1702 라벨 클릭 시 클래스 on 추가  -->
@@ -199,7 +199,7 @@ function nickCheck(nick){
               <tr><td>
               <button type="submit">회원 가입</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <button type="reset">다시 입력</button>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="button" value="메인으로" onclick="location.href='${pageContext.request.contextPath}/board/main'"/>
+              <input type="button" value="메인으로" onclick="location.href='${pageContext.request.contextPath}/membertb/main'"/>
               </td></tr>
               </table>
               

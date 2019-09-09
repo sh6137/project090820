@@ -11,6 +11,6 @@
 	</settings>
 
 	<typeAliases>
-		<typeAlias alias="BoardVO" type="board.domain.BoardVO" />
+		<typeAlias alias="membertbVO" type="membertb.domain.membertbVO" />
 	</typeAliases>
 </configuration>

@@ -31,7 +31,7 @@
 <tr align="center">
 <td width="120" height="100"><a class="btn btn-iight" href="#" role="button"><span style="font-size:13pt">최근 본 상품</span></a></td>
 <td width="120" height="100"><a class="btn btn-iight" href="#" role="button"><span style="font-size:13pt">관심<br>상품 </span></a></td>
-<td width="120" height="100"><a class="btn btn-iight" href="<c:url value="/board/login" />" role="button"><span style="font-size:13pt">로 그 인</span></a></td>
+<td width="120" height="100"><a class="btn btn-iight" href="<c:url value="/membertb/login" />" role="button"><span style="font-size:13pt">로 그 인</span></a></td>
 </tr> 
 
 </table></div>
@@ -49,7 +49,7 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="<c:url value="/board/main" />">Main</a>
+        <a class="nav-link" href="<c:url value="/membertb/main" />">Main</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">제품 목록 게시판</a>
@@ -68,8 +68,8 @@
           Dropdown link
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="<c:url value="/board/login" />">로그인</a>
-          <a class="dropdown-item" href="<c:url value="/board/reg" />">회원가입</a>
+          <a class="dropdown-item" href="<c:url value="/membertb/login" />">로그인</a>
+          <a class="dropdown-item" href="<c:url value="/membertb/reg" />">회원가입</a>
         </div>
       </li>
     </ul>

@@ -18,24 +18,24 @@
 	
 	<!-- 뷰 컨트롤러! 프로젝트 경로 설정  JSP파일 설정! 왼쪽으로 설정해두면 뷰네임으로 간다.--> 
 	
-	<mvc:view-controller path="/board/main" view-name="/board/main"/>
-	<mvc:view-controller path="/board/danaom" view-name="/board/danaom"/>
-	<mvc:view-controller path="/board/login" view-name="/board/login"/>
-	<mvc:view-controller path="/board/logout" view-name="/board/logout"/>
-	<mvc:view-controller path="/board/reg" view-name="/board/reg"/>
-	<mvc:view-controller path="/board/regok" view-name="/board/regok"/>
-	<mvc:view-controller path="/board/danaom" view-name="/board/danaom"/>
-	<mvc:view-controller path="/board/delete" view-name="/board/delete"/>
-	<mvc:view-controller path="/board/deleteok" view-name="/board/deleteok"/>
-	<mvc:view-controller path="/board/changeinfo" view-name="/board/changeinfo"/>
-	<mvc:view-controller path="/board/changeinfook" view-name="/board/changeinfook"/>
-	<mvc:view-controller path="/board/idCheck" view-name="/board/idCheck"/>
-	<mvc:view-controller path="/board/nickCheck" view-name="/board/nickCheck"/>
+	<mvc:view-controller path="/membertb/main" view-name="/membertb/main"/>
+	<mvc:view-controller path="/membertb/danaom" view-name="/membertb/danaom"/>
+	<mvc:view-controller path="/membertb/login" view-name="/membertb/login"/>
+	<mvc:view-controller path="/membertb/logout" view-name="/membertb/logout"/>
+	<mvc:view-controller path="/membertb/reg" view-name="/membertb/reg"/>
+	<mvc:view-controller path="/membertb/regok" view-name="/membertb/regok"/>
+	<mvc:view-controller path="/membertb/danaom" view-name="/membertb/danaom"/>
+	<mvc:view-controller path="/membertb/delete" view-name="/membertb/delete"/>
+	<mvc:view-controller path="/membertb/deleteok" view-name="/membertb/deleteok"/>
+	<mvc:view-controller path="/membertb/changeinfo" view-name="/membertb/changeinfo"/>
+	<mvc:view-controller path="/membertb/changeinfook" view-name="/membertb/changeinfook"/>
+	<mvc:view-controller path="/membertb/idCheck" view-name="/membertb/idCheck"/>
+	<mvc:view-controller path="/membertb/nickCheck" view-name="/membertb/nickCheck"/>
 	
 	
-	<bean id="boardController" class="board.controller.BoardController">
+	<bean id="membertbController" class="membertb.controller.membertbController">
 	
-		<property name="boardService" ref="boardService" />
+		<property name="membertbService" ref="membertbService" />
 	</bean>
 	
 	

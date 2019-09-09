@@ -34,7 +34,7 @@
 		<property name="configLocation" value="classpath:config/mybatis-config.xml" />
 		<property name="mapperLocations">
 			<list>
-				<value>classpath:config/sqlmap-board.xml</value>
+				<value>classpath:config/sqlmap-membertb.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -46,12 +46,12 @@
 	
 	<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
 	
-	<bean id="boardDao" class="board.dao.BoardDaoMybatis">
+	<bean id="membertbDao" class="membertb.dao.membertbDaoMybatis">
 	<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
 	</bean>
 	
-	<bean id="boardService" class="board.service.BoardServiceImpl">
-		<property name="boardDao" ref="boardDao"/>
+	<bean id="membertbService" class="membertb.service.membertbServiceImpl">
+		<property name="membertbDao" ref="membertbDao"/>
 	</bean>
 	
 	<mvc:resources mapping="/resources/**" location="/resources/" />
