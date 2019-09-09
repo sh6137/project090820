@@ -1,11 +1,11 @@
-package board.domain;
+package membertb.domain;
 
 import java.sql.Timestamp;
 
 import org.apache.ibatis.type.Alias;
 
-@Alias("BoardVO")
-public class BoardVO {
+@Alias("membertbVO")
+public class membertbVO {
         
 	//테이블의 변수 선언!
 	

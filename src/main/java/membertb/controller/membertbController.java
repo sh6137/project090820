@@ -1,4 +1,4 @@
-package board.controller;
+package membertb.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,7 +15,7 @@ import board.service.BoardService;
 
 @Controller
 @SessionAttributes("boardVO")
-public class BoardController {
+public class membertbController {
 	private BoardService boardService;
 
 	public void setBoardService(BoardService boardService){

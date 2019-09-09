@@ -21,7 +21,7 @@
  <div id="loginer" align="center">
  <div id="form">
 <fieldset>
-<legend>ID중복확인</legend>
+<legend>닉네임중복확인</legend>
 <b>${nick}</b>
 <c:choose>
 	<c:when test="${check == 0}">는 이미 존재하는 닉네임입니다.</c:when>
