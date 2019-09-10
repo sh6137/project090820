@@ -9,7 +9,7 @@
         action="<c:url value="/requestboard/delete" />" method="POST">
                 <input size="1" name="reqNo" value="${reqNo}"/>
                 번글을 삭제하시겠습니까?<br>
-                비밀번호<input type="password" name="pwd" />
+               
                 <input type="submit" value="삭제">
                 <a href="<c:url value="/requestboard/read/${reqNo}" />">취소</a>
         </form>

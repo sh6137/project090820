@@ -41,6 +41,7 @@ public class QuestiontbController {
 	public String list(Model model, HttpSession session
 			, @RequestParam(required = false, defaultValue = "1") int page
 			, @RequestParam(required = false, defaultValue = "1") int range
+			
 			, @RequestParam(required = false, defaultValue = "title") String searchType
 			, @RequestParam(required = false) String keyword
 			
@@ -57,9 +58,11 @@ public class QuestiontbController {
 		search.setSearchType(searchType);
 
 		search.setKeyword(keyword);
-		System.out.println(searchType);
-		
-		System.out.println(keyword);
+		/*
+		 * System.out.println(searchType);
+		 * 
+		 * System.out.println(keyword);
+		 */
 		//전체 게시글 개수
 
 		int listCnt = questiontbService.getListCnt(search);
@@ -137,22 +140,19 @@ public class QuestiontbController {
 		public String edit(
 		        @Valid @ModelAttribute QuestiontbVO questiontbVO, @Valid QuestioncategorytbVO questioncategorytbVO,
 		        BindingResult result, 
-		        int pwd, 
+		       
 		        SessionStatus sessionStatus,
 		        Model model){
 		        if(result.hasErrors()){
 		                return "/questionboard/edit";
 		        }
 		        else{
-		                if(questiontbVO.getQuePassword() == pwd){
+		                
 		                        questiontbService.edit(questiontbVO);
 		                        sessionStatus.setComplete();
 		                        return "redirect:/questionboard/list";
-		                }
-		        }
-		        questioncategorytbService.list();
-		        model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
-		        return "/questionboard/edit";
+		              
+		        }	  
 		}
 		
 		//글 삭제 요청을 처리할 메서드
@@ -162,17 +162,16 @@ public class QuestiontbController {
 			return "/questionboard/delete";
 		}
 		@RequestMapping(value="/questionboard/delete", method=RequestMethod.POST)
-		public String delete(int queNo, int pwd, Model model){
+		public String delete1(int queNo,  Model model){
 			int rowCount;
 			QuestiontbVO questiontbVO = new QuestiontbVO();
 			questiontbVO.setQueNo(queNo);
-			questiontbVO.setQuePassword(pwd);
+			
 			
 			rowCount = questiontbService.delete(questiontbVO);
 			
 			if(rowCount == 0){
 				model.addAttribute("queNo", queNo);
-				model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
 				return "/questionboard/delete";
 			}
 			else{

@@ -9,8 +9,7 @@
         action="<c:url value="/questionboard/delete" />" method="POST">
                 <input size="1" name="queNo" value="${queNo}"/>
                 번글을 삭제하시겠습니까?<br>
-                비밀번호<input type="password" name="pwd" />
-                <input type="submit" value="삭제">
+                 <input type="submit" value="삭제">
                 <a href="<c:url value="/questionboard/read/${queNo}" />">취소</a>
         </form>
         <div>${msg}</div>

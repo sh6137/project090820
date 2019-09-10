@@ -25,12 +25,6 @@
 				</td>
 			</tr>
 			
-			<tr>
-				<th><form:label path="reqPassword">비밀번호</form:label></th>
-				<td><%-- <form:input path="password" /> --%>
-				<form:password path="reqPassword" /> 
-				<form:errors path="reqPassword" /></td>
-			</tr>
 		</table>
 		<div>
 		<input type="submit" value="등록"> 

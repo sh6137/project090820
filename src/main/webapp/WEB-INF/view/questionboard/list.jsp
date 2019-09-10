@@ -68,17 +68,20 @@ function fn_prev(page, range, rangeSize) {
 			<c:if test="${pagination.prev}">
 				<li class="page-item"><a class="page-link" href="#" onClick="fn_prev('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}')">Previous</a></li>
 			</c:if>				
-			<c:forEach begin="${pagination.startPage}" end="${pagination.endPage+1}" var="idx">
+			<c:forEach begin="${pagination.startPage}" end="${pagination.endPage}" var="idx">
 				<li class="page-item <c:out value="${pagination.page == idx ? 'active' : ''}"/> "><a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.range}', '${pagination.rangeSize}')"> ${idx} </a></li>
+				
 			</c:forEach>
 				
 			<c:if test="${pagination.next}">
 				<li class="page-item"><a class="page-link" href="#" onClick="fn_next('${pagination.range}', 
 				'${pagination.range}', '${pagination.rangeSize}')" >Next</a></li>
 			</c:if>
+			
+			
 		</ul>
 	</div>
-
+	
 	<!-- pagination{e} -->
 	
 	<!--search{s} -->
@@ -90,6 +93,8 @@ function fn_prev(page, range, rangeSize) {
 		<form:input path="keyword" /> 
 	</form:select>
 		<input type="submit" value="검색">
+	<br>
+	<br>
 	
 	</form:form>
 	

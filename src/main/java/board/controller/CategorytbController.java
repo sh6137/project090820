@@ -95,7 +95,7 @@ public class CategorytbController {
 			return "/categoryboard/delete";
 		}
 		@RequestMapping(value="/categoryboard/delete", method=RequestMethod.POST)
-		public String delete(int cateNo, int pwd, Model model){
+		public String delete1(int cateNo, Model model){
 			int rowCount;
 			CategorytbVO categorytbVO = new CategorytbVO();
 			categorytbVO.setCateNo(cateNo);

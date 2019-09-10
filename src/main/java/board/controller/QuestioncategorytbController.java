@@ -71,21 +71,20 @@ public class QuestioncategorytbController {
 		public String edit(
 		        @Valid @ModelAttribute QuestioncategorytbVO questioncategorytbVO, 
 		        BindingResult result, 
-		        int pwd, 
+		       
 		        SessionStatus sessionStatus,
 		        Model model){
 		        if(result.hasErrors()){
 		                return "/questioncategoryboard/edit";
 		        }
 		        else{
-		                if(questioncategorytbVO.getQuecatePass() == pwd){
+		                
 		                        questioncategorytbService.edit(questioncategorytbVO);
 		                        sessionStatus.setComplete();
 		                        return "redirect:/questioncategoryboard/list";
-		                }
+		                
 		        }
-		        model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
-		        return "/questioncategoryboard/edit";
+
 		}
 		
 		//글 삭제 요청을 처리할 메서드
@@ -95,17 +94,16 @@ public class QuestioncategorytbController {
 			return "/questioncategoryboard/delete";
 		}
 		@RequestMapping(value="/questioncategoryboard/delete", method=RequestMethod.POST)
-		public String delete(int quecateNum, int pwd, Model model){
+		public String delete1(int quecateNum, Model model){
 			int rowCount;
 			QuestioncategorytbVO questioncategorytbVO = new QuestioncategorytbVO();
 			questioncategorytbVO.setQuecateNum(quecateNum);
-			questioncategorytbVO.setQuecatePass(pwd);
+			
 			
 			rowCount = questioncategorytbService.delete(questioncategorytbVO);
 			
 			if(rowCount == 0){
 				model.addAttribute("quecateNum", quecateNum);
-				model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
 				return "/questioncategoryboard/delete";
 			}
 			else{

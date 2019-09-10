@@ -27,20 +27,30 @@ public class QuestiontbVO extends Search {
 	private String queCategory;
 	private Timestamp queRegDt;
 	private int quePassword;
-	
+	private int queUserno = 1234;
+
+
 	public QuestiontbVO() {}
 	
-	public QuestiontbVO(String queTitle, String queUser, String queText, String queCategory, int quePassword) {
+	public QuestiontbVO(String queTitle, String queUser, String queText, String queCategory, int queUserno) {
 		super();
 		this.queTitle = queTitle;
 		this.queUser = queUser;
 		this.queText = queText;
 		this.queCategory = queCategory;
-		this.quePassword = quePassword;
+		this.queUserno = queUserno;
 		this.queReadCnt=0;
 		
 		
 		
+	}
+	
+	public int getQueUserno() {
+		return queUserno;
+	}
+
+	public void setQueUserno(int queUserno) {
+		this.queUserno = queUserno;
 	}
 
 	public int getQueNo() {

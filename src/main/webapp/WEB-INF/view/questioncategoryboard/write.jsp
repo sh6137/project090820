@@ -15,12 +15,6 @@
 			</tr>
 			
 			
-			<tr>
-				<th><form:label path="quecatePass">비밀번호</form:label></th>
-				<td><%-- <form:input path="password" /> --%>
-				<form:password path="quecatePass" /> 
-				<form:errors path="quecatePass" /></td>
-			</tr>
 		</table>
 		<div>
 		<input type="submit" value="등록"> 

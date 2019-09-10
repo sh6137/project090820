@@ -78,10 +78,10 @@
         
         <insert id="insert" parameterType="questiontbVO">
                 INSERT INTO QUESTIONTB 
-                (QUENO, QUETITLE, QUEUSER, QUETEXT, QUEREADCNT, QUECATEGORY, QUEREGDT, QUEPASSWORD)
+                (QUENO, QUETITLE, QUEUSER, QUETEXT, QUEREADCNT, QUECATEGORY, QUEREGDT, QUEUSERNO)
                 VALUES
                 (QUESTIONTB_SEQ.nextval, 
-			#{queTitle}, #{queUser}, #{queText}, 0, #{queCategory}, SYSDATE, #{quePassword})
+			#{queTitle}, #{queUser}, #{queText}, 0, #{queCategory}, SYSDATE, #{queUserno})
                 <selectKey keyProperty="queNo" resultType="Integer">
                         SELECT NVL(MAX(queNo), 0) FROM QUESTIONTB
                 </selectKey>
@@ -92,7 +92,7 @@
                 QUETEXT = #{queText},
                 QUEUSER = #{queUser},
                 QUECATEGORY = #{queCategory}
-                WHERE QUENO = #{queNo} AND QUEPASSWORD = #{quePassword}
+                WHERE QUENO = #{queNo} 
         </update>
         
         <update id="updateCount" parameterType="int">
@@ -101,7 +101,7 @@
         
         <delete id="delete" parameterType="questiontbVO">
                 DELETE FROM QUESTIONTB WHERE QUENO = #{queNo}
-                AND QUEPASSWORD = #{quePassword}
+                
         </delete>
         
         <delete id="deleteAll">

@@ -15,10 +15,10 @@
         
         <insert id="insert" parameterType="requesttbVO">
                 INSERT INTO REQUESTTB 
-                (REQNO, REQTITLE, REQUSER, REQTEXT, REQREADCNT, REQREGDT, REQPASSWORD)
+                (REQNO, REQTITLE, REQUSER, REQTEXT, REQREADCNT, REQREGDT, REQUSERNO)
                 VALUES
                 (REQUESTTB_SEQ.nextval, 
-			#{reqTitle}, #{reqUser}, #{reqText}, 0, SYSDATE, #{reqPassword})
+			#{reqTitle}, #{reqUser}, #{reqText}, 0, SYSDATE, #{reqUserno})
                 <selectKey keyProperty="reqNo" resultType="Integer">
                         SELECT NVL(MAX(reqNo), 0) FROM REQUESTTB
                 </selectKey>
@@ -28,7 +28,7 @@
                 UPDATE REQUESTTB SET REQTITLE = #{reqTitle},
                 REQTEXT = #{reqText},
                 REQUSER = #{reqUser}
-                WHERE REQNO = #{reqNo} AND REQPASSWORD = #{reqPassword}
+                WHERE REQNO = #{reqNo}
         </update>
         
         <update id="updateCount" parameterType="int">
@@ -37,7 +37,7 @@
         
         <delete id="delete" parameterType="requesttbVO">
                 DELETE FROM REQUESTTB WHERE REQNO = #{reqNo}
-                AND REQPASSWORD = #{reqPassword}
+               
         </delete>
         
         <delete id="deleteAll">

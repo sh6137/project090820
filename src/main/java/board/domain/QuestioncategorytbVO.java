@@ -7,7 +7,7 @@ public class QuestioncategorytbVO {
 	
 	private int quecateNum;
 	private String quecateCat;
-	private int quecatePass;
+	
 	
 	public QuestioncategorytbVO() {
 		
@@ -16,7 +16,7 @@ public class QuestioncategorytbVO {
 	public QuestioncategorytbVO(String quecateCat, int quecatePass) {
 		super();
 		this.quecateCat = quecateCat;
-		this.quecatePass = quecatePass;
+		
 	}
 	
 	public int getQuecateNum() {
@@ -30,12 +30,6 @@ public class QuestioncategorytbVO {
 	}
 	public void setQuecateCat(String quecateCat) {
 		this.quecateCat = quecateCat;
-	}
-	public int getQuecatePass() {
-		return quecatePass;
-	}
-	public void setQuecatePass(int quecatePass) {
-		this.quecatePass = quecatePass;
 	}
 	
 	

@@ -69,21 +69,21 @@ public class RequesttbController {
 		public String edit(
 		        @Valid @ModelAttribute RequesttbVO requesttbVO, 
 		        BindingResult result, 
-		        int pwd, 
+		    
 		        SessionStatus sessionStatus,
 		        Model model){
 		        if(result.hasErrors()){
 		                return "/requestboard/edit";
 		        }
 		        else{
-		                if(requesttbVO.getReqPassword() == pwd){
+		               
 		                        requesttbService.edit(requesttbVO);
 		                        sessionStatus.setComplete();
 		                        return "redirect:/requestboard/list";
-		                }
+		               
 		        }
-		        model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
-		        return "/requestboard/edit";
+		       
+		    
 		}
 		
 		//글 삭제 요청을 처리할 메서드
@@ -93,17 +93,17 @@ public class RequesttbController {
 			return "/requestboard/delete";
 		}
 		@RequestMapping(value="/requestboard/delete", method=RequestMethod.POST)
-		public String delete(int reqNo, int pwd, Model model){
+		public String delete1(int reqNo,  Model model){
 			int rowCount;
 			RequesttbVO requesttbVO = new RequesttbVO();
 			requesttbVO.setReqNo(reqNo);
-			requesttbVO.setReqPassword(pwd);
+			
 			
 			rowCount = requesttbService.delete(requesttbVO);
 			
 			if(rowCount == 0){
 				model.addAttribute("reqNo", reqNo);
-				model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
+	
 				return "/requestboard/delete";
 			}
 			else{

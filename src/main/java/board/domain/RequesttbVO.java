@@ -12,17 +12,17 @@ public class RequesttbVO {
 	private String reqText;
 	private int reqReadCnt;
 	private Timestamp reqRegDt;
-	private int reqPassword;
+	private int reqUserno=1234;;
 	
 	public RequesttbVO() {}
 
-	public RequesttbVO(String reqTitle, String reqUser, String reqText, int reqPassword) {
+	public RequesttbVO(String reqTitle, String reqUser, String reqText, int reqUserno) {
 		super();
 		this.reqTitle = reqTitle;
 		this.reqUser = reqUser;
 		this.reqText = reqText;
 		this.reqReadCnt = 0;
-		this.reqPassword = reqPassword;
+		this.reqUserno = reqUserno;
 		
 		
 		
@@ -63,12 +63,15 @@ public class RequesttbVO {
 	public void setReqRegDt(Timestamp reqRegDt) {
 		this.reqRegDt = reqRegDt;
 	}
-	public int getReqPassword() {
-		return reqPassword;
+	
+	public int getReqUserno() {
+		return reqUserno;
 	}
-	public void setReqPassword(int reqPassword) {
-		this.reqPassword = reqPassword;
+
+	public void setReqUserno(int reqUserno) {
+		this.reqUserno = reqUserno;
 	}
+
 	
 	
 }

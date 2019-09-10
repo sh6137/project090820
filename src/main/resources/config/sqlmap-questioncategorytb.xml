@@ -15,9 +15,9 @@
         
         <insert id="insert" parameterType="questioncategorytbVO">
                 INSERT INTO QUESTIONCATEGORYTB 
-                (QUECATENUM, QUECATECAT, QUECATEPASS)
+                (QUECATENUM, QUECATECAT)
                 VALUES
-                (QUESTIONCATEGORYTB_SEQ.nextval, #{quecateCat}, #{quecatePass})
+                (QUESTIONCATEGORYTB_SEQ.nextval, #{quecateCat})
                 <selectKey keyProperty="quecateNum" resultType="Integer">
                         SELECT NVL(MAX(quecateNum), 0) FROM QUESTIONCATEGORYTB
                 </selectKey>
@@ -26,13 +26,13 @@
         <update id="update" parameterType="questioncategorytbVO">
                 UPDATE QUESTIONCATEGORYTB SET QUECATECAT = #{quecateCat}
                 
-                WHERE QUECATENUM = #{quecateNum} AND QUECATEPASS = #{quecatePass}
+                WHERE QUECATENUM = #{quecateNum}
         </update>
         
         
         <delete id="delete" parameterType="questioncategorytbVO">
                 DELETE FROM QUESTIONCATEGORYTB WHERE QUECATENUM = #{quecateNum}
-                AND QUECATEPASS = #{quecatePass}
+                
         </delete>
         
         <delete id="deleteAll">

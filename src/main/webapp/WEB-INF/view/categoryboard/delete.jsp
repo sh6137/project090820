@@ -9,9 +9,9 @@
         action="<c:url value="/categoryboard/delete" />" method="POST">
                 <input size="1" name="cateNo" value="${cateNo}"/>
                 번글을 삭제하시겠습니까?<br>
-                비밀번호<input type="password" name="pwd" />
+               
                 <input type="submit" value="삭제">
-                <a href="<c:url value="categoryboard" />">취소</a>
+                <a href="<c:url value="/categoryboard/list" />">취소</a>
         </form>
         <div>${msg}</div>
 </body>

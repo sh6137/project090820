@@ -7,12 +7,13 @@
 <body>
         <form name="deleteForm" 
         action="<c:url value="/questioncategoryboard/delete" />" method="POST">
-                <input size="1" name="quecateNum" value="${quecateNum}"/>
+<input type="hidden" size="1" name="quecateNum" value="${quecateNum}"/>
+                ${questioncategorytbVO.quecateCat}
                 번글을 삭제하시겠습니까?<br>
-                비밀번호<input type="password" name="pwd" />
                 <input type="submit" value="삭제">
-                <a href="<c:url value="questioncategoryboard" />">취소</a>
+                
         </form>
+        <a href="<c:url value="/questioncategoryboard/list" />">취소</a>
         <div>${msg}</div>
 </body>
 </html>

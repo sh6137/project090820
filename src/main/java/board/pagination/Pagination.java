@@ -80,6 +80,12 @@ public class Pagination  {
 		this.listCnt = listCnt;
 		//전체 페이지수 
 		this.pageCnt = (int) Math.ceil(listCnt/listSize);
+		if(listCnt%listSize !=0){
+			this.pageCnt = this.pageCnt+1;
+		}
+		
+		
+		System.out.println("페이지카운트"+pageCnt);
 		//시작 페이지
 		this.startPage = (range - 1) * rangeSize + 1 ;
 		//끝 페이지
@@ -91,6 +97,11 @@ public class Pagination  {
 		//게시판 시작번호
 		this.startList = (page - 1) * count+1;
 		count = count*page;
+		
+		
+		
+		
+		
 		//이전 버튼 상태
 		this.prev = range == 1 ? false : true;
 		//다음 버튼 상태

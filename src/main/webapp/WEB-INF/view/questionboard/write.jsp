@@ -42,12 +42,7 @@
 			
 			</tr>
 			
-			<tr>
-				<th><form:label path="quePassword">비밀번호</form:label></th>
-				<td><%-- <form:input path="password" /> --%>
-				<form:password path="quePassword" /> 
-				<form:errors path="quePassword" /></td>
-			</tr>
+			
 		</table>
 		<div>
 		<input type="submit" value="등록"> 
