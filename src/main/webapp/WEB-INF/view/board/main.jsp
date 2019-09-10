@@ -70,6 +70,34 @@
 				}
 			});
 		}
+		function productInsert(){
+			var url = '${pageContext.request.contextPath}/board/write-p';
+			$.ajax({
+				type : "GET",
+				url : url,
+				dataType : "text",
+				error : function(){
+					alert("통신실패");
+				},
+				success : function(data){
+					$("#center").html(data);
+				}
+			});
+		}
+		function replyList(){
+			var url = '${pageContext.request.contextPath}/replyboard/list';
+			$.ajax({
+				type : "GET",
+				url : url,
+				dataType : "text",
+				error : function(){
+					alert("통신실패");
+				},
+				success : function(data){
+					$("#center").html(data);
+				}
+			});
+		}
 	</script>
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -125,13 +153,16 @@
         <a class="nav-link" onclick="list();">제품 목록 게시판</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="/board/write">제품 등록/삭제/수정</a>
+        <a class="nav-link" onclick="productInsert();">제품 등록</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" onclick="question();">고객 요청/게시판</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="#">관심상품</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="replyList();">댓글 관리</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
