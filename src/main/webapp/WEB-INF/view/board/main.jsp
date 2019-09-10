@@ -42,8 +42,22 @@
 			});
 		}
 		
-		function proRead(postNo){
-			var url = '${pageContext.request.contextPath}/product/read?location=product&postNo='+postNo;
+		function notice(){
+			var url = '${pageContext.request.contextPath}/noticeboard/list';
+			$.ajax({
+				type : "GET",
+				url : url,
+				dataType : "text",
+				error : function(){
+					alert("통신실패");
+				},
+				success : function(data){
+					$("#center").html(data);
+				}
+			});
+		}
+		function question(){
+			var url = '${pageContext.request.contextPath}/questionboard/list';
 			$.ajax({
 				type : "GET",
 				url : url,
@@ -79,7 +93,12 @@
 <tr align="center">
 <td width="120" height="100"><a class="btn btn-iight" href="#" role="button"><span style="font-size:13pt">최근 본 상품</span></a></td>
 <td width="120" height="100"><a class="btn btn-iight" href="#" role="button"><span style="font-size:13pt">관심<br>상품 </span></a></td>
-<td width="120" height="100"><a class="btn btn-iight" href="#" role="button"><span style="font-size:13pt">로 그 인</span></a></td>
+	<c:if test="${re == null || re == 0}">
+		<td width="120" height="100"><a class="btn btn-iight" href="<c:url value="/membertb/login" />" role="button"><span style="font-size:13pt">로 그 인</span></a></td>
+	</c:if>
+	<c:if test="${re == 1}">
+		<td width="120" height="100"><a class="btn btn-iight" href="<c:url value="/membertb/login" />" role="button"><span style="font-size:13pt">로 그 아 웃</span></a></td>
+	</c:if>
 </tr> 
 
 </table></div>
@@ -100,13 +119,16 @@
         <a class="nav-link" onclick="main();">Main</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" onclick="notice();">공지사항</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" onclick="list();">제품 목록 게시판</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="/board/write">제품 등록/삭제/수정</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="#">고객 요청/게시판</a>
+        <a class="nav-link" onclick="question();">고객 요청/게시판</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="#">관심상품</a>

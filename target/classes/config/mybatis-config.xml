@@ -17,5 +17,13 @@
 		<typeAlias alias="replyVO" type="board.domain.ReplyVO" />
 		<typeAlias alias="ProductVO" type="board.domain.ProductVO" />
 		<typeAlias alias="pagination" type="board.pagination.Pagination"/>
+		<typeAlias alias="membertbVO" type="membertb.domain.membertbVO" />
+		<typeAlias alias="replytbVO" type="board.domain.ReplytbVO"/>
+		<typeAlias alias="noticetbVO" type="board.domain.NoticetbVO"/>
+		<typeAlias alias="questiontbVO" type="board.domain.QuestiontbVO" />
+		<typeAlias alias="requesttbVO" type="board.domain.RequesttbVO" />
+		<typeAlias alias="questioncategorytbVO" type="board.domain.QuestioncategorytbVO"/>
+		<typeAlias alias="search" type="board.pagination.Search"/>
+		<typeAlias alias="categorytbVO" type="board.domain.CategorytbVO"/>
 	</typeAliases>
 </configuration>

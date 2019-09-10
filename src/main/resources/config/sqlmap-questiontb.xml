@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="questiontbDAO">
+        <select id="list" resultType="questiontbVO" >
+       
+        
+        <!-- SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT * FROM QUESTIONTB ORDER by QUENO DESC) DATA) -->  
+     	
+		<if test="keyword == null">
+		SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT * FROM QUESTIONTB ORDER by QUENO DESC) DATA)
+		WHERE RNUM <![CDATA[ >= ]]> #{startList} AND RNUM <![CDATA[ <= ]]> #{count}
+		</if>
+		<if test="keyword != null and keyword != '' ">
+			<if test="searchType=='queTitle'">
+				SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT * FROM QUESTIONTB ORDER by QUENO DESC) DATA)
+				WHERE REGEXP_LIKE (QUETITLE, #{keyword})
+				
+			</if>
+			<if test="searchType=='queCategory'">
+				SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT * FROM QUESTIONTB ORDER by QUENO DESC) DATA)
+				WHERE REGEXP_LIKE (QUECATEGORY, #{keyword})
+				
+			</if>
+			<if test="searchType=='queUser'">
+				SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT * FROM QUESTIONTB ORDER by QUENO DESC) DATA)
+				WHERE REGEXP_LIKE (QUEUSER, #{keyword})
+				
+			</if>
+     	</if>
+     	<!--  AND RNUM <![CDATA[ >= ]]> #{startList} AND RNUM <![CDATA[ <= ]]> #{count} -->
+	
+
+			
+
+		<!--  SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT * FROM QUESTIONTB ORDER by QUENO DESC) DATA)  
+     	WHERE RNUM <![CDATA[ >= ]]> #{startList} AND RNUM <![CDATA[ <= ]]> #{count} -->
+        </select>
+       
+        
+        <select id="getListCnt" resultType="int">
+		SELECT
+			count(*) as listCnt
+		FROM
+			QUESTIONTB 
+			
+			<if test="keyword != null and keyword != '' ">
+
+			<if test="searchType=='queTitle'">
+
+				WHERE REGEXP_LIKE (QUETITLE, #{keyword})
+
+			</if>
+
+			<if test="searchType=='queUser'">
+
+				WHERE REGEXP_LIKE (QUEUSER, #{keyword})
+
+			</if>
+
+			<if test="searchType=='queCategory'">
+
+				WHERE REGEXP_LIKE (QUECATEGORY, #{keyword})
+
+			</if>
+
+      </if>
+
+			
+		</select>
+        
+        
+        <select id="select" parameterType="int" resultType="questiontbVO">
+                SELECT * FROM
+                QUESTIONTB WHERE QUENO = #{queNo}
+        </select>
+        
+        <insert id="insert" parameterType="questiontbVO">
+                INSERT INTO QUESTIONTB 
+                (QUENO, QUETITLE, QUEUSER, QUETEXT, QUEREADCNT, QUECATEGORY, QUEREGDT, QUEUSERNO)
+                VALUES
+                (QUESTIONTB_SEQ.nextval, 
+			#{queTitle}, #{queUser}, #{queText}, 0, #{queCategory}, SYSDATE, #{queUserno})
+                <selectKey keyProperty="queNo" resultType="Integer">
+                        SELECT NVL(MAX(queNo), 0) FROM QUESTIONTB
+                </selectKey>
+        </insert>
+        
+        <update id="update" parameterType="questiontbVO">
+                UPDATE QUESTIONTB SET QUETITLE = #{queTitle},
+                QUETEXT = #{queText},
+                QUEUSER = #{queUser},
+                QUECATEGORY = #{queCategory}
+                WHERE QUENO = #{queNo} 
+        </update>
+        
+        <update id="updateCount" parameterType="int">
+                UPDATE QUESTIONTB SET QUEREADCNT = QUEREADCNT + 1 WHERE QUENO = #{queNo}
+        </update>
+        
+        <delete id="delete" parameterType="questiontbVO">
+                DELETE FROM QUESTIONTB WHERE QUENO = #{queNo}
+                
+        </delete>
+        
+        <delete id="deleteAll">
+                DELETE FROM QUESTIONTB
+        </delete>
+        
+
+        
+</mapper>

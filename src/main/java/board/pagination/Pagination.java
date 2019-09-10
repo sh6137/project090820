@@ -2,10 +2,12 @@ package board.pagination;
 
 import org.apache.ibatis.type.Alias;
 
-@Alias("Pagination")
-public class Pagination {
+import board.domain.QuestiontbVO;
 
-	private int listSize = 9;                //초기값으로 목록개수를 10으로 셋팅
+@Alias("Pagination")
+public class Pagination  {
+
+	private int listSize = 5;                //초기값으로 목록개수를 10으로 셋팅
 	private int count;
 	private int rangeSize = 10;            //초기값으로 페이지범위를 10으로 셋팅
 	private int page;
@@ -60,11 +62,6 @@ public class Pagination {
 	public int getListSize() {
 		return listSize;
 	}
-	
-
-	public void setCount(int count) {
-		this.count = count;
-	}
 	public void setListSize(int listSize) {
 		this.listSize = listSize;
 	}
@@ -75,13 +72,7 @@ public class Pagination {
 		this.listCnt = listCnt;
 	}
 	public int getStartList() {
-		//System.out.println("startList");
 		return startList;
-	}
-	
-	public int getCount() {
-		//System.out.println("count");
-		return count;
 	}
 	public void pageInfo(int page, int range, int listCnt) {
 		this.page = page;
@@ -89,6 +80,12 @@ public class Pagination {
 		this.listCnt = listCnt;
 		//전체 페이지수 
 		this.pageCnt = (int) Math.ceil(listCnt/listSize);
+		if(listCnt%listSize !=0){
+			this.pageCnt = this.pageCnt+1;
+		}
+		
+		
+		System.out.println("페이지카운트"+pageCnt);
 		//시작 페이지
 		this.startPage = (range - 1) * rangeSize + 1 ;
 		//끝 페이지
@@ -100,6 +97,11 @@ public class Pagination {
 		//게시판 시작번호
 		this.startList = (page - 1) * count+1;
 		count = count*page;
+		
+		
+		
+		
+		
 		//이전 버튼 상태
 		this.prev = range == 1 ? false : true;
 		//다음 버튼 상태

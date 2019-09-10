@@ -28,5 +28,51 @@
 	<bean id="boardController" class="controller.BoardController">
 		<property name="boardService" ref="boardService" />
 	</bean>
+	
+	<bean id="questioncategorytbController" class="board.controller.QuestioncategorytbController">
+		<property name="questioncategorytbService" ref="questioncategorytbServiceImpl"/>
+	</bean>
+	
+	<bean id="questiontbController" class="board.controller.QuestiontbController">
+		<property name="questiontbService" ref="questiontbServiceImpl" />
+		<property name="questioncategorytbService" ref="questioncategorytbServiceImpl"/>
+		
+	</bean>
+	
+	
+	<bean id="noticetbController" class="board.controller.NoticetbController">
+		<property name="noticetbService" ref="noticetbServiceImpl"/>
+	</bean>
+	
+	<bean id="replytbController" class="board.controller.ReplytbController">
+		<property name="replytbService" ref="replytbServiceImpl"/>
+	</bean>
+	
+	<bean id="requesttbController" class="board.controller.RequesttbController">
+		<property name="requesttbService" ref="requesttbServiceImpl" />
+	</bean>
+	
+	<bean id="categorytbController" class="board.controller.CategorytbController">
+		<property name="categorytbService" ref="categorytbServiceImpl"/>
+	</bean>
+	
+	<mvc:view-controller path="/membertb/main" view-name="/membertb/main"/>
+	<mvc:view-controller path="/membertb/danaom" view-name="/membertb/danaom"/>
+	<mvc:view-controller path="/membertb/login" view-name="/membertb/login"/>
+	<mvc:view-controller path="/membertb/logout" view-name="/membertb/logout"/>
+	<mvc:view-controller path="/membertb/reg" view-name="/membertb/reg"/>
+	<mvc:view-controller path="/membertb/regok" view-name="/membertb/regok"/>
+	<mvc:view-controller path="/membertb/danaom" view-name="/membertb/danaom"/>
+	<mvc:view-controller path="/membertb/delete" view-name="/membertb/delete"/>
+	<mvc:view-controller path="/membertb/deleteok" view-name="/membertb/deleteok"/>
+	<mvc:view-controller path="/membertb/changeinfo" view-name="/membertb/changeinfo"/>
+	<mvc:view-controller path="/membertb/changeinfook" view-name="/membertb/changeinfook"/>
+	<mvc:view-controller path="/membertb/idCheck" view-name="/membertb/idCheck"/>
+	<mvc:view-controller path="/membertb/nickCheck" view-name="/membertb/nickCheck"/>
+	
+	
+	<bean id="membertbController" class="membertb.controller.membertbController">
+		<property name="membertbService" ref="membertbService" />
+	</bean>
 
 </beans>

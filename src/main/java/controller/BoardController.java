@@ -22,7 +22,7 @@ import board.service.BoardService;
 @SessionAttributes("productVO")
 public class BoardController {
 	private BoardService boardService;
-
+	
 	public void setBoardService(BoardService boardService) {
 		this.boardService = boardService;
 	}

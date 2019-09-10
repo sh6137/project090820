@@ -15,14 +15,14 @@ public class ProductDao {
      }
      
 	 public void insert(ProductVO ProductVO) {
-         sqlSessionTemplate.insert("insert", ProductVO);
+         sqlSessionTemplate.insert("productDAO.insert", ProductVO);
 	 }
 	 
 	 public ProductVO select(String proNo) {
-		 return sqlSessionTemplate.selectOne("select", Integer.parseInt(proNo));
+		 return sqlSessionTemplate.selectOne("productDAO.select", Integer.parseInt(proNo));
 	 }
 	 
 	 public void readUp(String proNo) {
-		 sqlSessionTemplate.update("readUp", Integer.parseInt(proNo));
+		 sqlSessionTemplate.update("productDAO.readUp", Integer.parseInt(proNo));
 	 }
 }

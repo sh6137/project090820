@@ -34,6 +34,13 @@
 				<value>classpath:config/sqlmap-board.xml</value>
 				<value>classpath:config/sqlmap-productReply.xml</value>
 				<value>classpath:config/sqlmap-product.xml</value>
+				<value>classpath:config/sqlmap-membertb.xml</value>
+				<value>classpath:config/sqlmap-noticetb.xml</value>
+				<value>classpath:config/sqlmap-replytb.xml</value>
+				<value>classpath:config/sqlmap-questiontb.xml</value>
+				<value>classpath:config/sqlmap-requesttb.xml</value>
+				<value>classpath:config/sqlmap-questioncategorytb.xml</value>
+				<value>classpath:config/sqlmap-categorytb.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -52,6 +59,100 @@
 	</bean>
 	
 	<bean id="separate" class="separate.Separate"></bean>
+	
+	<bean id="membertbDao" class="membertb.dao.membertbDaoMybatis">
+	<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
+	</bean>
+	
+	<bean id="questiontbDao" class="board.dao.QuestiontbDaoMybatis">
+	<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
+	</bean>
+	
+	<bean id="membertbService" class="membertb.service.membertbServiceImpl">
+		<property name="membertbDao" ref="membertbDao"/>
+	</bean>
+	
+	<bean id="questiontbService" class="board.service.QuestiontbServiceImpl">
+		<property name="questiontbDao" ref="questiontbDao"/>
+	</bean>
+	
+	<bean id="questiontbServiceImpl" class="board.service.QuestiontbServiceImpl">
+		<property name="questiontbDao" ref="questiontbDao"/>
+	</bean>
+	
+	<!-- 공지사항 게시판 -->
+		<bean id="noticetbDao" class="board.dao.NoticetbDaoMybatis">
+	<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
+	</bean>
+	
+	<bean id="noticetbService" class="board.service.NoticetbServiceImpl">
+		<property name="noticetbDao" ref="noticetbDao"/>
+	</bean>
+	
+	
+	<bean id="noticetbServiceImpl" class="board.service.NoticetbServiceImpl">
+		<property name="noticetbDao" ref="noticetbDao"/>
+	</bean>
+	
+	<!-- 댓글관리 게시판 -->
+		<bean id="replytbDao" class="board.dao.ReplytbDaoMybatis">
+		<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
+		</bean>
+		
+		<bean id="replyttbService" class="board.service.ReplytbServiceImpl">
+		<property name="replytbDao" ref="replytbDao"/>
+	</bean>
+	
+	<bean id="replytbServiceImpl" class="board.service.ReplytbServiceImpl">
+		<property name="replytbDao" ref="replytbDao"/>
+	</bean>
+	
+	
+	<!-- 제품등록요청  -->
+	
+	<bean id="requesttbDao" class="board.dao.RequesttbDaoMybatis">
+	<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
+	</bean>
+	
+	<bean id="requesttbService" class="board.service.RequesttbServiceImpl">
+		<property name="requesttbDao" ref="requesttbDao"/>
+	</bean>
+	
+	
+	<bean id="requesttbServiceImpl" class="board.service.RequesttbServiceImpl">
+		<property name="requesttbDao" ref="requesttbDao"/>
+	</bean>
+	
+	
+	<!-- 질문카테고리 목록 -->
+	
+	<bean id="questioncategorytbDao" class="board.dao.QuestioncategorytbDaoMybatis">
+		<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="questioncategorytbService" class="board.service.QuestioncategorytbServiceImpl">
+		<property name="questioncategorytbDao" ref="questioncategorytbDao"/>
+	</bean>
+	
+	<bean id="questioncategorytbServiceImpl" class="board.service.QuestioncategorytbServiceImpl">
+		<property name="questioncategorytbDao" ref="questioncategorytbDao"/>
+	</bean>
+	
+	<!-- 카테고리 목록 -->
+	<bean id="categorytbDao" class="board.dao.CategorytbDaoMybatis">
+		<constructor-arg ref="sqlSessionTemplate"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="categorytbService" class="board.service.CategorytbServiceImpl">
+		<property name="categorytbDao" ref="categorytbDao"/>
+	</bean>
+	
+	<bean id="categorytbServiceImpl" class="board.service.CategorytbServiceImpl">
+		<property name="categorytbDao" ref="categorytbDao"/>
+	</bean>
+	
 	
 	<!-- 아래는 CSS적용 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
 	

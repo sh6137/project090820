@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="noticetbDAO">
+        <select id="list" resultType="noticetbVO" >
+                
+       SELECT * FROM (SELECT ROWNUM RNUM, DATA.* FROM (SELECT * FROM NOTICETB ORDER by NOTICENO DESC) DATA)
+     	WHERE RNUM <![CDATA[ >= ]]> #{startList} AND RNUM <![CDATA[ <= ]]> #{count} 
+       <!-- SELECT * FROM NOTICETB ORDER BY noticeNO DESC -->
+        </select>
+       
+        
+        <select id="getListCnt" resultType="int">
+		SELECT
+			count(*) as listCnt
+		FROM
+			NOTICETB 
+		</select>
+        
+        
+        <select id="select" parameterType="int" resultType="noticetbVO">
+                SELECT * FROM
+                NOTICETB WHERE NOTICENO = #{noticeNo}
+        </select>
+        
+        <insert id="insert" parameterType="noticetbVO">
+                INSERT INTO NOTICETB 
+                (NOTICENO, NOTICETITLE, NOTICEUSER, NOTICETEXT, NOTICEREADCNT, NOTICEREGDT)
+                VALUES
+                (NOTICETB_SEQ.nextval, 
+			#{noticeTitle}, #{noticeUser}, #{noticeText}, 0, SYSDATE)
+                <selectKey keyProperty="noticeNo" resultType="Integer">
+                        SELECT NVL(MAX(noticeNo), 0) FROM NOTICETB
+                </selectKey>
+        </insert>
+        
+        <update id="update" parameterType="noticetbVO">
+                UPDATE NOTICETB SET NOTICETITLE = #{noticeTitle},
+                NOTICETEXT = #{noticeText},
+                NOTICEUSER = #{noticeUser},
+                WHERE NOTICENO = #{noticeNo} 
+        </update>
+        
+        <update id="updateCount" parameterType="int">
+                UPDATE NOTICETB SET NOTICEREADCNT = NOTICEREADCNT + 1 WHERE NOTICENO = #{noticeNo}
+        </update>
+        
+        <delete id="delete" parameterType="noticetbVO">
+                DELETE FROM NOTICETB WHERE NOTICENO = #{noticeNo}
+        </delete>
+        
+        <delete id="deleteAll">
+                DELETE FROM NOTICETB
+        </delete>
+        
+
+        
+</mapper>
