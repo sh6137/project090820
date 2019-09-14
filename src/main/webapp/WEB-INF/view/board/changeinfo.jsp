@@ -24,7 +24,7 @@
           <form action="${pageContext.request.contextPath}/membertb/changeinfo" method="post" >
         <fieldset>
            <legend>회원정보 변경</legend>     
-               비밀번호  : <input type="password" name="memberpass" /> <br><br>
+         PW  : <input type="password" name="memberpass" /> <br><br>
        	 이메일  : <input type="email" name="memberemail" /> <br><br>
        	 닉네임  : <input type="text" name="membernick" />  <br><br>  
                <input type="submit" value="회원정보 변경"> &nbsp;&nbsp;&nbsp;&nbsp;

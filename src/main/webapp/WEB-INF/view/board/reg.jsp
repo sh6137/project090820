@@ -13,7 +13,7 @@
 <script> 
  function idCheck(id){
 	if(id == ""){
-		alert("아이디를 입력해주세요");
+		alert("ID를 입력해주세요");
 		document.name.id.focus();
 	}
 	else{
@@ -171,9 +171,9 @@ function nickCheck(nick){
               <legend>회원 가입</legend> <!-- 이름 , id, password, password1, email, address,   -->
               <table>
 			  <tr><td>
-   	 &nbsp;&nbsp;&nbsp;아이디 : </td><td><input type="text" name="memberid" placeholder="Id" required/> <input type="button" value="중복확인" onClick="idCheck(this.form.memberid.value) "/></td></tr> 
+   	 &nbsp;&nbsp;&nbsp;ID : </td><td><input type="text" name="memberid" placeholder="Id" required/> <input type="button" value="중복확인" onClick="idCheck(this.form.memberid.value) "/></td></tr> 
               <tr><td>
-     &nbsp;&nbsp;&nbsp;비밀번호 : </td><td><input type="password" name="memberpass" placeholder="Password" required/></td></tr> 
+     &nbsp;&nbsp;&nbsp;PW : </td><td><input type="password" name="memberpass" placeholder="Password" required/></td></tr> 
               <tr><td>
       &nbsp;&nbsp;&nbsp;닉네임 : </td><td><input type="text" name="membernick" placeholder="Nickname" required/> <input type="button" value="중복확인" onClick="nickCheck(this.form.membernick.value) "/></td></tr> 
               <tr><td>

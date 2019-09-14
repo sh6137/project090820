@@ -8,7 +8,7 @@
 <script>
 function re(){
 	if(${re}==0){
-		alert("ID와 패스워드를 확인하세요!");
+		alert("ID와 PW를 확인하세요!");
 	}
 }
 
@@ -35,9 +35,9 @@ function re(){
             <fieldset>
               <legend>로그인!</legend>
               <table><tr><td>
-              	아이디 : </td><td><input type="text" name="memberid" placeholder="Enter Your Id" required/> </td></tr>
+              	ID : </td><td><input type="text" name="memberid" placeholder="Enter Your Id" required/> </td></tr>
               <tr><td>
-              	비밀번호 : </td><td><input type="password" name="memberpass" placeholder="Enter Your Password" required/></td></tr>
+              	PW : </td><td><input type="password" name="memberpass" placeholder="Enter Your Password" required/></td></tr>
               </table>
               <button type="submit"> 로그인 </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
            
